@@ -26,9 +26,8 @@
     <a href="#releases">Releases</a> •
 </p>
 
-<p align="center">
-     Pasta/Capturar.PNG
-    <img width="70%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/Capturar.PNG">
+<p align="center" justify-content="center">
+    <img width="40%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/Capturar.PNG">
 </p>
 
 ## Overview
