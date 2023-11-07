@@ -27,7 +27,8 @@
 </p>
 
 <p align="center">
-    <img width="70%" src="https://github.com/spacelab-ufsc/ttc2/blob/master/doc/user_manual/figures/ttc2_pcb_3d.png">
+     Pasta/Capturar.PNG
+    <img width="70%" src="https://github.com/kiqsmg/NanoSatTrack/Pasta/Capturar.PNG">
 </p>
 
 ## Overview
