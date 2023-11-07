@@ -28,7 +28,7 @@
 
 <p align="center">
      Pasta/Capturar.PNG
-    <img width="70%" src="https://github.com/kiqsmg/NanoSatTrack/Pasta/Capturar.PNG">
+    <img width="70%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/Capturar.PNG">
 </p>
 
 ## Overview
