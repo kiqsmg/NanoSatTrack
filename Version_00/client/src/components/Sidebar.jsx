@@ -17,16 +17,12 @@ import {
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  ShoppingCartOutlined,
+  SatelliteAltOutlined,
   Groups2Outlined,
-  ReceiptLongOutlined,
-  PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
+  SettingsInputAntennaOutlined,
+  HubOutlined,
   AdminPanelSettingsOutlined,
   TrendingUpOutlined,
-  PieChartOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -43,40 +39,20 @@ const navItems = [
     icon: null,
   },
   {
-    text: "Products",
-    icon: <ShoppingCartOutlined />,
+    text: "Mission",
+    icon: <SatelliteAltOutlined />,
   },
   {
-    text: "Customers",
+    text: "Partners",
     icon: <Groups2Outlined />,
   },
   {
-    text: "Transactions",
-    icon: <ReceiptLongOutlined />,
+    text: "GroundStation",
+    icon: <SettingsInputAntennaOutlined />,
   },
   {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
-  {
-    text: "Sales",
-    icon: null,
-  },
-  {
-    text: "Overview",
-    icon: <PointOfSaleOutlined />,
-  },
-  {
-    text: "Daily",
-    icon: <TodayOutlined />,
-  },
-  {
-    text: "Monthly",
-    icon: <CalendarMonthOutlined />,
-  },
-  {
-    text: "Breakdown",
-    icon: <PieChartOutlined />,
+    text: "Ham Radio",
+    icon: <HubOutlined />,
   },
   {
     text: "Management",
@@ -131,8 +107,20 @@ const Sidebar = ({
             <Box m="1.5rem 2rem 2rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
+
+                <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="50px"
+                width="50px"
+                borderRadius="0%"
+                sx={{ objectFit: "cover" }}
+                marginLeft= "-40px"
+              />
+
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    GOLDS-UFSC
                   </Typography>
                 </Box>
                 {!isNonMobile && (
