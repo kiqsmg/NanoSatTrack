@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Card, CardActions, CardContent, Collapse, Button, Typography, Rating, useTheme, useMediaQuery, } from "@mui/material";
-import { useGetProductsQuery } from 'state/api';
 import Header from "components/Header";
+import { useGetProductsQuery } from 'state/api';
 
 const Product = ({
   _id,
@@ -11,7 +11,7 @@ const Product = ({
   rating,
   category,
   supply,
-  stat
+  stat,
 }) => {
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -69,10 +69,10 @@ const Product = ({
         </CardContent>
       </Collapse>
     </Card>
-  )
-}
+  );
+};
 
-const Products() {
+const Products= () => {
   const { data, isLoading } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   console.log("data", data);
