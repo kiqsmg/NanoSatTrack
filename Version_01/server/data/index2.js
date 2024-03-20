@@ -2,8 +2,9 @@ export const dataTransaction = [
     {
         _id: "01",
         year: 2019,
-        day: 20,
         month: 12,
+        day: 20,
+        hour: 9,
         minute: 51,
         second: 22,
         battery_cell_1_voltage: 4.10172,
@@ -17,12 +18,11 @@ export const dataTransaction = [
         sp_04_current: 0.0,
         sp_05_current: 0.173012,
         sp_06_current: 0.00754801,
+        sp_07_current: 4.30408,
         sp_08_current: 1.23311,
         sp_09_current: 3.69696,
-        hour: 9,
         energy_level: 1,
         reserved_21: "",
-        sp_07_current: 4.30408,
         reserved_22: "",
         reserved_23: "",
         reserved_24: "",
@@ -37,7 +37,8 @@ export const dataTransaction = [
         reserved_33: "",
         reserved_34: "",
         reserved_35: "",
-        satNOGS: "0",
+        eps_temperature: 13.6149,
+        satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
@@ -80,7 +81,7 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 13.3635,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
@@ -123,7 +124,7 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 13.1121,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
@@ -166,7 +167,7 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 12.6094,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
@@ -209,7 +210,7 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 15.6259,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
@@ -251,9 +252,9 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 12.6094,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
-        grid_locator: "JN49lr"
+        grid_locator: "JN49lr",
     },
     {
         _id: "07",
@@ -293,9 +294,9 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 14.369,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
-        grid_locator: "JN49lr"
+        grid_locator: "JN49lr",
     },
     {
         _id: "08",
@@ -335,9 +336,9 @@ export const dataTransaction = [
         reserved_34: "",
         reserved_35: "",
         eps_temperature: 13.1121,
-        satNOGS: "0",
+        satNOGS: "-",
         callsign: "DK3WN",
-        grid_locator: "JN49lr"
+        grid_locator: "JN49lr",
     },
     {
         _id: "09",
@@ -379,7 +380,7 @@ export const dataTransaction = [
         eps_temperature: 13.3635,
         satNOGS: "1405905",
         callsign: "IQ1RY",
-        grid_locator: "JN34wq"
+        grid_locator: "JN34wq",
     },
     {
         _id: "10",
@@ -421,7 +422,7 @@ export const dataTransaction = [
         eps_temperature: 18.3912,
         satNOGS: "1405884",
         callsign: "KB9JHU",
-        grid_locator: "EM69uf"
+        grid_locator: "EM69uf",
     },
     {
         _id: "11",
@@ -463,7 +464,7 @@ export const dataTransaction = [
         eps_temperature: 17.1342,
         satNOGS: "1405884",
         callsign: "KB9JHU",
-        grid_locator: "EM69uf"
+        grid_locator: "EM69uf",
     },
     {
         _id: "12",
@@ -505,7 +506,7 @@ export const dataTransaction = [
         eps_temperature: 17.1342,
         satNOGS: "1405884",
         callsign: "KB9JHU",
-        grid_locator: "EM69uf"
+        grid_locator: "EM69uf",
     },
     {
         _id: "13",
@@ -547,7 +548,7 @@ export const dataTransaction = [
         eps_temperature: 30.4575,
         satNOGS: "1405901",
         callsign: "ZR1ADC",
-        grid_locator: "LL34js"
+        grid_locator: "LL34js",
     },
     {
         _id: "14",
@@ -589,7 +590,7 @@ export const dataTransaction = [
         eps_temperature: 30.4575,
         satNOGS: "1405901",
         callsign: "ZR1ADC",
-        grid_locator: "LL34js"
+        grid_locator: "LL34js",
     },
     {
         _id: "15",
@@ -631,7 +632,7 @@ export const dataTransaction = [
         eps_temperature: 30.4575,
         satNOGS: "1405901",
         callsign: "ZR1ADC",
-        grid_locator: "LL34js"
+        grid_locator: "LL34js",
     },
     {
         _id: "20",
@@ -673,7 +674,7 @@ export const dataTransaction = [
         eps_temperature: 27.4409,
         satNOGS: "1405885",
         callsign: "KB9JHU",
-        grid_locator: "EM69uf"
+        grid_locator: "EM69uf",
     },
     {
         _id: "23",
@@ -715,7 +716,7 @@ export const dataTransaction = [
         eps_temperature: 27.4409,
         satNOGS: "1405885",
         callsign: "KB9JHU",
-        grid_locator: "EM69uf"
+        grid_locator: "EM69uf",
     },
     {
         _id: "24",
@@ -757,7 +758,7 @@ export const dataTransaction = [
         eps_temperature: 23.9216,
         satNOGS: "-",
         callsign: "K4KDR",
-        grid_locator: "FM17es"
+        grid_locator: "FM17es",
     },
     {
         _id: "25",
@@ -799,7 +800,7 @@ export const dataTransaction = [
         eps_temperature: 25.4299,
         satNOGS: "-",
         callsign: "K4KDR",
-        grid_locator: "FM17es"
+        grid_locator: "FM17es",
     },
     {
         _id: "26",
@@ -841,7 +842,7 @@ export const dataTransaction = [
         eps_temperature: 19.1453,
         satNOGS: "1659102",
         callsign: "SQ3XZ",
-        grid_locator: "JO82ik"
+        grid_locator: "JO82ik",
     },
     {
         _id: "28",
@@ -883,7 +884,7 @@ export const dataTransaction = [
         eps_temperature: 20.6536,
         satNOGS: "1692775",
         callsign: "DL4PD",
-        grid_locator: "JO30cr"
+        grid_locator: "JO30cr",
     },
     {
         _id: "29",
@@ -925,7 +926,7 @@ export const dataTransaction = [
         eps_temperature: 21.9105,
         satNOGS: "1692777",
         callsign: "ZR1ADC",
-        grid_locator: "LL34js"
+        grid_locator: "LL34js",
     },
     {
         _id: "34",
@@ -967,7 +968,7 @@ export const dataTransaction = [
         eps_temperature: 17.8884,
         satNOGS: "1692776",
         callsign: "DL4PD",
-        grid_locator: "JO30cr"
+        grid_locator: "JO30cr",
     },
     {
         _id: "38",
@@ -1009,7 +1010,7 @@ export const dataTransaction = [
         eps_temperature: 21.1564,
         satNOGS: "-",
         callsign: "KJ7LXJ",
-        grid_locator: "CN97"
+        grid_locator: "CN97",
     },
     {
         _id: "40",
@@ -1033,8 +1034,8 @@ export const dataTransaction = [
         sp_07_current: 0,
         sp_08_current: 0.31476,
         sp_09_current: 0,
-        reserved_21: 0,
-        reserved_22: 1,
+        reserved_21: 1,
+        reserved_22: "",
         reserved_23: "",
         reserved_24: "",
         reserved_25: "",
@@ -1051,7 +1052,7 @@ export const dataTransaction = [
         eps_temperature: 18.3912,
         satNOGS: "1719304",
         callsign: "DL4PD",
-        grid_locator: "JO30cr"
+        grid_locator: "JO30cr",
     },
     {
         _id: "42",
@@ -1093,7 +1094,7 @@ export const dataTransaction = [
         eps_temperature: 19.1453,
         satNOGS: "1719302",
         callsign: "ZR1ADC",
-        grid_locator: "LL34js"
+        grid_locator: "LL34js",
     },
     {
         _id: "55",
@@ -1135,6 +1136,6 @@ export const dataTransaction = [
         eps_temperature: 19.3967,
         satNOGS: "-",
         callsign: "JA5BLZ",
-        grid_locator: "PM63uo"
+        grid_locator: "PM63uo",
     },    
 ]
