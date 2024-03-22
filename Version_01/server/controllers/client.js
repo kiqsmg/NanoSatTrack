@@ -45,17 +45,17 @@ export const getTransactions = async (req, res) => {  //route handler(fetch tran
         const generateSort = () => { //formats the sort to MongoDB sor format
             const sortParsed = JSON.parse(sort);
             const sortFormatted = {
-                [sortParsed.field]: (sortParsed.sort = "asc" ? 1 : -1 )
+                [sortParsed.field]: (sortParsed.sort = "asc" ? 1 : -1),
             };
 
             return sortFormatted;
-        }
+        };
         const sortFormatted = Boolean(sort) ? generateSort() : {};
 
         const transactions = await Transaction.find({ //consults the data base using the search criteria and pagination paramters
             $or: [
-                { cost: {$regex: new RegExp(search, "i") } },
-                { userId: {$regex: new RegExp(search, "i") } },          
+                { cost: { $regex: new RegExp(search, "i") } },
+                { userId: { $regex: new RegExp(search, "i") } },          
             ],
         })
             .sort(sortFormatted)
@@ -64,7 +64,7 @@ export const getTransactions = async (req, res) => {  //route handler(fetch tran
 
 
         const total = await Transaction.countDocuments ({ //counts the number of documents in the collections based on the search
-            name: { $regex: search, $options: "i" }
+            name: { $regex: search, $options: "i" },
         });
 
 
