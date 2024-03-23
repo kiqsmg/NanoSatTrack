@@ -1,0 +1,5 @@
+1- First you create the router in /routes/client.js
+2- We dont have to create a model for it, because the data already exists in the user
+3- Create getGeography in /controllers/client.js
+4- Install new package country-iso-2-to-3
+5- create code to change country 2-to-3
