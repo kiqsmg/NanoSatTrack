@@ -1,5 +1,21 @@
+Geography feature step-by-step
+
 1- First you create the router in /routes/client.js
 2- We dont have to create a model for it, because the data already exists in the user
 3- Create getGeography in /controllers/client.js
 4- Install new package country-iso-2-to-3
 5- create code to change country 2-to-3
+6- Build query in state/api.js
+7- Import and create Geography route in /App.js
+8- Create geography folder in scenes, and there create the index file for the geography feature
+9- IMport GeoData map from the site https://nivo.rocks/choropleth/
+10- Chande map design 
+11- 
+
+
+
+
+Overview Page step-by-step
+
+1- Create OverallStat file in /server/models/ (In summary, this code defines a Mongoose schema and model for storing overall statistics related to sales and customers, including yearly, monthly, and daily sales data, as well as sales data categorized by category)
+2- copy 
