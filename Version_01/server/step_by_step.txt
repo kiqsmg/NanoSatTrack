@@ -18,4 +18,18 @@ Geography feature step-by-step
 Overview Page step-by-step
 
 1- Create OverallStat file in /server/models/ (In summary, this code defines a Mongoose schema and model for storing overall statistics related to sales and customers, including yearly, monthly, and daily sales data, as well as sales data categorized by category)
-2- copy 
+2- Import OverallStat and dataOverallStat in the index /server/index.js 
+3- Insert multiple documents into the MongoDB collection associated with OverallStat model (one-time data seeding operation)
+4- In /routes/sales.js Set up route handler for GET requests to "/sales" using Express
+5- In /controllers/sales.js Define controller function getSales that handles GET requests to retrive sales data from the MongoDB database using the OverllStat model
+6- Build query in state/api.js (useGetSlesQuery send a request to the specified URL and the fetched data is tagged as Sales)
+7- Import and create Overview route in /App.js
+8- Create Overview folder in scenes, and there create the index file for the overview feature page
+9- Create OverviewChart in components
+10- 
+
+
+daily
+1- Create daily page in scenes
+2- 
+
