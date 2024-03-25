@@ -27,21 +27,28 @@ const Daily = () => {
       data: [],
     };
 
-    Object.values(dailyData).forEach(({ date, totalSales, totalUnits }) => {
-      const dateFormatted = new Date(date);
-      if (dateFormatted >= startDate && dateFormatted <= endDate) {
-        const splitDate = date.substring(date.indexOf("-") + 1);
+    if (dailyData) {
+        Object.values(dailyData).forEach(({ date, totalSales, totalUnits }) => {
+            const dateFormatted = new Date(date);
+            if (dateFormatted >= startDate && dateFormatted <= endDate) {
+              const splitDate = date.substring(date.indexOf("-") + 1);
+      
+              totalSalesLine.data = [
+                ...totalSalesLine.data,
+                { x: splitDate, y: totalSales },
+              ];
+              totalUnitsLine.data = [
+                ...totalUnitsLine.data,
+                { x: splitDate, y: totalUnits },
+              ];
+            }
+          });
+    } else {
+        console.error("dailyData is undefined or null");
+    };
+    
 
-        totalSalesLine.data = [
-          ...totalSalesLine.data,
-          { x: splitDate, y: totalSales },
-        ];
-        totalUnitsLine.data = [
-          ...totalUnitsLine.data,
-          { x: splitDate, y: totalUnits },
-        ];
-      }
-    });
+    
 
     const formattedData = [totalSalesLine, totalUnitsLine];
     return [formattedData];
