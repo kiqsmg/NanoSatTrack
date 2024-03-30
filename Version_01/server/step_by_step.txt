@@ -31,5 +31,5 @@ Overview Page step-by-step
 
 daily
 1- Create daily page in scenes
-2- 
+2- In App.js Import daily and create route 
 
