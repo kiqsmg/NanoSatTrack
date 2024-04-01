@@ -35,7 +35,7 @@ const Dashboard = () => {
             }}
           >
             <LanOutlined sx={{ mr: "10px" }} />
-            Want to know more?<br/> Look us in our github...
+            Want to know more?
           </Button>
         </Box>
       </FlexBetween>
