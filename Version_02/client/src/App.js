@@ -22,12 +22,10 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/" element={<Navigate to="/spacelab" replace />} />
               <Route path="/spacelab" element={<Spacelab />} />
               <Route path="/locations" element={<Locations />} />
               <Route path="/breakdown" element={<Breakdown />} />
-              <Route path="/breakdown" element={<Breakdown />} />
-
             </Route>
           </Routes>
         </ThemeProvider>
