@@ -17,16 +17,11 @@ import {
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  ShoppingCartOutlined,
   Groups2Outlined,
   ReceiptLongOutlined,
   PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
-  TrendingUpOutlined,
-  PieChartOutlined,
+  BatteryChargingFullOutlined,
+  SolarPowerOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -35,60 +30,32 @@ import profileImage from "assets/profile.jpg";
 
 const navItems = [
   {
-    text: "Dashboard",
+    text: "Spacelab",
     icon: <HomeOutlined />,
   },
   {
-    text: "Client Facing",
+    text: "FloripaSat-1",
     icon: null,
   },
   {
-    text: "Products",
-    icon: <ShoppingCartOutlined />,
+    text: "Battery Cells",
+    icon: <BatteryChargingFullOutlined />,
   },
   {
-    text: "Customers",
-    icon: <Groups2Outlined />,
+    text: "Solar Panels",
+    icon: <SolarPowerOutlined />,
   },
   {
-    text: "Transactions",
-    icon: <ReceiptLongOutlined />,
-  },
-  {
-    text: "Geography",
+    text: "Locations",
     icon: <PublicOutlined />,
   },
   {
-    text: "Sales",
-    icon: null,
+    text: "Radio Amadores",
+    icon: <Groups2Outlined />,
   },
   {
-    text: "Overview",
-    icon: <PointOfSaleOutlined />,
-  },
-  {
-    text: "Daily",
-    icon: <TodayOutlined />,
-  },
-  {
-    text: "Monthly",
-    icon: <CalendarMonthOutlined />,
-  },
-  {
-    text: "Breakdown",
-    icon: <PieChartOutlined />,
-  },
-  {
-    text: "Management",
-    icon: null,
-  },
-  {
-    text: "Admin",
-    icon: <AdminPanelSettingsOutlined />,
-  },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
+    text: "OBDH-data",
+    icon: <ReceiptLongOutlined />,
   },
 ];
 
@@ -132,7 +99,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    NANOSATTRACKER
                   </Typography>
                 </Box>
                 {!isNonMobile && (
