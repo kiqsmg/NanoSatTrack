@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
-import Dashboard from "scenes/dashboard";
+import Spacelab from "scenes/spacelab";
 import Locations from "scenes/location";
 import Breakdown from "scenes/breakdown";
 
@@ -23,9 +23,11 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/spacelab" element={<Spacelab />} />
               <Route path="/locations" element={<Locations />} />
               <Route path="/breakdown" element={<Breakdown />} />
+              <Route path="/breakdown" element={<Breakdown />} />
+
             </Route>
           </Routes>
         </ThemeProvider>
