@@ -1,5 +1,5 @@
 import express from "express";
-import { getUser, getDashboardStats } from "../controllers/general.js";
+import { getUser, getDashboardStats } from "../controllers/goldsufsc.js";
 
 const router = express.Router();
 
