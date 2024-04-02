@@ -13,6 +13,9 @@ import {
 import { useMediaQuery } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import FloripaSat01 from "../../assets/FloripaSat-1.jpg";
+import EPS from "../../assets/eps2-pcb-top.png";
+import TTC from "../../assets/ttc2_pcb_top.png";
+import OBDH from "../../assets/obdh2-pcb-top.png";
 import GoldsUfsc from "../../assets/golds-ufsc.jpg";
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -30,8 +33,7 @@ const Dashboard = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <FlexBetween>
-        <Header title="Welcome to NanosatTracker"/>
+      <FlexBetween sx={{ justifyContent: "flex-end"}}>
 
         <Box>
           <Button
@@ -63,97 +65,95 @@ const Dashboard = () => {
                 and the passive Attitude Control System (ACS). The payload is an amateur radio repeater, which can be used
                  all over the globe in emergency and rescue situations, for instance.
           </p>
-
-          <img src="ufscImage.png" alt="" />
           
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <Box sx={{mt: 10, display: "flex", flexDirection: "column", alignItems: "center"}}>
 
-            <h1>Mission Modules and subsystems</h1>
-          <Grid item xs={12} md={6} mb={10} mt={5} {...gridProps}>
+            <h2>Mission Modules and subsystems</h2>
+
+            <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex' }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
-                    FloripaSat-1
+                    EPS
                   </Typography>
                   <Typography variant="subtitle1" color="text.secondary">
-                    1U-cubesat
+                    “Electric Power System” (EPS)
                   </Typography>
                   <Typography variant="subtitle1" paragraph>
-                  FloripaSat-1 is a platform with five modules including core components for mission control and payloads,
-                    featuring an amateur radio repeater for global emergency and rescue communications.
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary">
-                    Continue reading...
+                  Te module is designed to capture, store and distribute power to other FloripaSat-1 modules. 
+                  The power capture system is based on the conversion of solar energy through six panels located on 
+                  each face of the satellite structure. The captured energy is stored in two series-connected lithium batteries. 
+                  From decision-making algorithms, the other satellite modules are fed according to the available battery power at
+                   a given time. EPS plays a key role in energy management at different times in orbit, such as when the satellite
+                    is in eclipse, with the earth covering the sun.
                   </Typography>
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-                  image= {FloripaSat01}
+                  sx={{ margin:2, width: 250, display: { xs: 'none', sm: 'block' } }}
+                  image= {EPS}
                   alt="Imagem do FloripaSat-1"
                 />
               </Card>
             </CardActionArea>
           </Grid>
 
-          <Grid item xs={12} md={6} mb={10} {...gridProps}>
+          <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex' }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
-                    GOLDS-UFSC
+                    TT&C
                   </Typography>
                   <Typography variant="subtitle1" color="text.secondary">
-                    2U-cubesat
+                    “Telemetry, Tracking and Command” (TT&C)
                   </Typography>
                   <Typography variant="subtitle1" paragraph>
-                    GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for the test of core spacecraft
-                     technologies in a microgravity, high-radiation and low Earth orbit environment.
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary">
-                    Continue reading...
+                  The module is responsible for satellite communication with the terrestrial segment.
+                   It is divided into two sub-modules: “Beacon” and “Main Radio”. “Beacon” transmits periodic signals
+                   containing satellite identification (ID) and basic telemetry information. “Main Radio” is responsible for
+                    receiving remote controls from a control station located on Earth (in this case at the UFSC), and send responses
+                     via telemetry. Received remotes are forwarded to OBDH, which performs decoding and the requested processing.
                   </Typography>
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-                  image= {GoldsUfsc}
+                  sx={{ margin:2, width: 250, display: { xs: 'none', sm: 'block' } }}
+                  image= {TTC}
+                  alt="Imagem do FloripaSat-1"
+                />
+              </Card>
+            </CardActionArea>
+          </Grid>
+
+          <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
+            <CardActionArea component="a" href="#">
+              <Card sx={{ display: 'flex' }}>
+                <CardContent sx={{ flex: 1 }}>
+                  <Typography component="h2" variant="h5">
+                    OBDH
+                  </Typography>
+                  <Typography variant="subtitle1" color="text.secondary">
+                    “On-Board Data Handling” (OBDH)
+                  </Typography>
+                  <Typography variant="subtitle1" paragraph>
+                  The module is responsible for synchronizing actions and data flow between satellite modules (eg, EPS, Payloads, …) and the ground segment.
+                    OBDH packs the generated data, and stores it in nonvolatile memory for sending to the ground station as soon as possible (when the satellite is passing over UFSC, or over a partner’s ground station). The remote commands sent by the ground segment are received by TT&C and sent to the OBDH which decodes and performs the necessary actions, sending the actions to the other modules if necessary. This allows communication between the entire satellite and the earth.
+                  </Typography>
+                </CardContent>
+                <CardMedia
+                  component="img"
+                  sx={{ margin:2, width: 250, display: { xs: 'none', sm: 'block' } }}
+                  image= {OBDH}
                   alt="Imagem do GOLDS-UFSC"
                 />
               </Card>
             </CardActionArea>
           </Grid>
 
-
-          <Grid item xs={12} md={6} mb={10} {...gridProps}>
-            <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
-                <CardContent sx={{ flex: 1 }}>
-                  <Typography component="h2" variant="h5">
-                    Catarina-A1
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    Post date
-                  </Typography>
-                  <Typography variant="subtitle1" paragraph>
-                    Post description
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary">
-                    Continue reading...
-                  </Typography>
-                </CardContent>
-                <CardMedia
-                  component="img"
-                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-                  image= {GoldsUfsc}
-                  alt="Imagem do Catarina-A1"
-                />
-              </Card>
-            </CardActionArea>
-          </Grid>
         </Box>
       </Box>
     </Box>
