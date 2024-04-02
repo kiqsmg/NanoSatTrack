@@ -20,6 +20,7 @@ import {
   PublicOutlined,
   BatteryChargingFullOutlined,
   SolarPowerOutlined,
+  PollOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -33,6 +34,10 @@ const navItems = [
   {
     text: "FloripaSat-1",
     icon: null,
+  },
+  {
+    text: "FloripaSat-1 Main",
+    icon: <PollOutlined />,
   },
   {
     text: "Battery Cells",
@@ -57,7 +62,6 @@ const navItems = [
 ];
 
 const Sidebar = ({
-  user,
   drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,

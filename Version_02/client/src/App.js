@@ -7,8 +7,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Spacelab from "scenes/spacelab";
+import FloripaSat1 from "scenes/floripasat1";
 import Locations from "scenes/location";
-import Breakdown from "scenes/breakdown";
+
 
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/spacelab" replace />} />
               <Route path="/spacelab" element={<Spacelab />} />
+              <Route path="/FloripaSat-1 Main" element={<FloripaSat1 />} />
               <Route path="/locations" element={<Locations />} />
-              <Route path="/breakdown" element={<Breakdown />} />
             </Route>
           </Routes>
         </ThemeProvider>
