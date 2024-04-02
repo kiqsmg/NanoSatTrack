@@ -10,6 +10,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import Paper from '@mui/material/Paper';
 import Grid from "@mui/material/Grid";
 import Link from '@mui/material/Link';
@@ -21,8 +22,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 
+
+
 const Dashboard = () => {
   const theme = useTheme();
+
+  const isBigScreen = useMediaQuery('(max-width: 1000px)');
+  const gridProps = isBigScreen ? { } : { width: 1200 };
 
   return (
     <Box m="1.5rem 2.5rem">
@@ -102,22 +108,78 @@ const Dashboard = () => {
           <p>SpaceLab brings together several research groups from the Federal University of Santa Catarina (UFSC), Brazil.
             The different groups conduct research and development activities in space systems in general,
             aiming to make space more accessible not only to the scientific community but also to the industry.
-            Featured missions include FloripaSat-1, FloripaSat-2, and GOMX-5.
-            This organization combines repositories for different projects, files and documents. The following sections briefly
-            describes the main repositories and their relation to the SpaceLab's major space campaigns.
+            Featured missions include FloripaSat-1, GOLDS-UFSC, GOMX-5, and cubesats from the Catarina Constelation.
+            This organization combines repositories for different projects, files and documents.
           </p>
 
           <img src="ufscImage.png" alt="" />
           
         </Box>
 
-        <Box>
-          <Grid item xs={12} md={6}>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <Grid item xs={12} md={6} mb={10} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex' }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
-                    Our Institution
+                    FloripaSat-1
+                  </Typography>
+                  <Typography variant="subtitle1" color="text.secondary">
+                    1U-cubesat
+                  </Typography>
+                  <Typography variant="subtitle1" paragraph>
+                  FloripaSat-1 is a platform with five modules including core components for mission control and payloads,
+                    featuring an amateur radio repeater for global emergency and rescue communications.
+                  </Typography>
+                  <Typography variant="subtitle1" color="primary">
+                    Continue reading...
+                  </Typography>
+                </CardContent>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+                  image= {FloripaSat01}
+                  alt="Imagem do FloripaSat-1"
+                />
+              </Card>
+            </CardActionArea>
+          </Grid>
+
+          <Grid item xs={12} md={6} mb={10} {...gridProps}>
+            <CardActionArea component="a" href="#">
+              <Card sx={{ display: 'flex' }}>
+                <CardContent sx={{ flex: 1 }}>
+                  <Typography component="h2" variant="h5">
+                    GOLDS-UFSC
+                  </Typography>
+                  <Typography variant="subtitle1" color="text.secondary">
+                    2U-cubesat
+                  </Typography>
+                  <Typography variant="subtitle1" paragraph>
+                    GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for the test of core spacecraft
+                     technologies in a microgravity, high-radiation and low Earth orbit environment.
+                  </Typography>
+                  <Typography variant="subtitle1" color="primary">
+                    Continue reading...
+                  </Typography>
+                </CardContent>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+                  image= {FloripaSat01}
+                  alt="Imagem do FloripaSat-1"
+                />
+              </Card>
+            </CardActionArea>
+          </Grid>
+
+
+          <Grid item xs={12} md={6} mb={10} {...gridProps}>
+            <CardActionArea component="a" href="#">
+              <Card sx={{ display: 'flex' }}>
+                <CardContent sx={{ flex: 1 }}>
+                  <Typography component="h2" variant="h5">
+                    Catarina-A1
                   </Typography>
                   <Typography variant="subtitle1" color="text.secondary">
                     Post date
