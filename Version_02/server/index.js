@@ -5,10 +5,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import clientRoutes from "./routes/client.js";
-import generalRoutes from "./routes/general.js";
-import managementRoutes from "./routes/management.js";
-import salesRoutes from "./routes/sales.js";
+import floripasat1Routes from "./routes/floripasat1.js";
+import goldsufscRoutes from "./routes/goldsufsc.js";
+import catarinaa1Routes from "./routes/catarinaa1.js";
 
 // data imports
 import User from "./models/User.js";
@@ -41,10 +40,9 @@ app.use(cors());
 
 /* ROUTES */
 
-app.use("/client", clientRoutes);
-app.use("/general", generalRoutes);
-app.use("/management", managementRoutes);
-app.use("/sales", salesRoutes);
+app.use("/floripasat1", floripasat1Routes);
+app.use("/goldsufsc", goldsufscRoutes);
+app.use("/catarinaa1", catarinaa1Routes);
 
 
 /* MONGOOSE SETUP */
