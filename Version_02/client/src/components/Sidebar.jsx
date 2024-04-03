@@ -87,7 +87,7 @@ const Sidebar = ({
           sx={{
             width: drawerWidth,
             "& .MuiDrawer-paper": {
-              color: theme.palette.secondary[200],
+              color: theme.palette.secondary[300],
               backgroundColor: theme.palette.background.alt,
               boxSixing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
