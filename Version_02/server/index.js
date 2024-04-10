@@ -16,6 +16,7 @@ import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
 import OverallStat from "./models/OverallStat.js";
 import AffiliateStat from "./models/AffiliateStat.js";
+import CubeSat from "./models/CubeSat.js";
 import {
   dataUser,
   dataProduct,
@@ -24,6 +25,10 @@ import {
   dataOverallStat,
   dataAffiliateStat,
 } from "./data/index.js";
+
+import {
+  dataCubeSat,
+} from "./data/index2.js";
 
 
 
@@ -57,6 +62,7 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     // ONLY ADD DATA ONE TIME
+
     //AffiliateStat.insertMany(dataAffiliateStat);
     //OverallStat.insertMany(dataOverallStat);
     //Product.insertMany(dataProduct);
