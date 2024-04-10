@@ -1,4 +1,4 @@
-export const dataTransaction = [
+export const dataCubeSat = [
     {
         name: "floripasat1",
         _id: "01",
