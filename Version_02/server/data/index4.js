@@ -33,3 +33,41 @@ export const satellite =[
     },   
 ];
 
+export const date =[
+    {
+        date_id: 1,
+        year: 2019,
+        month: 12,
+        day: 20,
+        hour: 9,
+        minute: 51,
+        second: 22,
+    },
+    {
+        date_id: 2,
+        year: 2019,
+        month: 12,
+        day: 20,
+        hour: 9,
+        minute: 51,
+        second: 32,
+    },
+    {
+        date_id: 3,
+        year: 2019,
+        month: 12,
+        day: 20,
+        hour: 9,
+        minute: 51,
+        second: 42,
+    },
+    {
+        date_id: 4,
+        year: 2019,
+        month: 12,
+        day: 20,
+        hour: 9,
+        minute: 51,
+        second: 52,
+    },
+];
