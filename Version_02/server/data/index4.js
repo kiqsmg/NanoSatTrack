@@ -71,3 +71,10 @@ export const date =[
         second: 52,
     },
 ];
+
+export const temperatures =[
+    {
+        _id: 1,
+        date_id: 
+    }
+]
