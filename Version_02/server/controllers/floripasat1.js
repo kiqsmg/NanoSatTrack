@@ -36,7 +36,7 @@ export const getCustomers = async (req, res) => {
 };
 
 
-//transaction query
+//Date query
 export const getDate = async (req, res) => {  //route handler(fetch date)
     try {
         //sort should look like this: { "field": "userId", "sort": "desc"}
