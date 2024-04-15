@@ -173,3 +173,45 @@ export const connectivity =[
     },
 ];
 
+export const battery_overall =[
+    {
+        _id: 1,
+        date_id: 1,
+        battery_cell_1_voltage: 4.10172,
+        battery_cell_2_voltage: 4.11149,
+        battery_current: 0.06875,
+        battery_temperature: 3.875,
+        battery_charge: 2.82125,
+        energy_level: 1,
+    },
+    {
+        _id: 2,
+        date_id: 2,
+        battery_cell_1_voltage: 4.11149,
+        battery_cell_2_voltage: 4.11149,
+        battery_current: 0.159531,
+        battery_temperature: 3.875,
+        battery_charge: 2.82125,
+        energy_level: 1,
+    },
+    {
+        _id: 3,
+        date_id: 3,
+        battery_cell_1_voltage: 4.11149,
+        battery_cell_2_voltage: 4.11637,
+        battery_current: 0.224844,
+        battery_temperature: 3.625,
+        battery_charge: 2.82187,
+        energy_level: 1,
+    },
+    {
+        _id: 4,
+        date_id: 4,
+        battery_cell_1_voltage: 4.12125,
+        battery_cell_2_voltage: 4.12125,
+        battery_current: 0.255156,
+        battery_temperature: 3.875,
+        battery_charge: 2.82375,
+        energy_level: 1,
+    },
+];
