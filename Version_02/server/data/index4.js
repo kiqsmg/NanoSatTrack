@@ -35,7 +35,7 @@ export const satellite =[
 
 export const date =[
     {
-        _id: 1,
+        _id: "1",
         year: 2019,
         month: 12,
         day: 20,
@@ -44,7 +44,7 @@ export const date =[
         second: 22,
     },
     {
-        _id: 2,
+        _id: "2",
         year: 2019,
         month: 12,
         day: 20,
@@ -53,7 +53,7 @@ export const date =[
         second: 32,
     },
     {
-        _id: 3,
+        _id: "3",
         year: 2019,
         month: 12,
         day: 20,
@@ -62,7 +62,7 @@ export const date =[
         second: 42,
     },
     {
-        _id: 4,
+        _id: "4",
         year: 2019,
         month: 12,
         day: 20,
@@ -74,13 +74,13 @@ export const date =[
 
 export const temperatures =[
     {
-        _id: 1,
+        _id: "1",
         date_id: 1,
         eps_temperature: 13.6149,
         battery_temperature: 3.875,
     },
     {
-        _id: 2,
+        _id: "2",
         date_id: 2,
         eps_temperature: 13.3635,
         battery_temperature: 3.875,

@@ -13,7 +13,7 @@ import catarinaa1Routes from "./routes/catarinaa1.js";
 import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
-import Transaction from "./models/Transaction.js";
+import Date from "./models/Date.js";
 import OverallStat from "./models/OverallStat.js";
 import AffiliateStat from "./models/AffiliateStat.js";
 import CubeSat from "./models/CubeSat.js";
@@ -24,11 +24,11 @@ import {
   dataTransaction,
   dataOverallStat,
   dataAffiliateStat,
-} from "./data/index.js";
+} from "./data/index4.js";
 
 import {
-  dataCubeSat,
-} from "./data/index2.js";
+  date,
+} from "./data/index4.js";
 
 
 
@@ -67,7 +67,7 @@ mongoose
     //OverallStat.insertMany(dataOverallStat);
     //Product.insertMany(dataProduct);
     //ProductStat.insertMany(dataProductStat);
-    //Transaction.insertMany(dataTransaction);
+    Date.insertMany(dataDate);
     //User.insertMany(dataUser);
 
 }).catch((error) => console.log(`${error} did not connect`));
