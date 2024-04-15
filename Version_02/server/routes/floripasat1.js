@@ -2,7 +2,7 @@ import express from "express";
 import {
   getProducts,
   getCustomers,
-  getTransactions,
+  getDate,
   getGeography,
 } from "../controllers/floripasat1.js";
 
