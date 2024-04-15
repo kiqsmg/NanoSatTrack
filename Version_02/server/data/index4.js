@@ -142,3 +142,34 @@ export const sp_temp =[
     },
 ];
 
+export const connectivity =[
+    {
+        _id: 1,
+        date_id: 1,
+        satNOGS: "-",
+        callsign: "DK3WN",
+        grid_locator: "EM69uf",
+    },
+    {
+        _id: 2,
+        date_id: 2,
+        satNOGS: "-",
+        callsign: "DK3WN",
+        grid_locator: "JN49lr",
+    },
+    {
+        _id: 3,
+        date_id: 3,
+        satNOGS: "-",
+        callsign: "DK3WN",
+        grid_locator: "JN49lr",
+    },
+    {
+        _id: 4,
+        date_id: 4,
+        satNOGS: "-",
+        callsign: "DK3WN",
+        grid_locator: "JN49lr",
+    },
+];
+
