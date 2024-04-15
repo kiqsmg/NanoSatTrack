@@ -1,7 +1,7 @@
 import Product from "../models/Product.js";
 import ProductStat from "../models/ProductStat.js";
 import User from "../models/User.js";
-import Transaction from "../models/Transaction.js";
+import Date from "../models/Date.js";
 import getCountryIso3 from "country-iso-2-to-3";
 
 export const getProducts = async (req, res) => {
@@ -37,7 +37,7 @@ export const getCustomers = async (req, res) => {
 
 
 //transaction query
-export const getTransactions = async (req, res) => {  //route handler(fetch transactions)
+export const getDate = async (req, res) => {  //route handler(fetch date)
     try {
         //sort should look like this: { "field": "userId", "sort": "desc"}
         const { page = 1, pageSize = 20, sort = null, search = "" } = req.query;  //Parsing Request Parameters(extract parameters from the requesr query string)
@@ -53,7 +53,7 @@ export const getTransactions = async (req, res) => {  //route handler(fetch tran
         };
         const sortFormatted = Boolean(sort) ? generateSort() : {};
 
-        const transactions = await Transaction.find({ //consults the data base using the search criteria and pagination paramters
+        const date = await Date.find({ //consults the data base using the search criteria and pagination paramters
             $or: [
                 { cost: { $regex: new RegExp(search, "i") } },
                 { userId: { $regex: new RegExp(search, "i") } },          
@@ -64,13 +64,13 @@ export const getTransactions = async (req, res) => {  //route handler(fetch tran
             .limit(pageSize);
 
 
-        const total = await Transaction.countDocuments ({ //counts the number of documents in the collections based on the search
+        const total = await Date.countDocuments ({ //counts the number of documents in the collections based on the search
             name: { $regex: search, $options: "i" },
         });
 
 
         res.status(200).json({ //sends response
-            transactions,
+            date,
             total,
         });
     } catch (error) {  //error handling
