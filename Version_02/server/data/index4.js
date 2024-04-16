@@ -1,4 +1,4 @@
-export const satellite =[
+export const dataSatellite =[
     {
         satelitte_id: floripasat1,
         date_id: 1,
@@ -33,7 +33,7 @@ export const satellite =[
     },   
 ];
 
-export const date =[
+export const dataDate =[
     {
         _id: "1",
         year: 2019,
@@ -72,7 +72,7 @@ export const date =[
     },
 ];
 
-export const temperatures =[
+export const dataTemperatures =[
     {
         _id: "1",
         date_id: 1,
@@ -99,7 +99,7 @@ export const temperatures =[
     },
 ];
 
-export const sp_temp =[
+export const dataSp_temp =[
     {
         _id: 1,
         date_id: 1,
@@ -142,7 +142,7 @@ export const sp_temp =[
     },
 ];
 
-export const connectivity =[
+export const dataConnectivity =[
     {
         _id: 1,
         date_id: 1,
@@ -173,7 +173,7 @@ export const connectivity =[
     },
 ];
 
-export const battery_overall =[
+export const dataBattery_overall =[
     {
         _id: 1,
         date_id: 1,

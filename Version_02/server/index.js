@@ -24,11 +24,14 @@ import {
   dataTransaction,
   dataOverallStat,
   dataAffiliateStat,
+  satellite,
 } from "./data/index4.js";
 
 import {
-  date,
+  dataSatellite,
+  dataDate,
 } from "./data/index4.js";
+import Satellite from "./models/Satellite.js";
 
 
 
@@ -67,7 +70,11 @@ mongoose
     //OverallStat.insertMany(dataOverallStat);
     //Product.insertMany(dataProduct);
     //ProductStat.insertMany(dataProductStat);
-    //Date.insertMany(dataDate);
     //User.insertMany(dataUser);
+
+    //Date.insertMany(dataDate);
+    //Satellite.insertMany(dataSatellite);
+
+
 
 }).catch((error) => console.log(`${error} did not connect`));
