@@ -67,7 +67,7 @@ mongoose
     //OverallStat.insertMany(dataOverallStat);
     //Product.insertMany(dataProduct);
     //ProductStat.insertMany(dataProductStat);
-    Date.insertMany(dataDate);
+    //Date.insertMany(dataDate);
     //User.insertMany(dataUser);
 
 }).catch((error) => console.log(`${error} did not connect`));
