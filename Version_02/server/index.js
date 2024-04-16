@@ -6,32 +6,15 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import floripasat1Routes from "./routes/floripasat1.js";
-import goldsufscRoutes from "./routes/goldsufsc.js";
-import catarinaa1Routes from "./routes/catarinaa1.js";
+
 
 // data imports
-import User from "./models/User.js";
-import Product from "./models/Product.js";
-import ProductStat from "./models/ProductStat.js";
 import Date from "./models/Date.js";
-import OverallStat from "./models/OverallStat.js";
-import AffiliateStat from "./models/AffiliateStat.js";
-import CubeSat from "./models/CubeSat.js";
-import {
-  dataUser,
-  dataProduct,
-  dataProductStat,
-  dataTransaction,
-  dataOverallStat,
-  dataAffiliateStat,
-  satellite,
-} from "./data/index4.js";
 
 import {
   dataSatellite,
   dataDate,
 } from "./data/index4.js";
-import Satellite from "./models/Satellite.js";
 
 
 
@@ -49,8 +32,6 @@ app.use(cors());
 /* ROUTES */
 
 app.use("/floripasat1", floripasat1Routes);
-app.use("/goldsufsc", goldsufscRoutes);
-app.use("/catarinaa1", catarinaa1Routes);
 
 
 /* MONGOOSE SETUP */
@@ -72,7 +53,7 @@ mongoose
     //ProductStat.insertMany(dataProductStat);
     //User.insertMany(dataUser);
 
-    //Date.insertMany(dataDate);
+    Date.insertMany(dataDate);
     //Satellite.insertMany(dataSatellite);
 
 
