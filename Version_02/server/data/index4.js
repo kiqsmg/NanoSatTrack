@@ -1,4 +1,4 @@
-export const dataSatellite =[
+/*export const dataSatellite =[
     {
         satelitte_id: floripasat1,
         date_id: 1,
@@ -32,6 +32,7 @@ export const dataSatellite =[
         connectivity_id: 4,
     },   
 ];
+*/
 
 export const dataDate =[
     {
@@ -72,6 +73,7 @@ export const dataDate =[
     },
 ];
 
+/*
 export const dataTemperatures =[
     {
         _id: "1",
@@ -98,7 +100,8 @@ export const dataTemperatures =[
         battery_temperature: 3.875,
     },
 ];
-
+*/
+/*
 export const dataSp_temp =[
     {
         _id: 1,
@@ -141,6 +144,7 @@ export const dataSp_temp =[
         sp_06_current: 0.021312,
     },
 ];
+*/
 
 export const dataConnectivity =[
     {
