@@ -1,6 +1,6 @@
-/*export const dataSatellite =[
+export const dataSatellite =[
     {
-        satelitte_id: floripasat1,
+        _id: "floripasat1",
         date_id: 1,
         temperatures_id: 1,
         sp_temp_id: 1,
@@ -8,7 +8,7 @@
         connectivity_id: 1,
     },
     {
-        satelitte_id: floripasat1,
+        _id: "floripasat1",
         date_id: 2,
         temperatures_id: 2,
         sp_temp_id: 2,
@@ -16,7 +16,7 @@
         connectivity_id: 2,
     },
     {
-        satelitte_id: floripasat1,
+        _id: "floripasat1",
         date_id: 3,
         temperatures_id: 3,
         sp_temp_id: 3,
@@ -24,7 +24,7 @@
         connectivity_id: 3,
     },
     {
-        satelitte_id: floripasat1,
+        _id: "floripasat1",
         date_id: 4,
         temperatures_id: 4,
         sp_temp_id: 4,
@@ -32,7 +32,6 @@
         connectivity_id: 4,
     },   
 ];
-*/
 
 export const dataDate =[
     {
@@ -73,7 +72,6 @@ export const dataDate =[
     },
 ];
 
-/*
 export const dataTemperatures =[
     {
         _id: "1",
@@ -100,8 +98,7 @@ export const dataTemperatures =[
         battery_temperature: 3.875,
     },
 ];
-*/
-/*
+
 export const dataSp_temp =[
     {
         _id: 1,
@@ -144,7 +141,6 @@ export const dataSp_temp =[
         sp_06_current: 0.021312,
     },
 ];
-*/
 
 export const dataConnectivity =[
     {
