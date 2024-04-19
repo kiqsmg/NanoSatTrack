@@ -10,6 +10,7 @@ import floripasat1Routes from "./routes/floripasat1.js";
 
 // data imports
 import Date from "./models/Date.js";
+import Satellite from "./models/Satellite.js";
 
 import {
   dataSatellite,
@@ -52,7 +53,6 @@ mongoose
     //Product.insertMany(dataProduct);
     //ProductStat.insertMany(dataProductStat);
     //User.insertMany(dataUser);
-
     Date.insertMany(dataDate);
     //Satellite.insertMany(dataSatellite);
 
