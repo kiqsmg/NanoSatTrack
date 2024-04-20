@@ -3,28 +3,28 @@ import mongoose from "mongoose";
 const DateSchema = new mongoose.Schema({
   year: {
     type: Number,
-    required: true
+    required: true,
   },
   month: {
     type: Number,
-    required: true
+    required: true,
   },
   day: {
     type: Number,
-    required: true
+    required: true,
   },
   hour: {
     type: Number,
-    required: true
+    required: true,
   },
   minute: {
     type: Number,
-    required: true
+    required: true,
   },
   second: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const Date = mongoose.model("Date", DateSchema);
