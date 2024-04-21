@@ -1,35 +1,36 @@
 export const dataSatellite =[
     {
         _id: "floripasat1",
-        date_id: "1",
-        temperatures_id: "1",
-        sp_temp_id: "1",
-        battery_overall_id: "1",
-        connectivity_id: "1",
-    },
-    {
-        _id: "golds-ufsc",
-        date_id: "2",
-        temperatures_id: "2",
-        sp_temp_id: "2",
-        battery_overall_id: "2",
-        connectivity_id: "2",
-    },
-    {
-        _id: "catarina_a1",
-        date_id: "3",
-        temperatures_id: "3",
-        sp_temp_id: "3",
-        battery_overall_id: "3",
-        connectivity_id: "3",
-    },
-    {
-        _id: "catarina-a3",
-        date_id: "4",
-        temperatures_id: "4",
-        sp_temp_id: "4",
-        battery_overall_id: "4",
-        connectivity_id: "4",
+        dates: [
+            "1918273",
+            "2198237",
+            "3091823",
+            "4839021",
+        ],
+        temperatures: [
+            "1918273",
+            "2198237",
+            "3091823",
+            "4839021",
+        ],
+        sp_temperatures: [
+            "1918273",
+            "2198237",
+            "3091823",
+            "4839021",
+        ],
+        battery_overall: [
+            "1918273",
+            "2198237",
+            "3091823",
+            "4839021",
+        ],
+        connectivities: [
+            "1918273",
+            "2198237",
+            "3091823",
+            "4839021",
+        ],
     },
 ];
 
