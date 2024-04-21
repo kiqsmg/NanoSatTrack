@@ -35,6 +35,7 @@ export const dataSatellite =[
 
 export const dataDate =[
     {
+        _id: "1",
         year: 2019,
         month: 12,
         day: 20,
@@ -43,6 +44,7 @@ export const dataDate =[
         second: 22,
     },
     {
+        _id: "2",
         year: 2019,
         month: 12,
         day: 20,
@@ -51,6 +53,7 @@ export const dataDate =[
         second: 32,
     },
     {
+        _id: "3",
         year: 2019,
         month: 12,
         day: 20,
@@ -59,6 +62,7 @@ export const dataDate =[
         second: 42,
     },
     {
+        _id: "4",
         year: 2019,
         month: 12,
         day: 20,
@@ -71,25 +75,25 @@ export const dataDate =[
 export const dataTemperatures =[
     {
         _id: "1",
-        date_id: 1,
+        date_id: "1",
         eps_temperature: 13.6149,
         battery_temperature: 3.875,
     },
     {
         _id: "2",
-        date_id: 2,
+        date_id: "2",
         eps_temperature: 13.3635,
         battery_temperature: 3.875,
     },
     {
-        _id: 3,
-        date_id: 3,
+        _id: "3",
+        date_id: "3",
         eps_temperature: 13.1121,
         battery_temperature: 3.625,
     },
     {
-        _id: 4,
-        date_id: 4,
+        _id: "4",
+        date_id: "4",
         eps_temperature: 12.6094,
         battery_temperature: 3.875,
     },
@@ -97,8 +101,8 @@ export const dataTemperatures =[
 
 export const dataSp_temp =[
     {
-        _id: 1,
-        date_id: 1,
+        _id: "1",
+        date_id: "1",
         sp_01_current: 0.001332,
         sp_02_current: 0.268768,
         sp_03_current: 0.010212,
@@ -107,8 +111,8 @@ export const dataSp_temp =[
         sp_06_current: 0.00754801,
     },
     {
-        _id: 2,
-        date_id: 2,
+        _id: "2",
+        date_id: "2",
         sp_01_current: 0.000592001,
         sp_02_current: 0.002072,
         sp_03_current: 0.151996,
@@ -117,8 +121,8 @@ export const dataSp_temp =[
         sp_06_current: 0.018204,
     },
     {
-        _id: 3,
-        date_id: 3,
+        _id: "3",
+        date_id: "3",
         sp_01_current: 0.0,
         sp_02_current: 0.00740001,
         sp_03_current: 0.42994,
@@ -127,8 +131,8 @@ export const dataSp_temp =[
         sp_06_current: 0.297776,
     },
     {
-        _id: 4,
-        date_id: 4,
+        _id: "4",
+        date_id: "4",
         sp_01_current: 0.0,
         sp_02_current: 0.452436,
         sp_03_current: 0.010064,
