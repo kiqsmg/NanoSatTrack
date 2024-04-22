@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
 const DateSchema = new mongoose.Schema({
+  _id: {
+    type: String,
+    required: true,
+    min: 1,
+    max: 100,
+  },
+  satellite_id: String,
   year: {
     type: Number,
     required: true,
