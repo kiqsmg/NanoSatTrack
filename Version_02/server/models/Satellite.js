@@ -8,25 +8,23 @@ const UserSchema = new mongoose.Schema(
       min: 2,
       max: 100,
     },
-    date_id: {
+    name: {
       type: String,
       required: true,
+      min: 2,
+      max: 100,
     },
-    temperatures_id: {
+    category: {
       type: String,
       required: true,
+      min: 2,
+      max: 100,
     },
-    sp_temp_id: {
+    description: {
       type: String,
       required: true,
-    },
-    battery_overall_id: {
-      type: String,
-      required: true,
-    },
-    connectivity_id: {
-      type: String,
-      required: true,
+      min: 2,
+      max: 300,
     },
   },
   { timestamps: true },
