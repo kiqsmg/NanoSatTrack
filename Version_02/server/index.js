@@ -11,10 +11,12 @@ import floripasat1Routes from "./routes/floripasat1.js";
 // data imports
 import Date from "./models/Date.js";
 import Satellite from "./models/Satellite.js";
+import Temperatures from "./models/Temperatures.js";
 
 import {
   dataSatellite,
   dataDate,
+  dataTemperatures,
 } from "./data/index4.js";
 
 
@@ -53,8 +55,10 @@ mongoose
     //Product.insertMany(dataProduct);
     //ProductStat.insertMany(dataProductStat);
     //User.insertMany(dataUser);
-    Date.insertMany(dataDate);
+
     //Satellite.insertMany(dataSatellite);
+    //Date.insertMany(dataDate);
+    //Temperatures.insertMany(dataTemperatures);
 
 
 
