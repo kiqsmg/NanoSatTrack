@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const DateSchema = new mongoose.Schema({
+const TemperatureSchema = new mongoose.Schema({
   _id: {
     type: String,
     required: true,
@@ -10,7 +10,6 @@ const DateSchema = new mongoose.Schema({
   date_id: [
     {
       type: [mongoose.Types.ObjectId],
-      ref: "Date",
     },
   ],
   eps_temperature: {
@@ -24,5 +23,5 @@ const DateSchema = new mongoose.Schema({
 
 });
 
-const Date = mongoose.model("Date", DateSchema);
-export default Date;
+const Temperature = mongoose.model("Temperature", TemperatureSchema);
+export default Temperature;
