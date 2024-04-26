@@ -128,29 +128,25 @@ export const dataSolarPanels =[
 
 export const dataConnectivity =[
     {
-        _id: 1,
-        date_id: 1,
+        date_id: "662ba650b8435ac854c7e833",
         satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "EM69uf",
     },
     {
-        _id: 2,
-        date_id: 2,
+        date_id: "662ba650b8435ac854c7e834",
         satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
     {
-        _id: 3,
-        date_id: 3,
+        date_id: "662ba650b8435ac854c7e835",
         satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
     },
     {
-        _id: 4,
-        date_id: 4,
+        date_id: "662ba650b8435ac854c7e836",
         satNOGS: "-",
         callsign: "DK3WN",
         grid_locator: "JN49lr",
