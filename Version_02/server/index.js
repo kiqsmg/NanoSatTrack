@@ -14,6 +14,7 @@ import Satellite from "./models/Satellite.js";
 import Temperatures from "./models/Temperatures.js";
 import SolarPanels from "./models/SolarPanels.js";
 import Connectivity from "./models/Connectivity.js";
+import BatteryOverall from "./models/Battery.js";
 
 import {
   dataSatellite,
@@ -21,6 +22,7 @@ import {
   dataTemperatures,
   dataSolarPanels,
   dataConnectivity,
+  dataBattery_overall,
 } from "./data/index4.js";
 
 
@@ -64,7 +66,8 @@ mongoose
     //Date.insertMany(dataDate);
     //Temperatures.insertMany(dataTemperatures);
     //SolarPanels.insertMany(dataSolarPanels);
-    Connectivity.insertMany(dataConnectivity);
+    //Connectivity.insertMany(dataConnectivity);
+    //BatteryOverall.insertMany(dataBattery_overall);
 
 
 }).catch((error) => console.log(`${error} did not connect`));
