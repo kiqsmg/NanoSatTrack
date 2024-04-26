@@ -4,54 +4,29 @@ export const dataSatellite =[
         name: "Floripasat-1",
         category: "1U cubesat",
         description: "FloripaSat-1 is a platform with five modules including core components for mission control and payloads, featuring an amateur radio repeater for global emergency and rescue communications.",
-        dates: [
-            "f1918273",
-            "f2198237",
-            "f3091823",
-            "f4839021",
-        ],
     },
     {
         _id: "63701d24f03239c72c00018f",
         name: "Golds Ufsc",
         category: "2U cubesat",
         description: "GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for the test of core spacecraft technologies in a microgravity, high-radiation and low Earth orbit environment.",
-        dates: [
-            "f1918273",
-            "f2198237",
-            "f3091823",
-            "f4839021",
-        ],
     },
     {
         _id: "63701d24f03239c72c000190",
         name: "Catarina-A1",
         category: "2U cubesat",
         description: "Catarina-A1 is the first satellite of Catarina Constelation, with the main objective of receiving data transmitted by data collection platforms installed in remote areas.",
-        dates: [
-            "f1918273",
-            "f2198237",
-            "f3091823",
-            "f4839021",
-        ],
     },
     {
         _id: "63701d24f03239c72c000191",
         name: "Catarina-A3",
         category: "2U cubesat",
         description: "Catarina-A1 is the first satellite of Catarina Constelation, with the main objective of receiving data transmitted by data collection platforms installed in remote areas.",
-        dates: [
-            "f1918273",
-            "f2198237",
-            "f3091823",
-            "f4839021",
-        ],
     },
 ];
 
 export const dataDate =[
     {
-        _id: "f1918273",
         satellite_id: "63701d24f03239c72c00018e",
         year: 2019,
         month: 12,
@@ -61,7 +36,6 @@ export const dataDate =[
         second: 22,
     },
     {
-        _id: "f2198237",
         satellite_id: "63701d24f03239c72c00018e",
         year: 2019,
         month: 12,
@@ -71,7 +45,6 @@ export const dataDate =[
         second: 32,
     },
     {
-        _id: "f3091823",
         satellite_id: "63701d24f03239c72c00018e",
         year: 2019,
         month: 12,
@@ -81,7 +54,6 @@ export const dataDate =[
         second: 42,
     },
     {
-        _id: "f4839021",
         satellite_id: "63701d24f03239c72c00018e",
         year: 2019,
         month: 12,
@@ -94,30 +66,22 @@ export const dataDate =[
 
 export const dataTemperatures =[
     {
-        _id: "1",
-        satellite_id: "63701d24f03239c72c00018e",
-        date_id: "1918273",
+        date_id: "662ba650b8435ac854c7e833",
         eps_temperature: 13.6149,
         battery_temperature: 3.875,
     },
     {
-        _id: "2",
-        satellite_id: "63701d24f03239c72c00018e",
-        date_id: "2198237",
+        date_id: "662ba650b8435ac854c7e834",
         eps_temperature: 13.3635,
         battery_temperature: 3.875,
     },
     {
-        _id: "3",
-        satellite_id: "63701d24f03239c72c00018e",
-        date_id: "3091823",
+        date_id: "662ba650b8435ac854c7e835",
         eps_temperature: 13.1121,
         battery_temperature: 3.625,
     },
     {
-        _id: "4",
-        satellite_id: "63701d24f03239c72c00018e",
-        date_id: "4839021",
+        date_id: "662ba650b8435ac854c7e836",
         eps_temperature: 12.6094,
         battery_temperature: 3.875,
     },

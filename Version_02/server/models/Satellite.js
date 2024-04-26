@@ -26,7 +26,6 @@ const UserSchema = new mongoose.Schema(
       min: 2,
       max: 300,
     },
-    dates: Array,
   },
   { timestamps: true },
 );

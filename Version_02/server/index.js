@@ -56,9 +56,9 @@ mongoose
     //ProductStat.insertMany(dataProductStat);
     //User.insertMany(dataUser);
 
-    Satellite.insertMany(dataSatellite);
+    //Satellite.insertMany(dataSatellite);
     //Date.insertMany(dataDate);
-    //Temperatures.insertMany(dataTemperatures);
+    Temperatures.insertMany(dataTemperatures);
 
 
 
