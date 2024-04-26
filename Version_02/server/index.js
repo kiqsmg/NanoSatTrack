@@ -12,11 +12,13 @@ import floripasat1Routes from "./routes/floripasat1.js";
 import Date from "./models/Date.js";
 import Satellite from "./models/Satellite.js";
 import Temperatures from "./models/Temperatures.js";
+import SolarPanels from "./models/SolarPanels.js";
 
 import {
   dataSatellite,
   dataDate,
   dataTemperatures,
+  dataSolarPanels,
 } from "./data/index4.js";
 
 
@@ -59,6 +61,7 @@ mongoose
     //Satellite.insertMany(dataSatellite);
     //Date.insertMany(dataDate);
     Temperatures.insertMany(dataTemperatures);
+    SolarPanels.insertMany(dataSolarPanels);
 
 
 

@@ -87,10 +87,9 @@ export const dataTemperatures =[
     },
 ];
 
-export const dataSp_temp =[
+export const dataSolarPanels =[
     {
-        _id: "1",
-        date_id: "1",
+        date_id: "662ba650b8435ac854c7e833",
         sp_01_current: 0.001332,
         sp_02_current: 0.268768,
         sp_03_current: 0.010212,
@@ -99,8 +98,7 @@ export const dataSp_temp =[
         sp_06_current: 0.00754801,
     },
     {
-        _id: "2",
-        date_id: "2",
+        date_id: "662ba650b8435ac854c7e834",
         sp_01_current: 0.000592001,
         sp_02_current: 0.002072,
         sp_03_current: 0.151996,
@@ -109,8 +107,7 @@ export const dataSp_temp =[
         sp_06_current: 0.018204,
     },
     {
-        _id: "3",
-        date_id: "3",
+        date_id: "662ba650b8435ac854c7e835",
         sp_01_current: 0.0,
         sp_02_current: 0.00740001,
         sp_03_current: 0.42994,
@@ -119,8 +116,7 @@ export const dataSp_temp =[
         sp_06_current: 0.297776,
     },
     {
-        _id: "4",
-        date_id: "4",
+        date_id: "662ba650b8435ac854c7e836",
         sp_01_current: 0.0,
         sp_02_current: 0.452436,
         sp_03_current: 0.010064,
