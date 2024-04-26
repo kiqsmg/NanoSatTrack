@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       min: 2,
-      max: 100,
+      max: 50,
     },
     name: {
       type: String,
@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       min: 2,
-      max: 100,
+      max: 50,
     },
     description: {
       type: String,
@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema(
       min: 2,
       max: 300,
     },
+    dates: Array,
   },
   { timestamps: true },
 );
