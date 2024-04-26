@@ -4,24 +4,48 @@ export const dataSatellite =[
         name: "Floripasat-1",
         category: "1U cubesat",
         description: "FloripaSat-1 is a platform with five modules including core components for mission control and payloads, featuring an amateur radio repeater for global emergency and rescue communications.",
+        dates: [
+            "f1918273",
+            "f2198237",
+            "f3091823",
+            "f4839021",
+        ],
     },
     {
         _id: "63701d24f03239c72c00018f",
         name: "Golds Ufsc",
         category: "2U cubesat",
         description: "GOLDS-UFSC is a service module for INPE’s EDC payload, and also a platform for the test of core spacecraft technologies in a microgravity, high-radiation and low Earth orbit environment.",
+        dates: [
+            "f1918273",
+            "f2198237",
+            "f3091823",
+            "f4839021",
+        ],
     },
     {
         _id: "63701d24f03239c72c000190",
         name: "Catarina-A1",
         category: "2U cubesat",
         description: "Catarina-A1 is the first satellite of Catarina Constelation, with the main objective of receiving data transmitted by data collection platforms installed in remote areas.",
+        dates: [
+            "f1918273",
+            "f2198237",
+            "f3091823",
+            "f4839021",
+        ],
     },
     {
         _id: "63701d24f03239c72c000191",
         name: "Catarina-A3",
         category: "2U cubesat",
         description: "Catarina-A1 is the first satellite of Catarina Constelation, with the main objective of receiving data transmitted by data collection platforms installed in remote areas.",
+        dates: [
+            "f1918273",
+            "f2198237",
+            "f3091823",
+            "f4839021",
+        ],
     },
 ];
 
