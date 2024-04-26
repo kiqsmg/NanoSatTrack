@@ -7,6 +7,11 @@ const TemperatureSchema = new mongoose.Schema({
     min: 1,
     max: 100,
   },
+  satellite_id: [
+    {
+      type: [mongoose.Types.ObjectId],
+    },
+  ],
   date_id: [
     {
       type: [mongoose.Types.ObjectId],
