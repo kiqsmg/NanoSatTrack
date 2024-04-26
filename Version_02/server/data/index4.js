@@ -155,8 +155,7 @@ export const dataConnectivity =[
 
 export const dataBattery_overall =[
     {
-        _id: 1,
-        date_id: 1,
+        date_id: "662ba650b8435ac854c7e833",
         battery_cell_1_voltage: 4.10172,
         battery_cell_2_voltage: 4.11149,
         battery_current: 0.06875,
@@ -165,8 +164,7 @@ export const dataBattery_overall =[
         energy_level: 1,
     },
     {
-        _id: 2,
-        date_id: 2,
+        date_id: "662ba650b8435ac854c7e834",
         battery_cell_1_voltage: 4.11149,
         battery_cell_2_voltage: 4.11149,
         battery_current: 0.159531,
@@ -175,8 +173,7 @@ export const dataBattery_overall =[
         energy_level: 1,
     },
     {
-        _id: 3,
-        date_id: 3,
+        date_id: "662ba650b8435ac854c7e835",
         battery_cell_1_voltage: 4.11149,
         battery_cell_2_voltage: 4.11637,
         battery_current: 0.224844,
@@ -185,8 +182,7 @@ export const dataBattery_overall =[
         energy_level: 1,
     },
     {
-        _id: 4,
-        date_id: 4,
+        date_id: "662ba650b8435ac854c7e836",
         battery_cell_1_voltage: 4.12125,
         battery_cell_2_voltage: 4.12125,
         battery_current: 0.255156,
