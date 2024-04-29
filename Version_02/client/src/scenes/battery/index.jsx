@@ -12,17 +12,16 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Header from "components/Header";
-import { useGetProductsQuery } from "state/api";
+import { useGetBatteryQuery } from "state/api";
 
-const Product = ({
+const Battery = ({
   _id,
-  name,
-  description,
-  price,
-  rating,
-  category,
-  supply,
-  stat,
+  battery_cell_1_voltage,
+  battery_cell_2_voltage,
+  battery_current,
+  battery_temperature,
+  battery_charge,
+  energy_level,
 }) => {
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -85,8 +84,8 @@ const Product = ({
   );
 };
 
-const Products = () => {
-  const { data, isLoading} = useGetProductsQuery();
+const Battery = () => {
+  const { data, isLoading} = useGetBatteryQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
@@ -136,4 +135,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Battery;
