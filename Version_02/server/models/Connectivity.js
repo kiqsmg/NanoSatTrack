@@ -15,8 +15,9 @@ const ConnectivitySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
-});
+},
+{ timestamps: true },
+);
 
 const Connectivity = mongoose.model("Connectivity", ConnectivitySchema);
 export default Connectivity;

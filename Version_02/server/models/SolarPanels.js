@@ -27,8 +27,9 @@ const SolarPanelsSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-
-});
+},
+{ timestamps: true },
+);
 
 const SolarPanels = mongoose.model("SolarPanels", SolarPanelsSchema);
 export default SolarPanels;

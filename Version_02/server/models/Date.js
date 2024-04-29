@@ -26,7 +26,9 @@ const DateSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },  
-});
+},
+{ timestamps: true },
+);
 
 const Date = mongoose.model("Date", DateSchema);
 export default Date;

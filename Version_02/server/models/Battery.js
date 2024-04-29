@@ -27,8 +27,9 @@ const BatterySchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-
-});
+},
+{ timestamps: true },
+);
 
 const BatteryOverall = mongoose.model("Battery_overall", BatterySchema);
 export default BatteryOverall;

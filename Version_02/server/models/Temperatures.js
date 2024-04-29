@@ -11,8 +11,9 @@ const TemperatureSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-
-});
+},
+{ timestamps: true },
+);
 
 const Temperature = mongoose.model("Temperature", TemperatureSchema);
 export default Temperature;
