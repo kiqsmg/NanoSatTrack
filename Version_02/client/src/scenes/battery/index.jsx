@@ -84,13 +84,13 @@ const Battery = ({
   );
 };
 
-const Battery = () => {
+const Batteries = () => {
   const { data, isLoading} = useGetBatteryQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="PRODUCTS" subtitle="See your list of products." />
+      <Header title="BATTERY" subtitle="See your battery stats here." />
       {data || !isLoading ? (
         <Box
           mt="20px"
@@ -106,24 +106,22 @@ const Battery = () => {
           {data.map(
             ({
               _id,
-              name,
-              description,
-              price,
-              rating,
-              category,
-              supply,
-              stat,
+              battery_cell_1_voltage,
+              battery_cell_2_voltage,
+              battery_current,
+              battery_temperature,
+              battery_charge,
+              energy_level,
             }) => (
               <Product
                 key={_id}
                 _id={_id}
-                name={name}
-                description={description}
-                price={price}
-                rating={rating}
-                category={category}
-                supply={supply}
-                stat={stat}
+                battery_cell_1_voltage={battery_cell_1_voltage}
+                battery_cell_2_voltage={battery_cell_2_voltage}
+                battery_current={battery_current}
+                battery_temperature={battery_temperature}
+                battery_charge={battery_charge}
+                energy_level={energy_level}
               />
             )
           )}
@@ -135,4 +133,4 @@ const Battery = () => {
   );
 };
 
-export default Battery;
+export default Batteries;
