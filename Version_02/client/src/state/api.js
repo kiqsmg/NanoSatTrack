@@ -55,6 +55,14 @@ export const api = createApi({
       query: () => "general/dashboard",
       providesTags: ["Dashboard"],
     }),
+    getSatellite: build.query({
+      query: () => "general/satellite",
+      providesTags: ["Stellite"],
+    }),
+    getBattery: build.query({
+      query: () => "satellite/battery",
+      providesTags: ["Battery"],
+    }),
   }),
 });
 
@@ -68,4 +76,6 @@ export const {
   useGetAdminsQuery,
   useGetUserPerformanceQuery,
   useGetDashboardQuery,
+  useGetSatelliteQuery,
+  useGetBatteryQuery,
 } = api;
