@@ -40,7 +40,7 @@ const navItems = [
     icon: <PollOutlined />,
   },
   {
-    text: "Battery Cells",
+    text: "Battery",
     icon: <BatteryChargingFullOutlined />,
   },
   {
