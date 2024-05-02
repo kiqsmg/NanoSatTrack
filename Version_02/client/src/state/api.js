@@ -58,7 +58,7 @@ export const api = createApi({
     }),
     getSatellite: build.query({
       query: () => "general/satellite",
-      providesTags: ["Stellite"],
+      providesTags: ["Satellite"],
     }),
     getBattery: build.query({
       query: () => "battery",

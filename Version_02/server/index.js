@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import floripasat1Routes from "./routes/floripasat1.js";
+import batteryRoutes from "./routes/battery.js";
 
 
 // data imports
@@ -41,6 +42,8 @@ app.use(cors());
 /* ROUTES */
 
 app.use("/floripasat1", floripasat1Routes);
+app.use("/battery", batteryRoutes);
+
 
 
 /* MONGOOSE SETUP */
