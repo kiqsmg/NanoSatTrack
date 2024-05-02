@@ -13,6 +13,7 @@ export const api = createApi({
     "Performance",
     "Dashboard",
     "Satellite",
+    "Battery",
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -60,7 +61,7 @@ export const api = createApi({
       providesTags: ["Stellite"],
     }),
     getBattery: build.query({
-      query: () => "satellite/battery",
+      query: () => "battery",
       providesTags: ["Battery"],
     }),
   }),
