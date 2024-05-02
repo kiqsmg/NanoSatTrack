@@ -7,7 +7,6 @@ import {
   Collapse,
   Button,
   Typography,
-  Rating,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
@@ -40,17 +39,19 @@ const Battery = ({
           color={theme.palette.secondary[700]}
           gutterBottom
         >
-          {category}
+          {_id}
         </Typography>
         <Typography variant="h5" component="div">
-          {name}
+          {"FloripaSat-1"}
         </Typography>
         <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
-          ${Number(price).toFixed(2)}
+          Battery 01 voltage:{Number(battery_cell_1_voltage).toFixed(3)}
         </Typography>
-        <Rating value={rating} readOnly />
 
-        <Typography variant="body2">{description}</Typography>
+        <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
+          Battery 02 voltage:{Number(battery_cell_2_voltage).toFixed(3)}
+        </Typography>
+
       </CardContent>
       <CardActions>
         <Button
@@ -71,12 +72,11 @@ const Battery = ({
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
-          <Typography>Supply Left: {supply}</Typography>
           <Typography>
-            Yearly Sales This Year: {stat.yearlySalesTotal}
+            Battery Current: {Number(battery_current).toFixed(3)}
           </Typography>
           <Typography>
-            Yearly Units Sold This Year: {stat.yearlyTotalSoldUnits}
+            Battery Temperature: {Number(battery_temperature).toFixed(3)}
           </Typography>
         </CardContent>
       </Collapse>
@@ -113,7 +113,7 @@ const Batteries = () => {
               battery_charge,
               energy_level,
             }) => (
-              <Product
+              <Battery
                 key={_id}
                 _id={_id}
                 battery_cell_1_voltage={battery_cell_1_voltage}
