@@ -15,6 +15,7 @@ import { useGetBatteryQuery } from "state/api";
 
 const Battery = ({
   _id,
+  date_id,
   battery_cell_1_voltage,
   battery_cell_2_voltage,
   battery_current,
@@ -34,22 +35,23 @@ const Battery = ({
       }}
     >
       <CardContent>
-        <Typography
-          sx={{ fontSize: 14 }}
-          color={theme.palette.secondary[700]}
-          gutterBottom
-        >
-          {_id}
-        </Typography>
         <Typography variant="h5" component="div">
           {"FloripaSat-1"}
         </Typography>
-        <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
-          Battery 01 voltage:{Number(battery_cell_1_voltage).toFixed(3)}
+        <Typography sx={{ mt: "1.5rem", mb: "0.5rem" }} color={theme.palette.secondary[400]}>
+          Battery 01 voltage: {Number(battery_cell_1_voltage).toFixed(3)}
         </Typography>
 
-        <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
-          Battery 02 voltage:{Number(battery_cell_2_voltage).toFixed(3)}
+        <Typography sx={{ mb: "0.5rem" }} color={theme.palette.secondary[400]}>
+          Battery 02 voltage: {Number(battery_cell_2_voltage).toFixed(3)}
+        </Typography>
+
+        <Typography sx={{ mb: "0.5rem" }} color={theme.palette.secondary[400]}>
+          Battery Charge: {Number(battery_charge).toFixed(3)}
+        </Typography>
+
+        <Typography sx={{ mb: "0.5rem" }} color={theme.palette.secondary[400]}>
+          Energy Level: {Number(energy_level).toFixed(3)}
         </Typography>
 
       </CardContent>
@@ -72,6 +74,8 @@ const Battery = ({
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
+          <Typography>date_id: {date_id}</Typography>
+
           <Typography>
             Battery Current: {Number(battery_current).toFixed(3)}
           </Typography>
@@ -106,6 +110,7 @@ const Batteries = () => {
           {data.map(
             ({
               _id,
+              date_id,
               battery_cell_1_voltage,
               battery_cell_2_voltage,
               battery_current,
@@ -116,6 +121,7 @@ const Batteries = () => {
               <Battery
                 key={_id}
                 _id={_id}
+                date_id={date_id}
                 battery_cell_1_voltage={battery_cell_1_voltage}
                 battery_cell_2_voltage={battery_cell_2_voltage}
                 battery_current={battery_current}
