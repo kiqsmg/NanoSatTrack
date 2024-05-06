@@ -1,12 +1,10 @@
 import express from "express";
 import {
-  getDate,
+  getBattery,
 } from "../controllers/floripasat1.js";
 
 const router = express.Router();
 
-router.get("/date", getDate);
-//router.get("/customers", getCustomers);
-//router.get("/transactions", getTransactions);
+router.get("/battery", getBattery);
 
 export default router;
