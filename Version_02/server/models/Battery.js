@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-const BatterySchema = new mongoose.Schema({
-  date_id: { type: mongoose.Types.ObjectId, ref: "Battery_overall" },
+const BatteryOverallSchema = new mongoose.Schema({
+  date_id: { type: mongoose.Types.ObjectId, ref: "battery_overalls" },
 
   battery_cell_1_voltage: {
     type: Number,
@@ -31,5 +31,5 @@ const BatterySchema = new mongoose.Schema({
 { timestamps: true },
 );
 
-const BatteryOverall = mongoose.model("Battery_overall", BatterySchema);
+const BatteryOverall = mongoose.model("Battery_overall", BatteryOverallSchema);
 export default BatteryOverall;
