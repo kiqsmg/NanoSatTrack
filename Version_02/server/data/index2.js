@@ -1,6 +1,7 @@
-export const dataCubeSat = [
+export const dataFloripaSat1 = [
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -43,7 +44,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -86,7 +88,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -129,7 +132,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -172,7 +176,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -215,7 +220,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -257,7 +263,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -299,7 +306,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -341,7 +349,8 @@ export const dataCubeSat = [
         grid_locator: "JN49lr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -383,7 +392,8 @@ export const dataCubeSat = [
         grid_locator: "JN34wq",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -425,7 +435,8 @@ export const dataCubeSat = [
         grid_locator: "EM69uf",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -467,7 +478,8 @@ export const dataCubeSat = [
         grid_locator: "EM69uf",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -509,7 +521,8 @@ export const dataCubeSat = [
         grid_locator: "EM69uf",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -551,7 +564,8 @@ export const dataCubeSat = [
         grid_locator: "LL34js",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -593,7 +607,8 @@ export const dataCubeSat = [
         grid_locator: "LL34js",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 20,
@@ -635,7 +650,8 @@ export const dataCubeSat = [
         grid_locator: "LL34js",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 21,
@@ -677,7 +693,8 @@ export const dataCubeSat = [
         grid_locator: "EM69uf",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 21,
@@ -719,7 +736,8 @@ export const dataCubeSat = [
         grid_locator: "EM69uf",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2019,
         month: 12,
         day: 24,
@@ -761,7 +779,8 @@ export const dataCubeSat = [
         grid_locator: "FM17es",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 1,
         day: 6,
@@ -803,7 +822,8 @@ export const dataCubeSat = [
         grid_locator: "FM17es",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 7,
@@ -845,7 +865,8 @@ export const dataCubeSat = [
         grid_locator: "JO82ik",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 13,
@@ -887,7 +908,8 @@ export const dataCubeSat = [
         grid_locator: "JO30cr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 14,
@@ -929,7 +951,8 @@ export const dataCubeSat = [
         grid_locator: "LL34js",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 14,
@@ -971,7 +994,8 @@ export const dataCubeSat = [
         grid_locator: "JO30cr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 17,
@@ -1013,7 +1037,8 @@ export const dataCubeSat = [
         grid_locator: "CN97",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 18,
@@ -1055,7 +1080,8 @@ export const dataCubeSat = [
         grid_locator: "JO30cr",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 19,
@@ -1097,7 +1123,8 @@ export const dataCubeSat = [
         grid_locator: "LL34js",
     },
     {
-        _id: "floripasat1",
+        
+        name: "floripasat1",
         year: 2020,
         month: 2,
         day: 23,
