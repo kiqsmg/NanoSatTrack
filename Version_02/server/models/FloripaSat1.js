@@ -50,103 +50,78 @@ const FloripaSatSchema = new mongoose.Schema(
     },
     sp_01_current: {
       type: Number,
-      required: true,
     },
     sp_02_current: {
       type: Number,
-      required: true,
     },
     sp_03_current: {
       type: Number,
-      required: true,
     },
     sp_04_current: {
       type: Number,
-      required: true,
     },
     sp_05_current: {
       type: Number,
-      required: true,
     },
     sp_06_current: {
       type: Number,
-      required: true,
     },
     sp_01_02_voltage: {
       type: Number,
-      required: true,
     },
     sp_03_04_voltage: {
       type: Number,
-      required: true,
     },
     sp_05_06_voltage: {
       type: Number,
-      required: true,
     },
     energy_level: {
       type: Number,
-      required: true,
     },
     reserved_21: {
       type: String,
-      required: true,
     },
     reserved_22: {
       type: String,
-      required: true,
     },
     reserved_23: {
       type: String,
-      required: true,
     },
     reserved_24: {
       type: String,
-      required: true,
     },
     reserved_25: {
       type: String,
-      required: true,
     },
     reserved_26: {
       type: String,
-      required: true,
     },
     reserved_27: {
       type: String,
-      required: true,
     },
     reserved_28: {
       type: String,
-      required: true,
     },
     reserved_29: {
       type: String,
-      required: true,
     },
     reserved_30: {
       type: String,
-      required: true,
     },
     reserved_31: {
       type: String,
-      required: true,
     },
     reserved_32: {
       type: String,
-      required: true,
     },
     reserved_33: {
       type: String,
-      required: true,
     },
     reserved_34: {
       type: String,
-      required: true,
     },
     reserved_35: {
       type: String,
-      required: true,
     },
     eps_temperature: {
       type: Number,
