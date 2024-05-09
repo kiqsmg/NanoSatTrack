@@ -50,33 +50,43 @@ const FloripaSatSchema = new mongoose.Schema(
     },
     sp_01_current: {
       type: Number,
+      required: true,
     },
     sp_02_current: {
       type: Number,
+      required: true,
     },
     sp_03_current: {
       type: Number,
+      required: true,
     },
     sp_04_current: {
       type: Number,
+      required: true,
     },
     sp_05_current: {
       type: Number,
+      required: true,
     },
     sp_06_current: {
       type: Number,
+      required: true,
     },
     sp_01_02_voltage: {
       type: Number,
+      required: true,
     },
     sp_03_04_voltage: {
       type: Number,
+      required: true,
     },
     sp_05_06_voltage: {
       type: Number,
+      required: true,
     },
     energy_level: {
       type: Number,
+      required: true,
     },
     reserved_21: {
       type: String,
