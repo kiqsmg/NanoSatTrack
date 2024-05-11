@@ -25,6 +25,10 @@ export const api = createApi({
       query: () => "floripasat1/battery",
       providesTags: ["Battery"],
     }),
+    getDownlink: build.query({
+      quey: () => "floripasat1/downlink",
+      providesTags: ["Downlink"]
+    }),
   }),
 });
 
@@ -33,4 +37,5 @@ export const {
   useGetProductsQuery,
   useGetSatelliteQuery,
   useGetBatteryQuery,
+  useGetDownlinkQuery,
 } = api;
