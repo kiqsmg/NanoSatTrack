@@ -1,12 +1,12 @@
 import React from 'react';
 import {Box, useTheme} from "@mui/material"
-import { useGetDownlinksQuery } from "../../state/api"
+import { useGetDownlinkQuery } from "../../state/api"
 import Header from "../../components/Header";
 import {DataGrid} from "@mui/x-data-grid";
 
 function Downlink() {
   const theme = useTheme();
-  const { data, isLoading } = useGetDownlinksQuery();
+  const { data, isLoading } = useGetDownlinkQuery();
 
   const columns = [
     {
