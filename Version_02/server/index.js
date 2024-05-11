@@ -71,6 +71,6 @@ mongoose
     //SolarPanels.insertMany(dataSolarPanels);
     //Connectivity.insertMany(dataConnectivity);
     //BatteryOverall.insertMany(dataBattery_overall);
-    FloripaSat1Overall.insertMany(dataFloripaSat1);
+    //FloripaSat1Overall.insertMany(dataFloripaSat1);
 
 }).catch((error) => console.log(`${error} did not connect`));
