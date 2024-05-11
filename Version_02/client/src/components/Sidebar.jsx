@@ -40,6 +40,10 @@ const navItems = [
     icon: <PollOutlined />,
   },
   {
+    text: "Downlink",
+    icon: <PollOutlined />,
+  },
+  {
     text: "Battery",
     icon: <BatteryChargingFullOutlined />,
   },
