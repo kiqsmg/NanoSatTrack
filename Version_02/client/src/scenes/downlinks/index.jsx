@@ -1,57 +1,154 @@
 import React from 'react';
 import {Box, useTheme} from "@mui/material"
-import { useGetCustomersQuery } from "../../state/api"
+import { useGetDownlinksQuery } from "../../state/api"
 import Header from "../../components/Header";
 import {DataGrid} from "@mui/x-data-grid";
 
-function Customers() {
+function Downlink() {
   const theme = useTheme();
-  const { data, isLoading } = useGetCustomersQuery();
+  const { data, isLoading } = useGetDownlinksQuery();
 
   const columns = [
-      { 
-          field: "_id",
-          headerName: "ID",
-          flex:1
-      },
-      { 
-        field: "name",
-        headerName: "NAME",
-        flex:0.5
-      },
-      { 
-        field: "email",
-        headerName: "EMAIL",
-        flex:1
-      },
-      { 
-        field: "phoneNumber",
-        headerName: "Phone Number",
-        flex:0.5,
-        renderCell: (params) => {
-            return params.value.replace(/^(\d{3})(\d{3})(\d{4})/, "($1)$2-$3")
-        }
-      },
-      { 
-        field: "country",
-        headerName: "COUNTRY",
-        flex:0.4
-      },
-      { 
-        field: "occupation",
-        headerName: "OCCUPATION",
-        flex:1
-      },
-      { 
-        field: "role",
-        headerName: "ROLE",
-        flex:0.4
-      },
+    {
+      field: "_id",
+      headerName: "ID",
+      flex: 1
+    },
+    {
+      field: "name",
+      headerName: "NAME",
+      flex: 0.5
+    },
+    {
+      field: "year",
+      headerName: "YEAR",
+      flex: 0.5
+    },
+    {
+      field: "month",
+      headerName: "MONTH",
+      flex: 0.5
+    },
+    {
+      field: "day",
+      headerName: "DAY",
+      flex: 0.5
+    },
+    {
+      field: "hour",
+      headerName: "HOUR",
+      flex: 0.5
+    },
+    {
+      field: "minute",
+      headerName: "MINUTE",
+      flex: 0.5
+    },
+    {
+      field: "second",
+      headerName: "SECOND",
+      flex: 0.5
+    },
+    {
+      field: "battery_cell_1_voltage",
+      headerName: "BATTERY CELL 1 VOL.",
+      flex: 0.5
+    },
+    {
+      field: "battery_cell_2_voltage",
+      headerName: "BATTERY CELL 2 VOL.",
+      flex: 0.5
+    },
+    {
+      field: "battery_temperature",
+      headerName: "BATTERY TEMP.",
+      flex: 1
+    },
+    {
+      field: "battery_current",
+      headerName: "BATTERY CURRENT",
+      flex: 1
+    },
+    {
+      field: "battery_charge",
+      headerName: "BATTERY CHARGE",
+      flex: 1
+    },
+    {
+      field: "sp_01_current",
+      headerName: "Solar panel 1 current",
+      flex: 1
+    },
+    {
+      field: "sp_02_current",
+      headerName: "Solar panel 2 current",
+      flex: 1
+    },
+    {
+      field: "sp_03_current",
+      headerName: "Solar panel 3 current",
+      flex: 1
+    },
+    {
+      field: "sp_04_current",
+      headerName: "Solar panel 4 current",
+      flex: 1
+    },
+    {
+      field: "sp_05_current",
+      headerName: "Solar panel 5 current",
+      flex: 1
+    },
+    {
+      field: "sp_06_current",
+      headerName: "Solar panel 6 current",
+      flex: 1
+    },
+    {
+      field: "sp_01_02_voltage",
+      headerName: "Solar panel 1 & 2 voltage",
+      flex: 1
+    },
+    {
+      field: "sp_03_04_voltage",
+      headerName: "Solar panel 3 & 4 voltage",
+      flex: 1
+    },
+    {
+      field: "sp_05_06_voltage",
+      headerName: "Solar panel 5 & 6 voltage",
+      flex: 1
+    },
+    {
+      field: "energy_level",
+      headerName: "ENERGY LEVEL",
+      flex: 1
+    },
+    {
+      field: "eps_temperature",
+      headerName: "EPS TEMPERATURE",
+      flex: 1
+    },
+    {
+      field: "satNOGS",
+      headerName: "satNOGS",
+      flex: 1
+    },
+    {
+      field: "callsign",
+      headerName: "CALLSIGN",
+      flex: 1
+    },
+    {
+      field: "grid_locator",
+      headerName: "GRID LOCATOR",
+      flex: 1
+    },
   ]
   return (
     <>
     <Box m="1.5rem 2.5rem">
-        <Header title="CUSTOMERS" subtitle="List Of Customers" />
+        <Header title="DOWNLINKS" subtitle="List Of all Downlinks" />
     <Box mt="40px" height="75vh"
         sx={{ "& .MuiDataGrid-root" : { 
             border: "none",
@@ -87,4 +184,4 @@ function Customers() {
   )
 }
 
-export default Customers
+export default Downlink
