@@ -67,82 +67,82 @@ function Downlink() {
     {
       field: "battery_current",
       headerName: "BATTERY CURRENT",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "battery_charge",
       headerName: "BATTERY CHARGE",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_01_current",
       headerName: "Solar panel 1 current",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_02_current",
       headerName: "Solar panel 2 current",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_03_current",
       headerName: "Solar panel 3 current",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_04_current",
       headerName: "Solar panel 4 current",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_05_current",
       headerName: "Solar panel 5 current",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_06_current",
       headerName: "Solar panel 6 current",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_01_02_voltage",
       headerName: "Solar panel 1 & 2 voltage",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_03_04_voltage",
       headerName: "Solar panel 3 & 4 voltage",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "sp_05_06_voltage",
       headerName: "Solar panel 5 & 6 voltage",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "energy_level",
       headerName: "ENERGY LEVEL",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "eps_temperature",
       headerName: "EPS TEMPERATURE",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "satNOGS",
       headerName: "satNOGS",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "callsign",
       headerName: "CALLSIGN",
-      flex: 1
+      flex: 0.5
     },
     {
       field: "grid_locator",
       headerName: "GRID LOCATOR",
-      flex: 1
+      flex: 0.5
     },
   ]
   return (
