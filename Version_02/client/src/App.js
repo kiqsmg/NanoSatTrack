@@ -29,7 +29,7 @@ function App() {
               <Route path="/FloripaSat-1 Main" element={<MainFloripaSat1 />} />
               <Route path="/battery" element={<Battery />} />
               <Route path="/downlink" element={<Downlink />} />
-
+              
             </Route>
           </Routes>
         </ThemeProvider>
