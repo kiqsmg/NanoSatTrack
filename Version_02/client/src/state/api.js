@@ -26,7 +26,7 @@ export const api = createApi({
       providesTags: ["Battery"],
     }),
     getDownlink: build.query({
-      query: () => "/downlink",
+      query: () => "floripasat1/downlink",
       providesTags: ["Downlink"]
     }),
   }),
