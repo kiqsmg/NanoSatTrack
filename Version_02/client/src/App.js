@@ -9,6 +9,7 @@ import Layout from "scenes/layout";
 import Spacelab from "scenes/spacelab";
 import MainFloripaSat1 from "scenes/mainfloripasat1";
 import Battery from "scenes/battery";
+import Downlink from "scenes/downlinks";
 
 
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/spacelab" element={<Spacelab />} />
               <Route path="/FloripaSat-1 Main" element={<MainFloripaSat1 />} />
               <Route path="/battery" element={<Battery />} />
+              <Route path="/downlink" element={<Downlink />} />
 
             </Route>
           </Routes>
