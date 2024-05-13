@@ -12,14 +12,12 @@ export const getBattery = async (req, res) => {
   }
 };
 
-
-//Downlinks query
-
+//Downlink query
 export const getDownlink = async (req, res) => {
   try {
-      const downlink = await FloripaSat1Overall.find();
-      res.status(200).json(downlink)
-  } catch( error ) {
-      res.status(404).json({message: error})
+    const downlink = await FloripaSat1Overall.find();
+    res.status(200).json(downlink);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
 };
