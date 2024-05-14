@@ -40,7 +40,7 @@ const FloripaSatSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    batery_temperature: {
+    battery_temperature: {
       type: Number,
       required: true,
     },
