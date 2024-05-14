@@ -20,6 +20,10 @@ const FloripaSatSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    hour: {
+      type: Number,
+      required: true,
+    },
     minute: {
       type: Number,
       required: true,
@@ -154,5 +158,5 @@ const FloripaSatSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const FloripaSat1Overall = mongoose.model("FloripaSat", FloripaSatSchema);
+const FloripaSat1Overall = mongoose.model("Floripasats", FloripaSatSchema);
 export default FloripaSat1Overall;
