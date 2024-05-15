@@ -15,7 +15,12 @@ import { useGetDownlinkQuery } from "state/api";
 
 const Battery = ({
   _id,
-  date_id,
+  year,
+  month,
+  day,
+  hour,
+  minute,
+  second,
   battery_cell_1_voltage,
   battery_cell_2_voltage,
   battery_current,
@@ -74,7 +79,12 @@ const Battery = ({
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
-          <Typography>date_id: {date_id}</Typography>
+          <Typography>year: {year}</Typography>
+          <Typography>month: {month}</Typography>
+          <Typography>day: {day}</Typography>
+          <Typography>hour: {hour}</Typography>
+          <Typography>minute: {minute}</Typography>
+          <Typography>second: {second}</Typography>
 
           <Typography>
             Battery Current: {Number(battery_current).toFixed(3)}
@@ -110,7 +120,12 @@ const Batteries = () => {
           {data.map(
             ({
               _id,
-              date_id,
+              year,
+              month,
+              day,
+              hour,
+              minute,
+              second,
               battery_cell_1_voltage,
               battery_cell_2_voltage,
               battery_current,
@@ -121,7 +136,12 @@ const Batteries = () => {
               <Battery
                 key={_id}
                 _id={_id}
-                date_id={date_id}
+                year={year}
+                month={month}
+                day={day}
+                hour={hour}
+                minute={minute}
+                second={second}
                 battery_cell_1_voltage={battery_cell_1_voltage}
                 battery_cell_2_voltage={battery_cell_2_voltage}
                 battery_current={battery_current}
