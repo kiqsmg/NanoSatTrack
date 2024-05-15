@@ -13,7 +13,7 @@ function Downlink() {
     {
       field: "_id",
       headerName: "ID",
-      flex: 4
+      flex: 2
     },
     {
       field: "name",

@@ -11,7 +11,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Header from "components/Header";
-import { useGetBatteryQuery } from "state/api";
+import { useGetDownlinkQuery } from "state/api";
 
 const Battery = ({
   _id,
@@ -89,7 +89,7 @@ const Battery = ({
 };
 
 const Batteries = () => {
-  const { data, isLoading} = useGetBatteryQuery();
+  const { data, isLoading} = useGetDownlinkQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
