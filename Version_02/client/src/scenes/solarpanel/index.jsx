@@ -55,27 +55,27 @@ const Solarpanel = () => {
 
         sp_01_currentLine.data = [
           ...sp_01_currentLine.data,
-          { x: splitDate, y: totalSales },
+          { x: splitDate, y: sp_01_current },
         ];
         sp_02_currentLine.data = [
           ...sp_02_currentLine.data,
-          { x: splitDate, y: totalSales },
+          { x: splitDate, y: sp_02_current },
         ];
         sp_03_currentLine.data = [
           ...sp_03_currentLine.data,
-          { x: splitDate, y: totalSales },
+          { x: splitDate, y: sp_03_current },
         ];
         sp_04_currentLine.data = [
           ...sp_04_currentLine.data,
-          { x: splitDate, y: totalSales },
+          { x: splitDate, y: sp_04_current },
         ];
         sp_05_currentLine.data = [
           ...sp_05_currentLine.data,
-          { x: splitDate, y: totalSales },
+          { x: splitDate, y: sp_05_current },
         ];
         sp_06_currentLine.data = [
           ...sp_06_currentLine.data,
-          { x: splitDate, y: totalSales },
+          { x: splitDate, y: sp_06_current },
         ];
         
       }
