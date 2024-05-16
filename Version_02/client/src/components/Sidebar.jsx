@@ -48,7 +48,7 @@ const navItems = [
     icon: <BatteryChargingFullOutlined />,
   },
   {
-    text: "Solar Panels",
+    text: "solarpanel",
     icon: <SolarPowerOutlined />,
   },
   {

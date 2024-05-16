@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import Header from "../../components/Header";
 import { ResponsiveLine } from "@nivo/line";
-import { useGetDownlinkQuery } from "../../state/api";
+import { useGetDownlinkQuery } from "../../state/api"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -16,7 +16,6 @@ const Solarpanel = () => {
   const [formattedData] = useMemo(() => {
     if (!data) return [];
 
-    const { dailyData } = data;
     const sp_01_currentLine = {
       id: "sp_01_current",
       color: theme.palette.secondary.main,
@@ -48,13 +47,13 @@ const Solarpanel = () => {
       data: [],
     };
 
-    Object.values(dailyData).forEach(({ year, month, day, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
+    Object.values(data).forEach(({ year, month, day, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
       //Date formatting
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       
       const dateFormatted = new Date(dateAllTogether);
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
-        const splitDate = date.substring(date.indexOf("-") + 1);
+        const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
 
         sp_01_currentLine.data = [
           ...sp_01_currentLine.data,
@@ -90,7 +89,7 @@ const Solarpanel = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="DAILY SALES" subtitle="Chart of daily sales" />
+      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current by date" />
       <Box height="75vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
