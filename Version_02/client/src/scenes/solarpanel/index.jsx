@@ -6,6 +6,7 @@ import { useGetDownlinkQuery } from "../../state/api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
 const Solarpanel = () => {
   const [startDate, setStartDate] = useState(new Date("2019-12-01"));
   const [endDate, setEndDate] = useState(new Date("2020-03-01"));
@@ -47,7 +48,7 @@ const Solarpanel = () => {
       data: [],
     };
 
-    Object.values(dailyData).forEach(({ date, totalSales, totalUnits }) => {
+    Object.values(dailyData).forEach(({ date, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
       const dateFormatted = new Date(date);
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = date.substring(date.indexOf("-") + 1);
