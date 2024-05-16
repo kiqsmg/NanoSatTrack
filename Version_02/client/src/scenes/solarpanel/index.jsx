@@ -48,8 +48,11 @@ const Solarpanel = () => {
       data: [],
     };
 
-    Object.values(dailyData).forEach(({ date, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
-      const dateFormatted = new Date(date);
+    Object.values(dailyData).forEach(({ year, month, day, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
+      //Date formatting
+      const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
+      
+      const dateFormatted = new Date(dateAllTogether);
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = date.substring(date.indexOf("-") + 1);
 
