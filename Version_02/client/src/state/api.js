@@ -28,7 +28,7 @@ export const api = createApi({
     }),
     getDownlink: build.query({
       query: () => "floripasat1/downlink",
-      providesTags: ["Downlink"]
+      providesTags: ["Downlink"],
     }),
   }),
 });
