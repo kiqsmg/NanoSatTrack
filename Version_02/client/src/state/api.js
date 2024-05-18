@@ -7,7 +7,6 @@ export const api = createApi({
     "Dashboard",
     "Satellite",
     "Battery",
-    "Downlink",
   ],
   endpoints: (build) => ({
     getUser: build.query({
