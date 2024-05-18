@@ -18,14 +18,8 @@ import BatteryOverall from "./models/Battery.js";
 import FloripaSat1Overall from "./models/FloripaSat1.js";
 
 import {
-  dataSatellite,
-  dataDate,
-  dataTemperatures,
-  dataSolarPanels,
-  dataConnectivity,
-  dataBattery_overall,
   dataFloripaSat1,
-} from "./data/index4.js";
+} from "./data/index5.js";
 
 
 
