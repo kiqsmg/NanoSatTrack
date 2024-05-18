@@ -2,9 +2,10 @@ import React, { useMemo, useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import Header from "../../components/Header";
 import { ResponsiveLine } from "@nivo/line";
-import { useGetDownlinkQuery } from "../../state/api"
+import { useGetDownlinkQuery } from "../../state/api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
 
 
 const Solarpanel = () => {
@@ -16,42 +17,44 @@ const Solarpanel = () => {
   const [formattedData] = useMemo(() => {
     if (!data) return [];
 
+
     const sp_01_currentLine = {
-      id: "sp_01_current",
+      id: "Panel 1",
       color: theme.palette.secondary.main,
       data: [],
     };
     const sp_02_currentLine = {
-      id: "sp_02_current",
-      color: theme.palette.secondary[600],
+      id: "Panel 2",
+      color: theme.palette.secondary[100],
       data: [],
     };
     const sp_03_currentLine = {
-      id: "sp_03_current",
-      color: theme.palette.secondary[600],
+      id: "Panel 3",
+      color: theme.palette.secondary[300],
       data: [],
     };
     const sp_04_currentLine = {
-      id: "sp_04_current",
-      color: theme.palette.secondary[600],
+      id: "Panel 4",
+      color: theme.palette.secondary[500],
       data: [],
     };
     const sp_05_currentLine = {
-      id: "sp_05_current",
+      id: "Panel 5",
       color: theme.palette.secondary[600],
       data: [],
     };
     const sp_06_currentLine = {
-      id: "sp_06_current",
-      color: theme.palette.secondary[600],
+      id: "Panel 6",
+      color: theme.palette.secondary[800],
       data: [],
     };
 
     Object.values(data).forEach(({ year, month, day, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
       //Date formatting
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
-      
       const dateFormatted = new Date(dateAllTogether);
+
+
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
 
@@ -89,13 +92,13 @@ const Solarpanel = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current by date" />
+      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current" />
       <Box height="75vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
             <DatePicker
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={(dateFormatted) => setStartDate(dateFormatted)}
               selectsStart
               startDate={startDate}
               endDate={endDate}
@@ -104,7 +107,7 @@ const Solarpanel = () => {
           <Box>
             <DatePicker
               selected={endDate}
-              onChange={(date) => setEndDate(date)}
+              onChange={(dateFormatted) => setEndDate(dateFormatted)}
               selectsEnd
               startDate={startDate}
               endDate={endDate}
@@ -165,19 +168,19 @@ const Solarpanel = () => {
             axisRight={null}
             axisBottom={{
               orient: "bottom",
-              tickSize: 5,
+              tickSize: 10,
               tickPadding: 5,
               tickRotation: 90,
-              legend: "Month",
+              legend: "Month-Day",
               legendOffset: 60,
               legendPosition: "middle",
             }}
             axisLeft={{
               orient: "left",
-              tickSize: 5,
+              tickSize: 10,
               tickPadding: 5,
               tickRotation: 0,
-              legend: "Total",
+              legend: "Current [A]",
               legendOffset: -50,
               legendPosition: "middle",
             }}
