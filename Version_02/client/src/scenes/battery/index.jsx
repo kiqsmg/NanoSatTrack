@@ -1,17 +1,3 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  Collapse,
-  Button,
-  Typography,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
-import Header from "components/Header";
-import { useGetBatteryQuery } from "state/api";
 
 import React, { useMemo, useState } from "react";
 import { Box, useTheme } from "@mui/material";
@@ -29,7 +15,7 @@ const Batteries = () => {
   const { data } = useGetDownlinkQuery();
   const theme = useTheme();
 
-  const [formattedData] = useMemo(() => {
+  const [formattedData1] = useMemo(() => {
     if (!data) return [];
 
 
@@ -48,23 +34,8 @@ const Batteries = () => {
       color: theme.palette.secondary[300],
       data: [],
     };
-    const sp_04_currentLine = {
-      id: "Panel 4",
-      color: theme.palette.secondary[500],
-      data: [],
-    };
-    const sp_05_currentLine = {
-      id: "Panel 5",
-      color: theme.palette.secondary[600],
-      data: [],
-    };
-    const sp_06_currentLine = {
-      id: "Panel 6",
-      color: theme.palette.secondary[800],
-      data: [],
-    };
 
-    Object.values(data).forEach(({ year, month, day, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
+    Object.values(data).forEach(({ year, month, day, battery_cell_1_voltage, battery_cell_2_voltage }) => {
       //Date formatting
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       const dateFormatted = new Date(dateAllTogether);
@@ -73,36 +44,20 @@ const Batteries = () => {
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
 
-        sp_01_currentLine.data = [
-          ...sp_01_currentLine.data,
-          { x: splitDate, y: sp_01_current },
+        battery_cell_1_voltageLine.data = [
+          ...battery_cell_1_voltageLine.data,
+          { x: splitDate, y: battery_cell_1_voltage },
         ];
-        sp_02_currentLine.data = [
-          ...sp_02_currentLine.data,
-          { x: splitDate, y: sp_02_current },
-        ];
-        sp_03_currentLine.data = [
-          ...sp_03_currentLine.data,
-          { x: splitDate, y: sp_03_current },
-        ];
-        sp_04_currentLine.data = [
-          ...sp_04_currentLine.data,
-          { x: splitDate, y: sp_04_current },
-        ];
-        sp_05_currentLine.data = [
-          ...sp_05_currentLine.data,
-          { x: splitDate, y: sp_05_current },
-        ];
-        sp_06_currentLine.data = [
-          ...sp_06_currentLine.data,
-          { x: splitDate, y: sp_06_current },
+        battery_cell_2_voltageLine.data = [
+          ...battery_cell_2_voltageLine.data,
+          { x: splitDate, y: battery_cell_2_voltage },
         ];
         
       }
     });
 
-    const formattedData = [sp_01_currentLine, sp_02_currentLine, sp_03_currentLine, sp_04_currentLine, sp_05_currentLine, sp_06_currentLine];
-    return [formattedData];
+    const formattedData1 = [battery_cell_1_voltageLine, battery_cell_2_voltageLine ];
+    return [formattedData1];
   }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -133,7 +88,7 @@ const Batteries = () => {
 
         {data ? (
           <ResponsiveLine
-            data={formattedData}
+            data={formattedData1}
             theme={{
               axis: {
                 domain: {
