@@ -11,150 +11,233 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Header from "components/Header";
-import { useGetDownlinkQuery } from "state/api";
+import { useGetBatteryQuery } from "state/api";
 
-const Battery = ({
-  _id,
-  year,
-  month,
-  day,
-  hour,
-  minute,
-  second,
-  battery_cell_1_voltage,
-  battery_cell_2_voltage,
-  battery_current,
-  battery_temperature,
-  battery_charge,
-  energy_level,
-}) => {
-  const theme = useTheme();
-  const [isExpanded, setIsExpanded] = useState(false);
+import React, { useMemo, useState } from "react";
+import { Box, useTheme } from "@mui/material";
+import Header from "../../components/Header";
+import { ResponsiveLine } from "@nivo/line";
+import { useGetDownlinkQuery } from "../../state/api";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-  return (
-    <Card
-      sx={{
-        backgroundImage: "none",
-        backgroundColor: theme.palette.background.alt,
-        borderRadius: "0.55rem",
-      }}
-    >
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {"FloripaSat-1"}
-        </Typography>
-        <Typography sx={{ mt: "1.5rem", mb: "0.5rem" }} color={theme.palette.secondary[400]}>
-          Battery 01 voltage: {Number(battery_cell_1_voltage).toFixed(3)}
-        </Typography>
 
-        <Typography sx={{ mb: "0.5rem" }} color={theme.palette.secondary[400]}>
-          Battery 02 voltage: {Number(battery_cell_2_voltage).toFixed(3)}
-        </Typography>
-
-        <Typography sx={{ mb: "0.5rem" }} color={theme.palette.secondary[400]}>
-          Battery Charge: {Number(battery_charge).toFixed(3)}
-        </Typography>
-
-        <Typography sx={{ mb: "0.5rem" }} color={theme.palette.secondary[400]}>
-          Energy Level: {Number(energy_level).toFixed(3)}
-        </Typography>
-
-      </CardContent>
-      <CardActions>
-        <Button
-          variant="primary"
-          size="small"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          See More
-        </Button>
-      </CardActions>
-      <Collapse
-        in={isExpanded}
-        timeout="auto"
-        unmountOnExit
-        sx={{
-          color: theme.palette.neutral[300],
-        }}
-      >
-        <CardContent>
-          <Typography>id: {_id}</Typography>
-          <Typography>year: {year}</Typography>
-          <Typography>month: {month}</Typography>
-          <Typography>day: {day}</Typography>
-          <Typography>hour: {hour}</Typography>
-          <Typography>minute: {minute}</Typography>
-          <Typography>second: {second}</Typography>
-
-          <Typography>
-            Battery Current: {Number(battery_current).toFixed(3)}
-          </Typography>
-          <Typography>
-            Battery Temperature: {Number(battery_temperature).toFixed(3)}
-          </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
-  );
-};
 
 const Batteries = () => {
-  const { data, isLoading} = useGetDownlinkQuery();
-  const isNonMobile = useMediaQuery("(min-width: 1000px)");
+  const [startDate, setStartDate] = useState(new Date("2019-12-01"));
+  const [endDate, setEndDate] = useState(new Date("2020-03-01"));
+  const { data } = useGetDownlinkQuery();
+  const theme = useTheme();
+
+  const [formattedData] = useMemo(() => {
+    if (!data) return [];
+
+
+    const sp_01_currentLine = {
+      id: "Panel 1",
+      color: theme.palette.secondary.main,
+      data: [],
+    };
+    const sp_02_currentLine = {
+      id: "Panel 2",
+      color: theme.palette.secondary[100],
+      data: [],
+    };
+    const sp_03_currentLine = {
+      id: "Panel 3",
+      color: theme.palette.secondary[300],
+      data: [],
+    };
+    const sp_04_currentLine = {
+      id: "Panel 4",
+      color: theme.palette.secondary[500],
+      data: [],
+    };
+    const sp_05_currentLine = {
+      id: "Panel 5",
+      color: theme.palette.secondary[600],
+      data: [],
+    };
+    const sp_06_currentLine = {
+      id: "Panel 6",
+      color: theme.palette.secondary[800],
+      data: [],
+    };
+
+    Object.values(data).forEach(({ year, month, day, sp_01_current, sp_02_current, sp_03_current, sp_04_current, sp_05_current, sp_06_current }) => {
+      //Date formatting
+      const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
+      const dateFormatted = new Date(dateAllTogether);
+
+
+      if (dateFormatted >= startDate && dateFormatted <= endDate) {
+        const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
+
+        sp_01_currentLine.data = [
+          ...sp_01_currentLine.data,
+          { x: splitDate, y: sp_01_current },
+        ];
+        sp_02_currentLine.data = [
+          ...sp_02_currentLine.data,
+          { x: splitDate, y: sp_02_current },
+        ];
+        sp_03_currentLine.data = [
+          ...sp_03_currentLine.data,
+          { x: splitDate, y: sp_03_current },
+        ];
+        sp_04_currentLine.data = [
+          ...sp_04_currentLine.data,
+          { x: splitDate, y: sp_04_current },
+        ];
+        sp_05_currentLine.data = [
+          ...sp_05_currentLine.data,
+          { x: splitDate, y: sp_05_current },
+        ];
+        sp_06_currentLine.data = [
+          ...sp_06_currentLine.data,
+          { x: splitDate, y: sp_06_current },
+        ];
+        
+      }
+    });
+
+    const formattedData = [sp_01_currentLine, sp_02_currentLine, sp_03_currentLine, sp_04_currentLine, sp_05_currentLine, sp_06_currentLine];
+    return [formattedData];
+  }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="BATTERY" subtitle="See your battery stats here." />
-      {data || !isLoading ? (
-        <Box
-          mt="20px"
-          display="grid"
-          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-          justifyContent="space-between"
-          rowGap="20px"
-          columnGap="1.33%"
-          sx={{
-            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-          }}
-        >
-          {data.map(
-            ({
-              _id,
-              year,
-              month,
-              day,
-              hour,
-              minute,
-              second,
-              battery_cell_1_voltage,
-              battery_cell_2_voltage,
-              battery_current,
-              battery_temperature,
-              battery_charge,
-              energy_level,
-            }) => (
-              <Battery
-                key={_id}
-                _id={_id}
-                year={year}
-                month={month}
-                day={day}
-                hour={hour}
-                minute={minute}
-                second={second}
-                battery_cell_1_voltage={battery_cell_1_voltage}
-                battery_cell_2_voltage={battery_cell_2_voltage}
-                battery_current={battery_current}
-                battery_temperature={battery_temperature}
-                battery_charge={battery_charge}
-                energy_level={energy_level}
-              />
-            )
-          )}
+      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current" />
+      <Box height="75vh">
+        <Box display="flex" justifyContent="flex-end">
+          <Box>
+            <DatePicker
+              selected={startDate}
+              onChange={(dateFormatted) => setStartDate(dateFormatted)}
+              selectsStart
+              startDate={startDate}
+              endDate={endDate}
+            />
+          </Box>
+          <Box>
+            <DatePicker
+              selected={endDate}
+              onChange={(dateFormatted) => setEndDate(dateFormatted)}
+              selectsEnd
+              startDate={startDate}
+              endDate={endDate}
+              minDate={startDate}
+            />
+          </Box>
         </Box>
-      ) : (
-        <>Loading...</>
-      )}
+
+        {data ? (
+          <ResponsiveLine
+            data={formattedData}
+            theme={{
+              axis: {
+                domain: {
+                  line: {
+                    stroke: theme.palette.secondary[200],
+                  },
+                },
+                legend: {
+                  text: {
+                    fill: theme.palette.secondary[200],
+                  },
+                },
+                ticks: {
+                  line: {
+                    stroke: theme.palette.secondary[200],
+                    strokeWidth: 1,
+                  },
+                  text: {
+                    fill: theme.palette.secondary[200],
+                  },
+                },
+              },
+              legends: {
+                text: {
+                  fill: theme.palette.secondary[200],
+                },
+              },
+              tooltip: {
+                container: {
+                  color: theme.palette.primary.main,
+                },
+              },
+            }}
+            colors={{ datum: "color" }}
+            margin={{ top: 50, right: 50, bottom: 70, left: 60 }}
+            xScale={{ type: "point" }}
+            yScale={{
+              type: "linear",
+              min: "auto",
+              max: "auto",
+              stacked: false,
+              reverse: false,
+            }}
+            yFormat=" >-.2f"
+            curve="catmullRom"
+            axisTop={null}
+            axisRight={null}
+            axisBottom={{
+              orient: "bottom",
+              tickSize: 10,
+              tickPadding: 5,
+              tickRotation: 90,
+              legend: "Month-Day",
+              legendOffset: 60,
+              legendPosition: "middle",
+            }}
+            axisLeft={{
+              orient: "left",
+              tickSize: 10,
+              tickPadding: 5,
+              tickRotation: 0,
+              legend: "Current [A]",
+              legendOffset: -50,
+              legendPosition: "middle",
+            }}
+            enableGridX={false}
+            enableGridY={false}
+            pointSize={10}
+            pointColor={{ theme: "background" }}
+            pointBorderWidth={2}
+            pointBorderColor={{ from: "serieColor" }}
+            pointLabelYOffset={-12}
+            useMesh={true}
+            legends={[
+              {
+                anchor: "top-right",
+                direction: "column",
+                justify: false,
+                translateX: 50,
+                translateY: 0,
+                itemsSpacing: 0,
+                itemDirection: "left-to-right",
+                itemWidth: 80,
+                itemHeight: 20,
+                itemOpacity: 0.75,
+                symbolSize: 12,
+                symbolShape: "circle",
+                symbolBorderColor: "rgba(0, 0, 0, .5)",
+                effects: [
+                  {
+                    on: "hover",
+                    style: {
+                      itemBackground: "rgba(0, 0, 0, .03)",
+                      itemOpacity: 1,
+                    },
+                  },
+                ],
+              },
+            ]}
+          />
+        ) : (
+          <>Loading...</>
+        )}
+      </Box>
     </Box>
   );
 };
