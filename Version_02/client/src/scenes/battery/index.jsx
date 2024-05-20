@@ -61,11 +61,17 @@ const Batteries = () => {
 
     const battery_temperatureLine = {
       id: "Bat.[°C]",
-      color: theme.palette.secondary.main,
+      color: theme.palette.secondary.light,
       data: [],
     };
 
-    Object.values(data).forEach(({ year, month, day, battery_temperature }) => {
+    const eps_temperatureLine = {
+      id: "EPS.[°C]",
+      color: theme.palette.secondary.dark,
+      data: [],
+    };
+
+    Object.values(data).forEach(({ year, month, day, battery_temperature, eps_temperature }) => {
       //Date formatting
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       const dateFormatted = new Date(dateAllTogether);
@@ -79,11 +85,15 @@ const Batteries = () => {
           ...battery_temperatureLine.data,
           { x: splitDate, y: battery_temperature },
         ];
+        eps_temperatureLine.data = [
+          ...eps_temperatureLine.data,
+          { x: splitDate, y: eps_temperature },
+        ];
         
       }
     });
 
-    const formattedData2 = [battery_temperatureLine ];
+    const formattedData2 = [battery_temperatureLine, eps_temperatureLine ];
     return [formattedData2];
   }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
