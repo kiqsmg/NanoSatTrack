@@ -154,7 +154,7 @@ const Batteries = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current" />
+      <Header title="Batteries" subtitle="Chart of each battery voltage, current, temperature and charge..." />
       <Box height="40vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
