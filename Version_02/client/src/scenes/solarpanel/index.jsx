@@ -90,6 +90,56 @@ const Solarpanel = () => {
     return [formattedData];
   }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const [formattedData2] = useMemo(() => {
+    if (!data) return [];
+
+
+    const sp_01_02_voltageLine = {
+      id: "Panel 1-2",
+      color: theme.palette.secondary.main,
+      data: [],
+    };
+    const sp_03_04_voltageLine = {
+      id: "Panel 3-4",
+      color: theme.palette.secondary[600],
+      data: [],
+    };
+    const sp_05_06_voltageLine = {
+      id: "Panel 5-6",
+      color: theme.palette.secondary[600],
+      data: [],
+    };
+
+    Object.values(data).forEach(({ year, month, day, sp_01_02_voltage, sp_03_04_voltage, sp_05_06_voltage }) => {
+      //Date formatting
+      const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
+      const dateFormatted = new Date(dateAllTogether);
+
+
+      if (dateFormatted >= startDate && dateFormatted <= endDate) {
+        const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
+
+        sp_01_02_voltageLine.data = [
+          ...sp_01_02_voltageLine.data,
+          { x: splitDate, y: sp_01_02_voltage },
+        ];
+        sp_03_04_voltageLine.data = [
+          ...sp_03_04_voltageLine.data,
+          { x: splitDate, y: sp_03_04_voltage },
+        ];
+        sp_05_06_voltageLine.data = [
+          ...sp_05_06_voltageLine.data,
+          { x: splitDate, y: sp_05_06_voltage },
+        ];
+        
+      }
+    });
+
+    const formattedData = [sp_01_02_voltageLine, sp_03_04_voltageLine, sp_05_06_voltageLine ];
+    return [formattedData];
+  }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
+
+
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current" />
@@ -252,7 +302,7 @@ const Solarpanel = () => {
 
         {data ? (
           <ResponsiveLine
-            data={formattedData}
+            data={formattedData2}
             theme={{
               axis: {
                 domain: {
@@ -314,7 +364,7 @@ const Solarpanel = () => {
               tickSize: 10,
               tickPadding: 5,
               tickRotation: 0,
-              legend: "Current [A]",
+              legend: "Solar Panel Voltage [V]",
               legendOffset: -50,
               legendPosition: "middle",
             }}
