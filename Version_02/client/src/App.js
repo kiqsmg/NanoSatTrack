@@ -11,7 +11,6 @@ import MainFloripaSat1 from "scenes/mainfloripasat1";
 import Battery from "scenes/battery";
 import Downlink from "scenes/downlinks";
 import Solarpanel from "scenes/solarpanel";
-import Locations from "scenes/locations";
 
 
 
@@ -32,8 +31,6 @@ function App() {
               <Route path="/battery" element={<Battery />} />
               <Route path="/downlink" element={<Downlink />} />
               <Route path="/solarpanel" element={<Solarpanel />} />
-              <Route path="/locations" element={<Locations />} />
-
               
             </Route>
           </Routes>
