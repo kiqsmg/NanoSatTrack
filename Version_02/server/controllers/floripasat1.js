@@ -1,6 +1,8 @@
 
 import BatteryOverall from "../models/Battery.js";
 import FloripaSat1Overall from "../models/FloripaSat1.js";
+//import getCountryIso3 from "country-iso-2-to-3"
+
 
 //Battery query
 export const getBattery = async (req, res) => {
