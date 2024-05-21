@@ -143,7 +143,7 @@ const Solarpanel = () => {
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current" />
-      <Box height="75vh">
+      <Box height="55vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
             <DatePicker
@@ -277,7 +277,7 @@ const Solarpanel = () => {
         )}
       </Box>
 
-      <Box height="75vh">
+      <Box height="55vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
             <DatePicker
