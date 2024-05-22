@@ -37,26 +37,18 @@ console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 async function getAdress(latitude, longitude) {
     const latitude_1 = latitude;
     const longitude_1 = longitude;
-    const apiKey = 'API KEY';
 
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude_1}&lon=${longitude_1}`;
 
-    const url2 = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude_1},${longitude_1}&key=${apiKey}`;
-    const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude_1}&lon=${longitude_1}&<params>
-    `
+    fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude_1}&lon=${longitude_1}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if(data.status ==='OK') {
-            const adress = data.results[0].formatted_adress;
-            adress.innerText = `Adress: ${adress}`;
-        } else {
-            adress.innerText = `Geocoding failed: ${data.status}`;
-        }
-    } catch (error) {
-        adress.innerText = `Error ${error.message}`;
-    }
 }
 
 let {final_adress} = getAdress(latitude, longitude);
