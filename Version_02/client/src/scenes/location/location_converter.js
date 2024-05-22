@@ -1,4 +1,4 @@
-
+/*-------------------------  Convert gridlocator to a longitude and latitude  -------------------------*/
 function gridLocatorToLatLon(grid_locator) {
     // Validate the grid locator length
     if (grid_locator.length !== 6) {
@@ -27,3 +27,32 @@ function gridLocatorToLatLon(grid_locator) {
 let grid_locator = "JN49lr";
 let { latitude, longitude } = gridLocatorToLatLon(grid_locator);
 console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+
+
+
+
+/*-------------------------  Convert longitude and latitude to an Adress -------------------------*/
+
+async function getAdress() {
+    const latitude_1 = dcoument.getElementById('latitude').value;
+    const longitude_1 = dcoument.getElementById('longitude').value;
+    const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
+
+
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if(data.status ==='OK') {
+            const adress = data.results[0].formatted_adress;
+            adress.innerText = `Adress: ${adress}`;
+        } else {
+            adress.innerText = `Geocoding failed: ${data.status}`;
+        }
+    } catch (error) {
+        adress.innerText = `Error ${error.message}`;
+    }
+}
