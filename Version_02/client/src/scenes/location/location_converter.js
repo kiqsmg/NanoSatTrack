@@ -37,10 +37,12 @@ console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 async function getAdress(latitude, longitude) {
     const latitude_1 = latitude;
     const longitude_1 = longitude;
-    const apiKey = 'AIzaSyDRITWssNUKb8DBeOBbOBuYV9nZLe05B5g';
+    const apiKey = 'API KEY';
 
 
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude_1},${longitude_1}&key=${apiKey}`;
+    const url2 = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude_1},${longitude_1}&key=${apiKey}`;
+    const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude_1}&lon=${longitude_1}&<params>
+    `
 
     try {
         const response = await fetch(url);
