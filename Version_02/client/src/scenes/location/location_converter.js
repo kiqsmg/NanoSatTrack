@@ -34,13 +34,13 @@ console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 
 /*-------------------------  Convert longitude and latitude to an Adress -------------------------*/
 
-async function getAdress() {
-    const latitude_1 = dcoument.getElementById('latitude').value;
-    const longitude_1 = dcoument.getElementById('longitude').value;
-    const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
+async function getAdress(latitude, longitude) {
+    const latitude_1 = latitude;
+    const longitude_1 = longitude;
+    const apiKey = 'AIzaSyDRITWssNUKb8DBeOBbOBuYV9nZLe05B5g';
 
 
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude_1},${longitude_1}&key=${apiKey}`;
 
     try {
         const response = await fetch(url);
@@ -56,3 +56,6 @@ async function getAdress() {
         adress.innerText = `Error ${error.message}`;
     }
 }
+
+let {final_adress} = getAdress(latitude, longitude);
+console.log(final_adress);
