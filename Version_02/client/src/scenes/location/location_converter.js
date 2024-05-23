@@ -43,7 +43,7 @@ async function getAdress(latitude, longitude) {
     fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude_1}&lon=${longitude_1}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        console.log(data.country);
     })
     .catch(error => {
         console.error('Error:', error);
@@ -53,3 +53,4 @@ async function getAdress(latitude, longitude) {
 
 let {final_adress} = getAdress(latitude, longitude);
 console.log(final_adress);
+
