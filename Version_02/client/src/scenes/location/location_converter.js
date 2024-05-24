@@ -1,6 +1,7 @@
 import dataFloripaSat1 from "../../../../server/data/index5.js";
 
 
+
 const gridLocators = dataFloripaSat1.map(item => item.grid_locator);
 
 /*-------------------------  Convert grid_locator to latitude and longitude  -------------------------*/
@@ -41,13 +42,27 @@ async function getAddress(latitude, longitude) {
     }
 }
 
+/*-------------------------  ISO-3 function  -------------------------*/
+
+function getIso3Code(country) {
+    try {
+        const iso3Code = getCountryIso3(country);
+        return iso3Code;
+    } catch (error) {
+        return `Country name ${country} not found.`;
+    }
+}
+
 /*-------------------------  Main processing function  -------------------------*/
 async function processGridLocators(gridLocators) {
     for (const grid_locator of gridLocators) {
         try {
             const { latitude, longitude } = gridLocatorToLatLon(grid_locator);
-            const address = await getAddress(latitude, longitude);
-            console.log(`Grid Locator: ${grid_locator} -> Latitude: ${latitude}, Longitude: ${longitude}, Country: ${address}`);
+            const country = await getAddress(latitude, longitude);
+            const iso3Code = getIso3Code(country);
+
+            console.log(`Grid Locator: ${grid_locator} -> Latitude: ${latitude}, Longitude: ${longitude}, Country: ${country}, ISO: ${iso3Code}`);
+
         } catch (error) {
             console.error(`Error processing grid locator ${grid_locator}:`, error);
         }
