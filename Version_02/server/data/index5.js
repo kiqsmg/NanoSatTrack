@@ -350,7 +350,7 @@ export const dataFloripaSat1 = [
         eps_temperature: 21.1564,
         satNOGS: "-",
         callsign: "KJ7LXJ",
-        grid_locator: "CN97",
+        grid_locator: "JO30cr",
     },
     {
         
