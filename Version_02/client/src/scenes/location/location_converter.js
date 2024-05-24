@@ -1,12 +1,16 @@
-/*-------------------------  Convert gridlocator to a longitude and latitude  -------------------------*/
+import dataFloripaSat1 from "../../../../server/data/index5.js";
+
+
+const gridLocators = dataFloripaSat1.map(item => item.grid_locator);
+
+/*-------------------------  Convert grid_locator to latitude and longitude  -------------------------*/
 function gridLocatorToLatLon(grid_locator) {
     // Validate the grid locator length
     if (grid_locator.length !== 6) {
-        throw new Error("Invalid grid_locator locator length. It should be 6 characters long.");
+        throw new Error("Invalid grid_locator length. It should be 6 characters long.");
     }
 
-    // Convert the first two characters to latitude and longitude  -------------> {charCodeAt(letter number coded}
-
+    // Convert the first two characters to latitude and longitude
     let A = grid_locator.charCodeAt(0) - 65; // First character: A-Z (-65 is used to convert it from ASCII value to its correct index-position)
     let B = grid_locator.charCodeAt(1) - 65; // Second character: A-Z (-65 is used to convert it from ASCII value to its correct index-position)
     let C = parseInt(grid_locator.charAt(2)); // Third character: 0-9 (convert string to integer)
@@ -23,34 +27,32 @@ function gridLocatorToLatLon(grid_locator) {
     return { latitude: lat, longitude: lon };
 }
 
-// Example usage
-let grid_locator = "JN49lr";
-let { latitude, longitude } = gridLocatorToLatLon(grid_locator);
-console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+/*-------------------------  Convert longitude and latitude to an address  -------------------------*/
+async function getAddress(latitude, longitude) {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
 
-
-
-
-
-/*-------------------------  Convert longitude and latitude to an Adress -------------------------*/
-
-async function getAdress(latitude, longitude) {
-    const latitude_1 = latitude;
-    const longitude_1 = longitude;
-
-    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude_1}&lon=${longitude_1}`;
-
-    fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude_1}&lon=${longitude_1}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.country);
-    })
-    .catch(error => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const country = data.address.country;
+        return country;
+    } catch (error) {
         console.error('Error:', error);
-    });
-
+    }
 }
 
-let {final_adress} = getAdress(latitude, longitude);
-console.log(final_adress);
+/*-------------------------  Main processing function  -------------------------*/
+async function processGridLocators(gridLocators) {
+    for (const grid_locator of gridLocators) {
+        try {
+            const { latitude, longitude } = gridLocatorToLatLon(grid_locator);
+            const address = await getAddress(latitude, longitude);
+            console.log(`Grid Locator: ${grid_locator} -> Latitude: ${latitude}, Longitude: ${longitude}, Country: ${address}`);
+        } catch (error) {
+            console.error(`Error processing grid locator ${grid_locator}:`, error);
+        }
+    }
+}
 
+// Start processing
+processGridLocators(gridLocators);
