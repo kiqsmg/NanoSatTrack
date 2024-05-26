@@ -7,7 +7,7 @@ export const api = createApi({
     "Dashboard",
     "Satellite",
     "Battery",
-    "Location"
+    "Location",
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -32,7 +32,7 @@ export const api = createApi({
     }),
     getLocation: build.query({ 
       query: () => "floripasat1/location",
-      providesTags: ["Location"]
+      providesTags: ["Location"],
     }),
   }),
 });
