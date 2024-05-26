@@ -1,13 +1,13 @@
 import React from 'react';
 import { Box, useTheme } from "@mui/material";
-import { useGetGeographyQuery } from "../../state/api";
+import { useGetLocationQuery } from "../../state/api";
 import Header from "../../components/Header";
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { geoData } from "../../state/geoData";
 
-const Geography = () =>  {
-    const theme = useTheme(useGetGeographyQuery());
-    const { data } = useGetGeographyQuery();
+const Location = () =>  {
+    const theme = useTheme(useGetLocationQuery());
+    const { data } = useGetLocationQuery();
     return (
         <Box m="1.5rem 2.5rem">
             <Header title="GEOGRAPHY" subtitle="Find where your users are located." />
@@ -52,7 +52,7 @@ const Geography = () =>  {
                               }
                           },
                       }}
-                      features={geoData.features}
+                      features={geoData.features} //understand what is going on here
                       margin={{ top: 0, right: 0, bottom: 0, left: -50}}
                       domain={[ 0, 60 ]}
                       unknownColor="#666666"
@@ -95,4 +95,4 @@ const Geography = () =>  {
   )
 }
 
-export default Geography
+export default Location;
