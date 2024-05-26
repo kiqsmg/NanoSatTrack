@@ -1,5 +1,7 @@
-import dataFloripaSat1 from "../../../../server/data/index5.js";
+import getCountryIso3 from "country-iso-2-to-3";
+import { getCode } from "country-list";
 
+import dataFloripaSat1 from "../../../../server/data/index5";
 
 
 const gridLocators = dataFloripaSat1.map(item => item.grid_locator);
@@ -35,7 +37,8 @@ async function getAddress(latitude, longitude) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        const country = data.address.country;
+        let country = data.address.country;
+        
         return country;
     } catch (error) {
         console.error('Error:', error);
@@ -43,13 +46,24 @@ async function getAddress(latitude, longitude) {
 }
 
 /*-------------------------  ISO-3 function  -------------------------*/
-
-function getIso3Code(country) {
+function getIso3Code(countryName) {
     try {
-        const iso3Code = getCountryIso3(country);
+        // Get ISO2 code from country name
+        const iso2Code = getCode(countryName);
+        if (!iso2Code) {
+            throw new Error(`Country name "${countryName}" not found.`);
+        }
+
+        // Convert ISO2 code to ISO3
+        const iso3Code = getCountryIso3(iso2Code);
+        if (!iso3Code) {
+            throw new Error(`ISO3 code for "${countryName}" not found.`);
+        }
+
         return iso3Code;
     } catch (error) {
-        return `Country name ${country} not found.`;
+        console.error(error.message);
+        return null;
     }
 }
 
@@ -60,7 +74,6 @@ async function processGridLocators(gridLocators) {
             const { latitude, longitude } = gridLocatorToLatLon(grid_locator);
             const country = await getAddress(latitude, longitude);
             const iso3Code = getIso3Code(country);
-
             console.log(`Grid Locator: ${grid_locator} -> Latitude: ${latitude}, Longitude: ${longitude}, Country: ${country}, ISO: ${iso3Code}`);
 
         } catch (error) {
@@ -71,3 +84,9 @@ async function processGridLocators(gridLocators) {
 
 // Start processing
 processGridLocators(gridLocators);
+
+/*-------------------------  Count countries function  -------------------------*/
+
+//async function countCountries(countryList):
+
+
