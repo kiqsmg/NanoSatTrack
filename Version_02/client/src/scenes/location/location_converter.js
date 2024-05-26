@@ -1,8 +1,6 @@
 import getCountryIso3 from "country-iso-2-to-3";
 import { getCode } from "country-list";
 
-import dataFloripaSat1 from "../../../../server/data/index5";
-
 
 const gridLocators = dataFloripaSat1.map(item => item.grid_locator);
 
@@ -49,6 +47,7 @@ async function getAddress(latitude, longitude) {
     }
 }
 
+
 /*-------------------------  ISO-3 function  -------------------------*/
 function getIso3Code(countryName) {
     try {
@@ -60,10 +59,10 @@ function getIso3Code(countryName) {
 
         // Convert ISO2 code to ISO3
         const iso3Code = getCountryIso3(iso2Code);
+        
         if (!iso3Code) {
             throw new Error(`ISO3 code for "${countryName}" not found.`);
         }
-
         return iso3Code;
     } catch (error) {
         console.error(error.message);
@@ -71,26 +70,71 @@ function getIso3Code(countryName) {
     }
 }
 
+async function getListCount(countries_list) {
+  try {
+    const countriesCounts = {};
+    countries_list.forEach(country => {
+      if (countriesCounts[country]) {
+        countriesCounts[country]++;
+      } else {
+        countriesCounts[country] = 1;
+      }
+    });
+
+    const result = Object.keys(countriesCounts).map(country => ({
+      id: country,
+      value: countriesCounts[country]
+    }));
+
+    return result;
+  } catch (error) {
+    console.error(error.message);
+    return null;
+  }
+}
+
+
 /*-------------------------  Main processing function  -------------------------*/
 async function processGridLocators(gridLocators) {
-    for (const grid_locator of gridLocators) {
-        try {
-            const { latitude, longitude } = gridLocatorToLatLon(grid_locator);
-            const country = await getAddress(latitude, longitude);
-            const iso3Code = getIso3Code(country);
-            console.log(`Grid Locator: ${grid_locator} -> Latitude: ${latitude}, Longitude: ${longitude}, Country: ${country}, ISO: ${iso3Code}`);
+  const countries_list = [];
 
-        } catch (error) {
-            console.error(`Error processing grid locator ${grid_locator}:`, error);
-        }
+  for (const grid_locator of gridLocators) {
+    try {
+      const { latitude, longitude } = gridLocatorToLatLon(grid_locator);
+      const country = await getAddress(latitude, longitude);
+      const iso3Code = getIso3Code(country);
+      if (iso3Code) {
+                countries_list.push(iso3Code);
+            }
+    } catch (error) {
+      console.error(`Error processing grid locator ${grid_locator}:`, error);
     }
+  }
+
+  const listCount = await getListCount(countries_list);
+  return listCount;
 }
 
 // Start processing
-processGridLocators(gridLocators);
+processGridLocators(gridLocators)
+  .then(result => {
+    console.log(result);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
-/*-------------------------  Count countries function  -------------------------*/
 
-//async function countCountries(countryList):
-
-
+/** RESULT
+   [
+    { id: "USA", value: 3},
+    { id: "DEU", value: 2},
+    { id: "ZAF", value: 1},
+    { id: "POL", value: 1},
+    { id: "BEL", value: 3},
+    { id: "SAU", value: 2},
+    { id: "JPN", value: 1},
+    // Other countries...
+  ]
+ 
+ */
