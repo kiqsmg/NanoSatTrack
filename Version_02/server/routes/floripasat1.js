@@ -3,6 +3,7 @@ import express from "express";
 import {
   getBattery,
   getDownlink,
+  getLocation,
 } from "../controllers/floripasat1.js";
 
 const router = express.Router();
@@ -10,7 +11,7 @@ const router = express.Router();
 router.get("/battery", getBattery);
 router.get("/downlink", getDownlink);
 router.get("/solarpanel", getDownlink);
-//router.get("/location", getLocation);
+router.get("/location", getLocation);
 
 
 
