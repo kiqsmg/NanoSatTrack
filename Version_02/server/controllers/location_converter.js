@@ -1,32 +1,3 @@
-
-import BatteryOverall from "../models/Battery.js";
-import FloripaSat1Overall from "../models/FloripaSat1.js";
-//import processGridLocators from "./location_converter.js";
-
-
-//Battery query
-export const getBattery = async (req, res) => {
-  try {
-    const battery = await BatteryOverall.find();
-    res.status(200).json(battery);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
-//Downlink query
-export const getDownlink = async (req, res) => {
-  try {
-    const downlink = await FloripaSat1Overall.find();
-    res.status(200).json(downlink);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
-
-
-
 import getCountryIso3 from "country-iso-2-to-3";
 import { getCode } from "country-list";
 import { dataFloripaSat1 } from "../data/index5.js";
@@ -59,33 +30,22 @@ function gridLocatorToLatLon(grid_locator) {
 
 /*-------------------------  Convert longitude and latitude to an address  -------------------------*/
 async function getAddress(latitude, longitude) {
-  const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
 
-  try {
-      const response = await fetch(url);
-      const data = await response.json();
-      let country = data.address.country;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        let country = data.address.country;
 
-      // Modify country name if it's not recognized by isoname
-      if (country === "United States") {
-          country = "United States of America";
-      } else if (country === "Polska") {
-          country = "Poland";
-      } else if (country === "België / Belgique / Belgien") {
-          country = "Belgium";
-      } else if (country === "السعودية") {
-        country = "Saudi Arabia";
-      } else if (country === "日本") {
-        country = "Japan";
-      } else if (country === "Deutschland") {
-        country = "Germany";
-      }
-      return country;
-  } catch (error) {
-      console.error('Error:', error);
-  }
+        //Modify country name if its not recongnise by isoname
+        if (country === "United States") {
+            country = "United States of America";
+        }
+        return country;
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
-
 
 
 /*-------------------------  ISO-3 function  -------------------------*/
@@ -158,7 +118,7 @@ async function processGridLocators(gridLocators) {
 // Start processing
 processGridLocators(gridLocators)
   .then(formattedLocations => {
-    //console.log(formattedLocations);
+    console.log(formattedLocations);
   })
   .catch(error => {
     console.error('Error:', error);
@@ -179,14 +139,4 @@ processGridLocators(gridLocators)
  
  */
 
-
-
-export const getLocation = async(req, res) => {
-  try {
-      const formattedLocations = await processGridLocators(gridLocators);
-      res.status(200).json(formattedLocations);
-  } catch ( error ) {
-      res.status(404).json({message: error});
-  }
-};
-
+export default processGridLocators;
