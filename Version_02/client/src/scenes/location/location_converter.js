@@ -38,7 +38,11 @@ async function getAddress(latitude, longitude) {
         const response = await fetch(url);
         const data = await response.json();
         let country = data.address.country;
-        
+
+        //Modify country name if its not recongnise by isoname
+        if (country === "United States") {
+            country = "United States of America";
+        }
         return country;
     } catch (error) {
         console.error('Error:', error);
