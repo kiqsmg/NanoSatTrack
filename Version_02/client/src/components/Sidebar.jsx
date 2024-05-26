@@ -52,7 +52,7 @@ const navItems = [
     icon: <SolarPowerOutlined />,
   },
   {
-    text: "Locations",
+    text: "Location",
     icon: <PublicOutlined />,
   },
   {
