@@ -10,7 +10,7 @@ const Location = () =>  {
     const { data } = useGetLocationQuery();
     return (
         <Box m="1.5rem 2.5rem">
-            <Header title="GEOGRAPHY" subtitle="Find where your users are located." />
+            <Header title="LOCATIONS" subtitle="Find where groundstations users are located." />
             <Box mt="40px"
               height="75vh"
               border={`1px solid ${theme.palette.secondary[200]}`}
@@ -54,11 +54,11 @@ const Location = () =>  {
                       }}
                       features={geoData.features} //understand what is going on here
                       margin={{ top: 0, right: 0, bottom: 0, left: -50}}
-                      domain={[ 0, 60 ]}
+                      domain={[ 0, 10 ]}
                       unknownColor="#666666"
                       label="properties.name"
                       valueFormat=".2s"
-                      projectionScale={150}
+                      projectionScale={190}
                       projectionTranslation={[ 0.45, 0.6 ]}
                       projectionRotation={[ 0, 0, 0 ]}
                       borderWidth={1.3}
@@ -67,7 +67,7 @@ const Location = () =>  {
                           {
                               anchor: 'bottom-right',
                               direction: 'column',
-                              justify: true,
+                              justify: false,
                               translateX: 0,
                               translateY: -125,
                               itemsSpacing: 0,
