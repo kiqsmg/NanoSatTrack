@@ -1,6 +1,5 @@
 import React from "react";
 import FlexBetween from "components/FlexBetween";
-import Header from "components/Header";
 import {
   QueryStatsOutlined,
 } from "@mui/icons-material";
@@ -12,11 +11,9 @@ import {
 } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import FloripaSat01 from "../../assets/FloripaSat-1.jpg";
 import EPS from "../../assets/eps2-pcb-top.png";
 import TTC from "../../assets/ttc2_pcb_top.png";
 import OBDH from "../../assets/obdh2-pcb-top.png";
-import GoldsUfsc from "../../assets/golds-ufsc.jpg";
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -36,18 +33,20 @@ const Dashboard = () => {
       <FlexBetween sx={{ justifyContent: "flex-end"}}>
 
         <Box>
-          <Button
-            sx={{
-              backgroundColor: theme.palette.secondary.light,
-              color: theme.palette.background.alt,
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <QueryStatsOutlined sx={{ mr: "10px" }} />
-            Know more about FloripaSat-1
-          </Button>
+        <a href="https://floripasat.ufsc.br/pt/home-br/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <Button
+              sx={{
+                backgroundColor: theme.palette.secondary.light,
+                color: theme.palette.background.alt,
+                fontSize: "14px",
+                fontWeight: "bold",
+                padding: "10px 20px",
+              }}
+            >
+              <QueryStatsOutlined sx={{ mr: "10px" }} />
+              Want to know more?
+            </Button>
+          </a>
         </Box>
       </FlexBetween>
 
