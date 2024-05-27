@@ -10,7 +10,7 @@ const Location = () =>  {
     const { data } = useGetLocationQuery();
     return (
         <Box m="1.5rem 2.5rem">
-            <Header title="LOCATIONS" subtitle="Find where groundstations users are located." />
+            <Header title="LOCATIONS" subtitle="Find where groundstations that have connected to our satellite are located." />
             <Box mt="40px"
               height="75vh"
               border={`1px solid ${theme.palette.secondary[200]}`}
