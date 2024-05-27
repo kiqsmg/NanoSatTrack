@@ -142,7 +142,7 @@ const Solarpanel = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current" />
+      <Header title="SOLAR PANELS" subtitle="Chart of each solar panel current and voltage..." />
       <Box height="55vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
@@ -203,7 +203,7 @@ const Solarpanel = () => {
               },
             }}
             colors={{ datum: "color" }}
-            margin={{ top: 50, right: 50, bottom: 70, left: 60 }}
+            margin={{ top: 50, right: 80, bottom: 70, left: 60 }}
             xScale={{ type: "point" }}
             yScale={{
               type: "linear",
@@ -247,7 +247,7 @@ const Solarpanel = () => {
                 anchor: "top-right",
                 direction: "column",
                 justify: false,
-                translateX: 50,
+                translateX: 90,
                 translateY: 0,
                 itemsSpacing: 0,
                 itemDirection: "left-to-right",
@@ -337,7 +337,7 @@ const Solarpanel = () => {
               },
             }}
             colors={{ datum: "color" }}
-            margin={{ top: 50, right: 50, bottom: 70, left: 60 }}
+            margin={{ top: 50, right: 80, bottom: 70, left: 60 }}
             xScale={{ type: "point" }}
             yScale={{
               type: "linear",
@@ -381,7 +381,7 @@ const Solarpanel = () => {
                 anchor: "top-right",
                 direction: "column",
                 justify: false,
-                translateX: 50,
+                translateX: 90,
                 translateY: 0,
                 itemsSpacing: 0,
                 itemDirection: "left-to-right",
