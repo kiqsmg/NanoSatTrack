@@ -16,7 +16,7 @@ import Paper from '@mui/material/Paper';
 import Grid from "@mui/material/Grid";
 import Link from '@mui/material/Link';
 import cubesatBackground from "../../assets/cubesat_background.webp";
-import FloripaSat01 from "../../assets/FloripaSat-1.jpg";
+import FloripaSat01 from "../../assets/floripasat-1-exploded.png";
 import GoldsUfsc from "../../assets/golds-ufsc.jpg";
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -143,7 +143,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'none', sm: 'block' } }}
                   image= {FloripaSat01}
                   alt="Imagem do FloripaSat-1"
                 />
@@ -174,7 +174,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'none', sm: 'block' } }}
                   image= {GoldsUfsc}
                   alt="Imagem do GOLDS-UFSC"
                 />
@@ -206,7 +206,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'none', sm: 'block' } }}
                   image= {GoldsUfsc}
                   alt="Imagem do Catarina-A1"
                 />
