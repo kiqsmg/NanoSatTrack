@@ -9,12 +9,6 @@ import floripasat1Routes from "./routes/floripasat1.js";
 
 
 // data imports
-import Date from "./models/Date.js";
-import Satellite from "./models/Satellite.js";
-import Temperatures from "./models/Temperatures.js";
-import SolarPanels from "./models/SolarPanels.js";
-import Connectivity from "./models/Connectivity.js";
-import BatteryOverall from "./models/Battery.js";
 import FloripaSat1Overall from "./models/FloripaSat1.js";
 
 import {
@@ -52,19 +46,6 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     // ONLY ADD DATA ONE TIME
-
-    //AffiliateStat.insertMany(dataAffiliateStat);
-    //OverallStat.insertMany(dataOverallStat);
-    //Product.insertMany(dataProduct);
-    //ProductStat.insertMany(dataProductStat);
-    //User.insertMany(dataUser);
-
-    //Satellite.insertMany(dataSatellite);
-    //Date.insertMany(dataDate);
-    //Temperatures.insertMany(dataTemperatures);
-    //SolarPanels.insertMany(dataSolarPanels);
-    //Connectivity.insertMany(dataConnectivity);
-    //BatteryOverall.insertMany(dataBattery_overall);
     //FloripaSat1Overall.insertMany(dataFloripaSat1);
 
 }).catch((error) => console.log(`${error} did not connect`));
