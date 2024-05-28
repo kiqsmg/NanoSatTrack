@@ -5,14 +5,9 @@ export const api = createApi({
   //reducerPath: "adminApi",
   tagTypes: [
     "Downlink",
-    "Battery",
     "Location",
   ],
   endpoints: (build) => ({
-    getBattery: build.query({
-      query: () => "floripasat1/battery",
-      providesTags: ["Battery"],
-    }),
     getDownlink: build.query({
       query: () => "floripasat1/downlink",
       providesTags: ["Downlink"],
@@ -25,7 +20,6 @@ export const api = createApi({
 });
 
 export const {
-  useGetBatteryQuery,
   useGetDownlinkQuery,
   useGetLocationQuery,
 } = api;
