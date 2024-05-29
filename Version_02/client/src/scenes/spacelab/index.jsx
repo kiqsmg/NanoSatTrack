@@ -121,7 +121,7 @@ const Dashboard = () => {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
           <Grid item xs={12} md={6} mb={10} mt={10} {...gridProps}>
             <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
+              <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' }}}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
                     FloripaSat-1
@@ -143,7 +143,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 150, height: 180, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 }}}
                   image= {FloripaSat01}
                   alt="Imagem do FloripaSat-1"
                 />
@@ -153,7 +153,7 @@ const Dashboard = () => {
 
           <Grid item xs={12} md={6} mb={10} {...gridProps}>
             <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
+              <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
                     GOLDS-UFSC
@@ -174,7 +174,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 150, height: 180, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 } }}
                   image= {GoldsUfsc}
                   alt="Imagem do GOLDS-UFSC"
                 />
@@ -185,7 +185,7 @@ const Dashboard = () => {
 
           <Grid item xs={12} md={6} mb={10} {...gridProps}>
             <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
+              <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
                     Catarina-A1
@@ -206,7 +206,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 150, height: 180, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 } }}
                   image= {GoldsUfsc}
                   alt="Imagem do Catarina-A1"
                 />
