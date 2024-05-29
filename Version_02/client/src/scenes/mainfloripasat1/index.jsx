@@ -73,7 +73,7 @@ const Dashboard = () => {
 
             <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
+              <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
                     EPS
@@ -92,7 +92,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ margin:2, width: 250, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ margin:2, width: 250, display: { xs: 'block', sm: 'block' } }}
                   image= {EPS}
                   alt="Imagem do FloripaSat-1"
                 />
@@ -102,7 +102,7 @@ const Dashboard = () => {
 
           <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
+              <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
                     TT&C
@@ -120,7 +120,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ margin:2, width: 250, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ margin:2, width: 250, display: { xs: 'block', sm: 'block' } }}
                   image= {TTC}
                   alt="Imagem do FloripaSat-1"
                 />
@@ -130,7 +130,7 @@ const Dashboard = () => {
 
           <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
-              <Card sx={{ display: 'flex' }}>
+              <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
                 <CardContent sx={{ flex: 1 }}>
                   <Typography component="h2" variant="h5">
                     OBDH
@@ -145,7 +145,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ margin:2, width: 250, display: { xs: 'none', sm: 'block' } }}
+                  sx={{ margin:2, width: 250, display: { xs: 'block', sm: 'block' } }}
                   image= {OBDH}
                   alt="Imagem do GOLDS-UFSC"
                 />
