@@ -1,8 +1,8 @@
 import getCountryIso3 from "country-iso-2-to-3";
 import { getCode } from "country-list";
-import { dataFloripaSat1 } from "../data/index5.js";
+import { getDownlink } from "./floripasat1";
 
-const gridLocators = dataFloripaSat1.map(item => item.grid_locator);
+const gridLocators = getDownlink.map(item => item.grid_locator);
 
 /*-------------------------  Convert grid_locator to latitude and longitude  -------------------------*/
 function gridLocatorToLatLon(grid_locator) {
