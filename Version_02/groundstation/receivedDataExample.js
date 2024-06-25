@@ -6,10 +6,15 @@ const dataArray = [
     1407200,"OZ7SAT","JO65hp"
 ];
 
-for (let i = 0; i < data.length; i++) {
+
+//First section of the code will verify if the received data is according to expected
+
+for (let i = 0; i < 20; i++) {
     if (typeof data[i] === 'number') {
       console.log(`Element at index ${i} is a number: ${data[i]}`);
     } else {
       console.log(`Element at index ${i} is not a number: ${data[i]}`);
     }
   }
+
+  
