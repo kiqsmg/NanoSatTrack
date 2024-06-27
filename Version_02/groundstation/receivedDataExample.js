@@ -7,12 +7,13 @@ const csvFilePath = './downlink.csv';
 
 const results = [];
 
+//This code converts the received csv file to an json file
 fs.createReadStream(csvFilePath)  // Upload your CSV file and provide the correct path
   .pipe(csv())
   .on('data', (data) => results.push(data))
   .on('end', () => {
     const dataFloripaSat1 = results.map(row => ({
-      name: "floripasat1",
+      name: row.name,
       year: parseInt(row.year, 10),
       month: parseInt(row.month, 10),
       day: parseInt(row.day, 10),
@@ -33,7 +34,7 @@ fs.createReadStream(csvFilePath)  // Upload your CSV file and provide the correc
       sp_01_02_voltage: parseFloat(row.sp_01_02_voltage),
       sp_03_04_voltage: parseFloat(row.sp_03_04_voltage),
       sp_05_06_voltage: parseFloat(row.sp_05_06_voltage),
-      energy_level: parseInt(row.energy_level, 10),
+      energy_level: parseFloat(row.energy_level, 10),
       reserved_21: row.reserved_21 || "",
       reserved_22: row.reserved_22 || "",
       reserved_23: row.reserved_23 || "",
@@ -57,3 +58,4 @@ fs.createReadStream(csvFilePath)  // Upload your CSV file and provide the correc
 
     console.log(dataFloripaSat1);
   });
+
