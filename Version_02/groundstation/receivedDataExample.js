@@ -1,5 +1,6 @@
 //remember to install dependencies
 
+import dotenv from "dotenv";
 const fs = require('fs');
 const csv = require('csv-parser');
 const { MongoClient } = require('mongodb');
@@ -10,16 +11,16 @@ const results = [];
 
 
 // MongoDB connection URI
-const uri = 'mongodb://localhost:27017';  // Replace with your MongoDB URI
-const client = new MongoClient(uri);
+const PORT = process.env.PORT || 9000;  // Replace with your MongoDB URI
+const client = new MongoClient(PORT);
 
 async function processData() {
   try {
     await client.connect();
     console.log('Connected to MongoDB');
 
-    const database = client.db('your_database_name');  // Replace with your database name
-    const collection = database.collection('your_collection_name');  // Replace with your collection name
+    const database = client.db('test');  // Replace with your database name
+    const collection = database.collection('floripasats');  // Replace with your collection name
 
     //This code converts the received csv file to an json file
     fs.createReadStream(csvFilePath)
