@@ -1,6 +1,5 @@
 //remember to install dependencies
 
-import dotenv from "dotenv";
 const fs = require('fs');
 const csv = require('csv-parser');
 const { MongoClient } = require('mongodb');

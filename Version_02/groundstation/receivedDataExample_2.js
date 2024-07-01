@@ -1,15 +1,21 @@
-//remember to install dependencies
+// Remember to install dependencies: fs, csv-parser, mongodb, mongoose, express
 
-import dotenv from "dotenv";
 const fs = require('fs');
 const csv = require('csv-parser');
 const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
+const express = require('express');
+const app = express();
 
 const csvFilePath = './downlink.csv';
-
 const results = [];
 
-//This code converts the received csv file to an json file
+// MongoDB connection details
+const MONGO_URL = process.env.MONGO_URL || 'your_mongodb_connection_string';
+const DATABASE_NAME = 'your_database_name';
+const COLLECTION_NAME = 'your_collection_name';
+
+// Read and parse the CSV file
 fs.createReadStream(csvFilePath)
   .pipe(csv())
   .on('data', (data) => results.push(data))
@@ -58,29 +64,33 @@ fs.createReadStream(csvFilePath)
       grid_locator: row.grid_locator,
     }));
 
-    // Insert data into MongoDB
-    const insertResult = await collection.insertMany(dataFloripaSat1);
-    console.log(`${insertResult.insertedCount} documents inserted`);
+    // Connect to MongoDB and insert data
+    const client = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+      await client.connect();
+      const db = client.db(DATABASE_NAME);
+      const collection = db.collection(COLLECTION_NAME);
 
-    // Optionally, you can close the MongoDB connection
-    await client.close();
-    console.log('Disconnected from MongoDB');
-});
+      const insertResult = await collection.insertMany(dataFloripaSat1);
+      console.log(`${insertResult.insertedCount} documents inserted`);
 
-newDocument = fs.createReadStream(csvFilePath);
+    } catch (error) {
+      console.error(`Failed to insert documents: ${error}`);
+    } finally {
+      await client.close();
+      console.log('Disconnected from MongoDB');
+    }
+  });
 
 const PORT = process.env.PORT || 9000;
+
+// Connect to MongoDB using Mongoose and set up the server
 mongoose
-    .connect(process.env.MONGO_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => {
-        app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-
-        FloripaSat1Overall.insertOne(newDocument)
-            .then(() => console.log('Document added successfully'))
-            .catch((error) => console.log(`Failed to add document: ${error}`));
-
-    })
-    .catch((error) => console.log(`${error} did not connect`));
+  .connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+  })
+  .catch((error) => console.log(`Failed to connect to MongoDB: ${error}`));
