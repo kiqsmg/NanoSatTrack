@@ -5,15 +5,16 @@ const csv = require('csv-parser');
 const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
 const express = require('express');
+
 const app = express();
 
 const csvFilePath = './downlink.csv';
 const results = [];
 
 // MongoDB connection details
-const MONGO_URL = process.env.MONGO_URL || 'your_mongodb_connection_string';
-const DATABASE_NAME = 'your_database_name';
-const COLLECTION_NAME = 'your_collection_name';
+const MONGO_URL = process.env.MONGO_URL;
+const DATABASE_NAME = 'test';
+const COLLECTION_NAME = 'floripasats';
 
 // Read and parse the CSV file
 fs.createReadStream(csvFilePath)
@@ -68,8 +69,8 @@ fs.createReadStream(csvFilePath)
     const client = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
       await client.connect();
-      const db = client.db(DATABASE_NAME);
-      const collection = db.collection(COLLECTION_NAME);
+      const db = client.db(test);
+      const collection = db.collection(floripasats);
 
       const insertResult = await collection.insertMany(dataFloripaSat1);
       console.log(`${insertResult.insertedCount} documents inserted`);
@@ -94,3 +95,10 @@ mongoose
     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
   })
   .catch((error) => console.log(`Failed to connect to MongoDB: ${error}`));
+
+
+  /*
+  Failed to connect to MongoDB: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+Failed to insert documents: MongoServerSelectionError: 40C2E8B9D6720000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1590:SSL alert number 80
+
+  */
