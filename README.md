@@ -27,7 +27,8 @@
 </p>
 
 <p align="center" justify-content="center">
-    <img width="40%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_principal.png">
+    <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_principal.png">
+     <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_principal_sidepage.png">
 </p>
 
 ## Overview
