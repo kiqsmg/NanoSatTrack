@@ -143,7 +143,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 }}}
+                  sx={{ width: 150, border:20, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 }, marginBottom: { xs: 4, sm: 0}}}
                   image= {FloripaSat01}
                   alt="Imagem do FloripaSat-1"
                 />
@@ -174,7 +174,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 }, marginBottom: { xs: 4, sm: 0} }}
                   image= {GoldsUfsc}
                   alt="Imagem do GOLDS-UFSC"
                 />
@@ -206,7 +206,7 @@ const Dashboard = () => {
                 </CardContent>
                 <CardMedia
                   component="img"
-                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 } }}
+                  sx={{ width: 150, height: 180, display: { xs: 'block', sm: 'block' }, order: { xs: 2, sm: 0 }, marginBottom: { xs: 4, sm: 0} }}
                   image= {GoldsUfsc}
                   alt="Imagem do Catarina-A1"
                 />
