@@ -13,7 +13,7 @@ import FloripaSat1Overall from "./models/FloripaSat1.js";
 
 import {
   dataFloripaSat1,
-} from "./data/index5.js";
+} from "./data/index6.js";
 
 
 
