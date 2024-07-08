@@ -42,6 +42,12 @@ The downlink page shows all the connections that ground stations have made with 
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_downlink.png">
 </p>
 
+## Batteries page
+
+The batteries page is an environment dedicated to showing all the information we collect about our Energy Power System.
+<img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_batteries.png">
+</p>
+
 ## License
 
 This project is open-source under the licenses: MIT License and ...
