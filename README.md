@@ -52,6 +52,10 @@ The batteries page is an environment dedicated to showing all the information we
 The solar panels page is an environment dedicated to showing all the information we collect about the 6 modules of solar panels we have in the CubeSat..</p>
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_solarpanels.png">
 
+## Locations page
+
+The locations page is a map that allows us to see all the countries that made contact with the Cubesat while in orbit. We only obtained this much data thanks to several Ram radio operators and partner institutions around the world! </p>
+<img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_locations.png">
 
 ## License
 
