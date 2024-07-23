@@ -47,6 +47,11 @@ The downlink page shows all the connections that ground stations have made with 
 The batteries page is an environment dedicated to showing all the information we collect about our Energy Power System.</p>
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_batteries.png">
 
+## Solar Panels page
+
+The solar panels page is an environment dedicated to showing all the information we collect about the 6 modules of solar panels we have in the CubeSat..</p>
+<img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_solarpanels.png">
+
 
 ## License
 
