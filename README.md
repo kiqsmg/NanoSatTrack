@@ -38,15 +38,15 @@ It is responsible for creating a dashboard showing the communication between the
 
 ## Downlink page
 
-The downlink page shows all the connections that ground stations have made with the satellite while on orbit, every single downlink connection is listed here.
+The downlink page shows all the connections that ground stations have made with the satellite while on orbit, every single downlink connection is listed here.</p>
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_downlink.png">
-</p>
+
 
 ## Batteries page
 
-The batteries page is an environment dedicated to showing all the information we collect about our Energy Power System.
+The batteries page is an environment dedicated to showing all the information we collect about our Energy Power System.</p>
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_batteries.png">
-</p>
+
 
 ## License
 
