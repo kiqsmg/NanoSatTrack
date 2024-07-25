@@ -57,6 +57,11 @@ The solar panels page is an environment dedicated to showing all the information
 The locations page is a map that allows us to see all the countries that made contact with the Cubesat while in orbit. We only obtained this much data thanks to several Ram radio operators and partner institutions around the world! </p>
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_locations.png">
 
+
+## Groundstation code
+
+The ground station code is a different part of the project, focused on the ground station side. Although we have received many connections with our Cubesat around the world, it's hard to send all the data to our database, this project also came to solve this problem making it easier for the Ham radio operators around the world to send the satellite data to our database by developing a code that automatically sends the received bacon data to our MongoDB platform. </p>
+
 ## License
 
 This project is open-source under the licenses: MIT License and ...
