@@ -38,9 +38,29 @@ It is responsible for creating a dashboard showing the communication between the
 
 ## Downlink page
 
-The downlink page shows all the connections that ground stations have made with the satellite while on orbit, every single downlink connection is listed here.
+The downlink page shows all the connections that ground stations have made with the satellite while on orbit, every single downlink connection is listed here.</p>
 <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_downlink.png">
-</p>
+
+
+## Batteries page
+
+The batteries page is an environment dedicated to showing all the information we collect about our Energy Power System.</p>
+<img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_batteries.png">
+
+## Solar Panels page
+
+The solar panels page is an environment dedicated to showing all the information we collect about the 6 modules of solar panels we have in the CubeSat..</p>
+<img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_solarpanels.png">
+
+## Locations page
+
+The locations page is a map that allows us to see all the countries that made contact with the Cubesat while in orbit. We only obtained this much data thanks to several Ram radio operators and partner institutions around the world! </p>
+<img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_locations.png">
+
+
+## Groundstation code
+
+The ground station code is a side project to complement the Nanosat tracker, focused on the ground station side. Although we have received many connections with our Cubesat around the world, it's hard to send all the data to our database, this project also came to solve this problem making it easier for the Ham radio operators around the world to send the satellite data to our database by developing a code that automatically sends the received beacon data to our MongoDB platform. </p>
 
 ## License
 
