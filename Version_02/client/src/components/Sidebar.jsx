@@ -56,7 +56,7 @@ const navItems = [
     icon: <PublicOutlined />,
   },
   {
-    text: "Radio Amadores",
+    text: "Ham Radios",
     icon: <Groups2Outlined />,
   },
   {
