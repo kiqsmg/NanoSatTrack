@@ -12,6 +12,7 @@ import Battery from "scenes/battery";
 import Downlink from "scenes/downlinks";
 import Solarpanel from "scenes/solarpanel";
 import Location from "scenes/location";
+import Hamradio from "scenes/hamradios";
 
 
 
@@ -33,6 +34,8 @@ function App() {
               <Route path="/downlink" element={<Downlink />} />
               <Route path="/solarpanel" element={<Solarpanel />} />
               <Route path="/location" element={<Location />} />
+              <Route path="/Ham Radios" element={<Hamradio />} />
+
 
             </Route>
           </Routes>
