@@ -2,12 +2,14 @@
 import React from "react";
 import {
   Box,
+  useTheme,
 } from "@mui/material";
 import "react-datepicker/dist/react-datepicker.css";
 
 
 
 const Hamradio = () => {
+  const theme = useTheme();
 
   return (
     <Box m="1.5rem 2.5rem">
@@ -23,8 +25,11 @@ const Hamradio = () => {
              collaborative environment where enthusiasts and professionals alike can contribute to space exploration and research.
           </p>
 
-          <h2 >The Spacelab group thanks all Ham Radio operators who collaborated to the FloripaSat-1 mission.
-          </h2>
+          <h2 style={{ textAlign: 'center', marginTop: '5rem' }}>
+  The Spacelab group thanks all Ham Radio operators who collaborated to the FloripaSat-1 mission.
+</h2>
+
+
           
         </Box>
       </Box>
