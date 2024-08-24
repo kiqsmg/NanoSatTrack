@@ -1,195 +1,33 @@
 
-import React, { useMemo, useState } from "react";
-import { Box, useTheme } from "@mui/material";
-import Header from "../../components/Header";
-import { ResponsiveLine } from "@nivo/line";
-import { useGetDownlinkQuery } from "../../state/api";
-import DatePicker from "react-datepicker";
+import React from "react";
+import {
+  Box,
+} from "@mui/material";
 import "react-datepicker/dist/react-datepicker.css";
 
 
 
 const Hamradio = () => {
-  const [startDate, setStartDate] = useState(new Date("2019-12-01"));
-  const [endDate, setEndDate] = useState(new Date("2020-03-01"));
-  const { data } = useGetDownlinkQuery();
-  const theme = useTheme();
-
-  const [formattedData1] = useMemo(() => {
-    if (!data) return [];
-
-
-    const battery_cell_1_voltageLine = {
-      id: "Cell1 vol",
-      color: theme.palette.secondary.main,
-      data: [],
-    };
-    const battery_cell_2_voltageLine = {
-      id: "Cell2 vol",
-      color: theme.palette.secondary[100],
-      data: [],
-    };
-
-    Object.values(data).forEach(({ year, month, day, battery_cell_1_voltage, battery_cell_2_voltage }) => {
-      //Date formatting
-      const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
-      const dateFormatted = new Date(dateAllTogether);
-
-
-      if (dateFormatted >= startDate && dateFormatted <= endDate) {
-        const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
-
-        battery_cell_1_voltageLine.data = [
-          ...battery_cell_1_voltageLine.data,
-          { x: splitDate, y: battery_cell_1_voltage },
-        ];
-        battery_cell_2_voltageLine.data = [
-          ...battery_cell_2_voltageLine.data,
-          { x: splitDate, y: battery_cell_2_voltage },
-        ];
-        
-      }
-    });
-
-    const formattedData1 = [battery_cell_1_voltageLine, battery_cell_2_voltageLine ];
-    return [formattedData1];
-  }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="Hamradio" subtitle="Chart of each battery voltage, current, temperature and charge..." />
-      <Box height="40vh">
-        <Box display="flex" justifyContent="flex-end">
-          <Box>
-            <DatePicker
-              selected={startDate}
-              onChange={(dateFormatted) => setStartDate(dateFormatted)}
-              selectsStart
-              startDate={startDate}
-              endDate={endDate}
-            />
-          </Box>
-          <Box>
-            <DatePicker
-              selected={endDate}
-              onChange={(dateFormatted) => setEndDate(dateFormatted)}
-              selectsEnd
-              startDate={startDate}
-              endDate={endDate}
-              minDate={startDate}
-            />
-          </Box>
+      <Box
+        mt="20px"
+        gap="20px"
+      >
+
+        <Box>
+          <h1>Ham radio operators </h1>
+          <p>The Ham radio community plays a crucial part in ensuring the communication, control, and data collection aspects of CubeSat missions.
+             The collaboration of the amateur radio community is important since they not only support the mission technically but also foster a 
+             collaborative environment where enthusiasts and professionals alike can contribute to space exploration and research.
+          </p>
+
+          <h2 >The Spacelab group thanks all Ham Radio operators who collaborated to the FloripaSat-1 mission.
+          </h2>
+          
         </Box>
-
-        {data ? (
-          <ResponsiveLine
-            data={formattedData1}
-            theme={{
-              axis: {
-                domain: {
-                  line: {
-                    stroke: theme.palette.secondary[200],
-                  },
-                },
-                legend: {
-                  text: {
-                    fill: theme.palette.secondary[200],
-                  },
-                },
-                ticks: {
-                  line: {
-                    stroke: theme.palette.secondary[200],
-                    strokeWidth: 1,
-                  },
-                  text: {
-                    fill: theme.palette.secondary[200],
-                  },
-                },
-              },
-              legends: {
-                text: {
-                  fill: theme.palette.secondary[200],
-                },
-              },
-              tooltip: {
-                container: {
-                  color: theme.palette.primary.main,
-                },
-              },
-            }}
-            colors={{ datum: "color" }}
-            margin={{ top: 50, right: 50, bottom: 70, left: 60 }}
-            xScale={{ type: "point" }}
-            yScale={{
-              type: "linear",
-              min: "auto",
-              max: "auto",
-              stacked: false,
-              reverse: false,
-            }}
-            yFormat=" >-.2f"
-            curve="catmullRom"
-            axisTop={null}
-            axisRight={null}
-            axisBottom={{
-              orient: "bottom",
-              tickSize: 10,
-              tickPadding: 5,
-              tickRotation: 90,
-              legend: "Month-Day",
-              legendOffset: 60,
-              legendPosition: "middle",
-            }}
-            axisLeft={{
-              orient: "left",
-              tickSize: 10,
-              tickPadding: 5,
-              tickRotation: 0,
-              legend: "Voltage [V]",
-              legendOffset: -50,
-              legendPosition: "middle",
-            }}
-            enableGridX={false}
-            enableGridY={false}
-            pointSize={10}
-            pointColor={{ theme: "background" }}
-            pointBorderWidth={2}
-            pointBorderColor={{ from: "serieColor" }}
-            pointLabelYOffset={-12}
-            useMesh={true}
-            legends={[
-              {
-                anchor: "top-right",
-                direction: "column",
-                justify: false,
-                translateX: 50,
-                translateY: 0,
-                itemsSpacing: 0,
-                itemDirection: "left-to-right",
-                itemWidth: 80,
-                itemHeight: 20,
-                itemOpacity: 0.75,
-                symbolSize: 12,
-                symbolShape: "circle",
-                symbolBorderColor: "rgba(0, 0, 0, .5)",
-                effects: [
-                  {
-                    on: "hover",
-                    style: {
-                      itemBackground: "rgba(0, 0, 0, .03)",
-                      itemOpacity: 1,
-                    },
-                  },
-                ],
-              },
-            ]}
-          />
-        ) : (
-          <>Loading...</>
-        )}
       </Box>
-
-
     </Box>
   );
 };
