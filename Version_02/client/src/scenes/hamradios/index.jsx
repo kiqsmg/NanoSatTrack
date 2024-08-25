@@ -3,6 +3,7 @@ import React from "react";
 import {
   Box,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -35,7 +36,7 @@ const Hamradio = () => {
           alignItems="flex-end"
           mt="20px"
         >
-          <Box
+          <motion.div
             style={{
               width: '100px',
               margin: '0 10px',
@@ -43,13 +44,21 @@ const Hamradio = () => {
               borderRadius: '10px 10px 0 0',
               padding: '10px',
               backgroundColor: '#ccc',
-              height: '120px',
-              backgroundColor: 'silver',
             }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
-            Carlos
-          </Box>
-          <Box
+            <Box
+              style={{
+                height: '120px',
+                backgroundColor: 'silver',
+              }}
+            >
+              Carlos
+            </Box>
+          </motion.div>
+          <motion.div
             style={{
               width: '100px',
               margin: '0 10px',
@@ -57,13 +66,21 @@ const Hamradio = () => {
               borderRadius: '10px 10px 0 0',
               padding: '10px',
               backgroundColor: '#ccc',
-              height: '150px',
-              backgroundColor: 'gold',
             }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
-            Joseph
-          </Box>
-          <Box
+            <Box
+              style={{
+                height: '150px',
+                backgroundColor: 'gold',
+              }}
+            >
+              Joseph
+            </Box>
+          </motion.div>
+          <motion.div
             style={{
               width: '100px',
               margin: '0 10px',
@@ -71,12 +88,20 @@ const Hamradio = () => {
               borderRadius: '10px 10px 0 0',
               padding: '10px',
               backgroundColor: '#ccc',
-              height: '90px',
-              backgroundColor: '#cd7f32', // Bronze color
             }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
           >
-            Roberta
-          </Box>
+            <Box
+              style={{
+                height: '90px',
+                backgroundColor: '#cd7f32', // Bronze color
+              }}
+            >
+              Roberta
+            </Box>
+          </motion.div>
         </Box>
         
       </Box>
