@@ -42,8 +42,8 @@ const Hamradio = () => {
               margin: '0 10px',
               textAlign: 'center',
               borderRadius: '10px 10px 0 0',
-              padding: '10px',
-              backgroundColor: '#ccc',
+              padding: '5px',
+              backgroundColor: '#ffffff',
             }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,11 +52,13 @@ const Hamradio = () => {
             <Box
               style={{
                 height: '120px',
+                color: '#000000',
                 backgroundColor: 'silver',
               }}
             >
-              Carlos
+              KB9JHU<br/><br/> 5X
             </Box>
+
           </motion.div>
           <motion.div
             style={{
@@ -64,8 +66,8 @@ const Hamradio = () => {
               margin: '0 10px',
               textAlign: 'center',
               borderRadius: '10px 10px 0 0',
-              padding: '10px',
-              backgroundColor: '#ccc',
+              padding: '5px',
+              backgroundColor: '#ffffff',
             }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,10 +76,11 @@ const Hamradio = () => {
             <Box
               style={{
                 height: '150px',
+                color: '#000000',
                 backgroundColor: 'gold',
               }}
             >
-              Joseph
+              DK3WN<br/><br/> 8X
             </Box>
           </motion.div>
           <motion.div
@@ -86,8 +89,8 @@ const Hamradio = () => {
               margin: '0 10px',
               textAlign: 'center',
               borderRadius: '10px 10px 0 0',
-              padding: '10px',
-              backgroundColor: '#ccc',
+              padding: '5px',
+              backgroundColor: '#ffffff',
             }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,10 +99,11 @@ const Hamradio = () => {
             <Box
               style={{
                 height: '90px',
+                color: '#000000',
                 backgroundColor: '#cd7f32', // Bronze color
               }}
             >
-              Roberta
+              ZR1ADC<br/><br/> 5X
             </Box>
           </motion.div>
         </Box>
