@@ -13,6 +13,7 @@ import Downlink from "scenes/downlinks";
 import Solarpanel from "scenes/solarpanel";
 import Location from "scenes/location";
 import Hamradio from "scenes/hamradios";
+import OBDH from "scenes/obdh"
 
 
 
@@ -35,6 +36,7 @@ function App() {
               <Route path="/solarpanel" element={<Solarpanel />} />
               <Route path="/location" element={<Location />} />
               <Route path="/Ham Radios" element={<Hamradio />} />
+              <Route path="/OBDH-data" element={<OBDH />} />
 
 
             </Route>
