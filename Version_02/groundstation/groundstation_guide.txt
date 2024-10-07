@@ -1,1 +1,0 @@
-This ground station guide will explain how this code should be implemented in other ground stations (ham radios) around the world
