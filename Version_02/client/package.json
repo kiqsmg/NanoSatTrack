@@ -23,7 +23,9 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "framer-motion": "^11.3.30",
+    "@babel/plugin-proposal-private-property-in-object"
   },
   "scripts": {
     "start": "react-scripts start",
