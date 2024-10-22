@@ -7,7 +7,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-
 const Solarpanel = () => {
   const [startDate, setStartDate] = useState(new Date("2019-12-01"));
   const [endDate, setEndDate] = useState(new Date("2020-03-01"));
@@ -16,7 +15,6 @@ const Solarpanel = () => {
 
   const [formattedData] = useMemo(() => {
     if (!data) return [];
-
 
     const sp_01_currentLine = {
       id: "Panel 1",
@@ -54,7 +52,6 @@ const Solarpanel = () => {
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       const dateFormatted = new Date(dateAllTogether);
 
-
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
 
@@ -82,7 +79,6 @@ const Solarpanel = () => {
           ...sp_06_currentLine.data,
           { x: splitDate, y: sp_06_current },
         ];
-        
       }
     });
 
@@ -92,7 +88,6 @@ const Solarpanel = () => {
 
   const [formattedData2] = useMemo(() => {
     if (!data) return [];
-
 
     const sp_01_02_voltageLine = {
       id: "Panel 1-2",
@@ -131,7 +126,6 @@ const Solarpanel = () => {
           ...sp_05_06_voltageLine.data,
           { x: splitDate, y: sp_05_06_voltage },
         ];
-        
       }
     });
 
@@ -165,7 +159,6 @@ const Solarpanel = () => {
             />
           </Box>
         </Box>
-
         {data ? (
           <ResponsiveLine
             data={formattedData}
@@ -268,15 +261,11 @@ const Solarpanel = () => {
                 ],
               },
             ]}
-          />
-
-          
+          />          
         ) : (
-          
           <>Loading...</>
         )}
       </Box>
-
       <Box height="55vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
@@ -299,7 +288,6 @@ const Solarpanel = () => {
             />
           </Box>
         </Box>
-
         {data ? (
           <ResponsiveLine
             data={formattedData2}
@@ -402,11 +390,8 @@ const Solarpanel = () => {
                 ],
               },
             ]}
-          />
-
-          
-        ) : (
-          
+          />          
+        ) : (          
           <>Loading...</>
         )}
       </Box>
