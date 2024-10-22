@@ -164,7 +164,6 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-
         </Drawer>
       )}
     </Box>
