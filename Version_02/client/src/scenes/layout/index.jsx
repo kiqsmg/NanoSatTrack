@@ -5,8 +5,6 @@ import Navbar from "components/Navbar";
 import Sidebar from "components/Sidebar";
 
 
-
-
 const Layout = () => {
     const isNonMobile = useMediaQuery("(min-width: 600px)");  //identify if the screen is mobile or not
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -29,6 +27,5 @@ const Layout = () => {
         </Box>
     );
 };
-
 
 export default Layout;
