@@ -24,8 +24,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 
-
-
 const Dashboard = () => {
   const theme = useTheme();
 
@@ -36,7 +34,6 @@ const Dashboard = () => {
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
         <Header title="Welcome to NanosatTracker"/>
-
         <Box>
           <a href="https://spacelab.ufsc.br/en/home/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
             <Button
@@ -54,7 +51,6 @@ const Dashboard = () => {
           </a>
         </Box>
       </FlexBetween>
-
       <Box
         mt="20px"
         gap="20px"
@@ -106,7 +102,6 @@ const Dashboard = () => {
             </Grid>
           </Grid>
         </Paper>
-
         <Box>
           <h1>Overview</h1>
           <p>SpaceLab brings together several research groups from the Federal University of Santa Catarina (UFSC), Brazil.
@@ -114,10 +109,8 @@ const Dashboard = () => {
             aiming to make space more accessible not only to the scientific community but also to the industry.
             Featured missions include FloripaSat-1, GOLDS-UFSC, GOMX-5, and cubesats from the Catarina Constelation.
             This organization combines repositories for different projects, files and documents.
-          </p>
-          
+          </p>          
         </Box>
-
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
           <Grid item xs={12} md={6} mb={10} mt={10} {...gridProps}>
             <CardActionArea component="a" href="#">
@@ -150,7 +143,6 @@ const Dashboard = () => {
               </Card>
             </CardActionArea>
           </Grid>
-
           <Grid item xs={12} md={6} mb={10} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
@@ -181,8 +173,6 @@ const Dashboard = () => {
               </Card>
             </CardActionArea>
           </Grid>
-
-
           <Grid item xs={12} md={6} mb={10} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
@@ -218,6 +208,5 @@ const Dashboard = () => {
     </Box>
   );
 };
-
 
 export default Dashboard;
