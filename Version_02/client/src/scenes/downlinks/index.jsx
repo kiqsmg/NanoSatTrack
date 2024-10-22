@@ -182,7 +182,7 @@ function Downlink() {
     </Box>
    </Box>
     </>
-  )
-}
+  );
+};
 
 export default Downlink
