@@ -20,8 +20,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 
-
-
 const Dashboard = () => {
   const theme = useTheme();
 
@@ -49,12 +47,10 @@ const Dashboard = () => {
           </a>
         </Box>
       </FlexBetween>
-
       <Box
         mt="20px"
         gap="20px"
       >
-
         <Box>
           <h1>FloripaSat-1 Mission </h1>
           <p>FloripaSat-1 is a technology demonstration mission entirely developed by SpaceLab UFSC students at the
@@ -63,14 +59,10 @@ const Dashboard = () => {
                On-Board Data Handling (OBDH), the Telemetry, Tracking, and Control (TT&C), the Electric Power System (EPS),
                 and the passive Attitude Control System (ACS). The payload is an amateur radio repeater, which can be used
                  all over the globe in emergency and rescue situations, for instance.
-          </p>
-          
+          </p>          
         </Box>
-
         <Box sx={{mt: 10, display: "flex", flexDirection: "column", alignItems: "center"}}>
-
             <h2>Mission Modules and subsystems</h2>
-
             <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
@@ -99,7 +91,6 @@ const Dashboard = () => {
               </Card>
             </CardActionArea>
           </Grid>
-
           <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
@@ -127,7 +118,6 @@ const Dashboard = () => {
               </Card>
             </CardActionArea>
           </Grid>
-
           <Grid item xs={12} md={6} mb={5} mt={5} {...gridProps}>
             <CardActionArea component="a" href="#">
               <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'center' } }}>
@@ -152,12 +142,10 @@ const Dashboard = () => {
               </Card>
             </CardActionArea>
           </Grid>
-
         </Box>
       </Box>
     </Box>
   );
 };
-
 
 export default Dashboard;
