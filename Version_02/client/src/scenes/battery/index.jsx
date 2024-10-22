@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import Header from "../../components/Header";
@@ -18,7 +17,6 @@ const Batteries = () => {
   const [formattedData1] = useMemo(() => {
     if (!data) return [];
 
-
     const battery_cell_1_voltageLine = {
       id: "Cell1 vol",
       color: theme.palette.secondary.main,
@@ -35,7 +33,6 @@ const Batteries = () => {
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       const dateFormatted = new Date(dateAllTogether);
 
-
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
 
@@ -47,10 +44,8 @@ const Batteries = () => {
           ...battery_cell_2_voltageLine.data,
           { x: splitDate, y: battery_cell_2_voltage },
         ];
-        
       }
     });
-
     const formattedData1 = [battery_cell_1_voltageLine, battery_cell_2_voltageLine ];
     return [formattedData1];
   }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -58,13 +53,11 @@ const Batteries = () => {
   const [formattedData2] = useMemo(() => {
     if (!data) return [];
 
-
     const battery_temperatureLine = {
       id: "Bat.[°C]",
       color: theme.palette.secondary.light,
       data: [],
     };
-
     const eps_temperatureLine = {
       id: "EPS.[°C]",
       color: theme.palette.secondary.dark,
@@ -80,7 +73,6 @@ const Batteries = () => {
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
 
-
         battery_temperatureLine.data = [
           ...battery_temperatureLine.data,
           { x: splitDate, y: battery_temperature },
@@ -88,8 +80,7 @@ const Batteries = () => {
         eps_temperatureLine.data = [
           ...eps_temperatureLine.data,
           { x: splitDate, y: eps_temperature },
-        ];
-        
+        ];        
       }
     });
 
@@ -99,7 +90,6 @@ const Batteries = () => {
 
   const [formattedData3] = useMemo(() => {
     if (!data) return [];
-
 
     const battery_currentLine = {
       id: "Bat.[A]",
@@ -112,16 +102,13 @@ const Batteries = () => {
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       const dateFormatted = new Date(dateAllTogether);
 
-
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
-
 
         battery_currentLine.data = [
           ...battery_currentLine.data,
           { x: splitDate, y: battery_current },
-        ];
-        
+        ];        
       }
     });
 
@@ -131,7 +118,6 @@ const Batteries = () => {
 
   const [formattedData4] = useMemo(() => {
     if (!data) return [];
-
 
     const battery_chargeLine = {
       id: "Charge",
@@ -144,16 +130,13 @@ const Batteries = () => {
       const dateAllTogether = year.toString() + "-" + month.toString() + "-" + day.toString()
       const dateFormatted = new Date(dateAllTogether);
 
-
       if (dateFormatted >= startDate && dateFormatted <= endDate) {
         const splitDate = dateAllTogether.substring(dateAllTogether.indexOf("-") + 1);
-
 
         battery_chargeLine.data = [
           ...battery_chargeLine.data,
           { x: splitDate, y: battery_charge },
-        ];
-        
+        ];        
       }
     });
 
@@ -187,7 +170,6 @@ const Batteries = () => {
             />
           </Box>
         </Box>
-
         {data ? (
           <ResponsiveLine
             data={formattedData1}
@@ -295,7 +277,6 @@ const Batteries = () => {
           <>Loading...</>
         )}
       </Box>
-
       <Box height="40vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
@@ -318,7 +299,6 @@ const Batteries = () => {
             />
           </Box>
         </Box>
-
         {data ? (
           <ResponsiveLine
             data={formattedData2}
@@ -426,7 +406,6 @@ const Batteries = () => {
           <>Loading...</>
         )}
       </Box>
-
       <Box height="40vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
@@ -449,7 +428,6 @@ const Batteries = () => {
             />
           </Box>
         </Box>
-
         {data ? (
           <ResponsiveLine
             data={formattedData3}
@@ -557,7 +535,6 @@ const Batteries = () => {
           <>Loading...</>
         )}
       </Box>
-
       <Box height="40vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
@@ -580,7 +557,6 @@ const Batteries = () => {
             />
           </Box>
         </Box>
-
         {data ? (
           <ResponsiveLine
             data={formattedData4}
@@ -688,8 +664,6 @@ const Batteries = () => {
           <>Loading...</>
         )}
       </Box>
-
-
     </Box>
   );
 };
