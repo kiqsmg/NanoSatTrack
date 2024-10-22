@@ -92,7 +92,7 @@ const Location = () =>  {
                   ) : <>Loading...</>}
             </Box>
         </Box>
-  )
-}
+  );
+};
 
 export default Location;
