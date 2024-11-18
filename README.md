@@ -26,6 +26,10 @@
     <a href="#releases">Releases</a> •
 </p>
 
+## <a name="links">🔗 Links</a>
+
+The Beta version deployed: [here](https://nanosattracker.netlify.app/)
+
 <p align="center" justify-content="center">
     <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_principal.png">
      <img width="80%" src="https://github.com/kiqsmg/NanoSatTrack/blob/main/Pasta/pagina_principal_sidepage.png">
