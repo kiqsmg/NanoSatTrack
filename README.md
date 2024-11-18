@@ -3,7 +3,7 @@
     <br>
 </h1>
 
-<h4 align="center">Nanosatelitte Tracking Software designed and developed by SpaceLab.</h4>
+<h4 align="center">Nanosatelitte Tracking Software designed and developed by Caique Sales de Miranda Gomes.</h4>
 
 <p align="center">
     <a href="https://github.com/kiqsmg/NanoSatTrack/#versioning">
