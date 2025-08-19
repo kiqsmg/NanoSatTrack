@@ -1,0 +1,45 @@
+{
+  "name": "@nivo/colors",
+  "version": "0.80.0",
+  "license": "MIT",
+  "author": {
+    "name": "Raphaël Benitte",
+    "url": "https://github.com/plouc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plouc/nivo.git",
+    "directory": "packages/colors"
+  },
+  "main": "./dist/nivo-colors.cjs.js",
+  "module": "./dist/nivo-colors.es.js",
+  "typings": "./dist/types/index.d.ts",
+  "files": [
+    "README.md",
+    "LICENSE.md",
+    "dist/",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
+  "dependencies": {
+    "d3-color": "^2.0.0",
+    "d3-scale": "^3.2.3",
+    "d3-scale-chromatic": "^2.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@nivo/core": "0.80.0",
+    "@types/d3-color": "^2.0.0",
+    "@types/d3-scale-chromatic": "^2.0.0",
+    "@types/lodash": "^4.14.170",
+    "@types/react-motion": "^0.0.29"
+  },
+  "peerDependencies": {
+    "@nivo/core": "0.80.0",
+    "prop-types": ">= 15.5.10 < 16.0.0",
+    "react": ">= 16.14.0 < 19.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "df352b82a7d3b7938fb3a1bd9be3f602cbc8a67f"
+}
