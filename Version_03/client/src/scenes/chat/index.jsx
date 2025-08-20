@@ -6,7 +6,6 @@ import {
   useMediaQuery,
   Alert,
   Paper,
-  Chip,
   IconButton,
   Tooltip,
   CircularProgress,
@@ -28,9 +27,90 @@ const Chat = () => {
   const [inputMessage, setInputMessage] = useState('');
   const messagesEndRef = useRef(null);
 
-  // Initialize with welcome message
+  // Chat history persistence
+  const CHAT_STORAGE_KEY = 'floripasat_chat_history';
+  const MAX_MESSAGES = 50; // Keep last 50 messages
+  const MAX_AGE_HOURS = 24; // Keep messages for 24 hours
+
+  // Load chat history from localStorage
+  const loadChatHistory = () => {
+    try {
+      const saved = localStorage.getItem(CHAT_STORAGE_KEY);
+      if (saved) {
+        const chatData = JSON.parse(saved);
+        const now = new Date();
+        const cutoffTime = new Date(now.getTime() - (MAX_AGE_HOURS * 60 * 60 * 1000));
+        
+        // Filter out old messages and limit to MAX_MESSAGES
+        const validMessages = chatData.messages
+          .filter(msg => new Date(msg.timestamp) > cutoffTime)
+          .slice(-MAX_MESSAGES);
+        
+        if (validMessages.length > 0) {
+          return validMessages;
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load chat history:', error);
+    }
+    return null;
+  };
+
+  // Save chat history to localStorage
+  const saveChatHistory = (messagesToSave) => {
+    try {
+      const chatData = {
+        messages: messagesToSave,
+        lastUpdated: new Date().toISOString(),
+        version: '1.0'
+      };
+      localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(chatData));
+    } catch (error) {
+      console.warn('Failed to save chat history:', error);
+    }
+  };
+
+  // Clear chat history
+  const clearChatHistory = () => {
+    try {
+      localStorage.removeItem(CHAT_STORAGE_KEY);
+      setMessages([]);
+    } catch (error) {
+      console.warn('Failed to clear chat history:', error);
+    }
+  };
+
+  // Export chat history
+  const exportChatHistory = () => {
+    try {
+      const chatData = {
+        messages: messages,
+        exportDate: new Date().toISOString(),
+        totalMessages: messages.length,
+        session: 'FloripaSat-1 AI Chat Export'
+      };
+      
+      const blob = new Blob([JSON.stringify(chatData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `floripasat-chat-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.warn('Failed to export chat history:', error);
+    }
+  };
+
+  // Initialize with welcome message or saved history
   useEffect(() => {
-    if (messages.length === 0) {
+    const savedMessages = loadChatHistory();
+    
+    if (savedMessages && savedMessages.length > 0) {
+      setMessages(savedMessages);
+    } else {
       const welcomeMessage = {
         id: 'welcome',
         message: `🛰️ Welcome to the FloripaSat-1 AI Assistant!
@@ -46,6 +126,13 @@ Ready to explore your satellite mission data! 🚀`,
   }, []);
 
   const [isLoading, setIsLoading] = useState(false);
+
+  // Save chat history whenever messages change
+  useEffect(() => {
+    if (messages.length > 0) {
+      saveChatHistory(messages);
+    }
+  }, [messages]);
 
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
@@ -125,6 +212,26 @@ Ready to explore your satellite mission data! 🚀`,
       <Alert severity="success" sx={{ mb: 2, borderRadius: 2 }}>
         ✅ AI Chat system connected to backend! Ask me about satellite data, battery performance, or any technical questions.
       </Alert>
+      
+      {/* Chat History Info */}
+      <Box 
+        display="flex" 
+        alignItems="center" 
+        gap={1} 
+        sx={{ 
+          mb: 2, 
+          p: 1.5, 
+          bgcolor: theme.palette.background.paper,
+          borderRadius: 1,
+          border: `1px solid ${theme.palette.divider}`,
+        }}
+      >
+        <HealthAndSafety color="info" sx={{ fontSize: 16 }} />
+        <Typography variant="caption" color="text.secondary">
+          💾 Chat history is automatically saved and will persist across page navigation. 
+          {messages.length > 1 && ` You have ${messages.length - 1} conversation${messages.length > 2 ? 's' : ''} in this session.`}
+        </Typography>
+      </Box>
 
       <Box 
         display="flex" 
@@ -144,18 +251,70 @@ Ready to explore your satellite mission data! 🚀`,
             borderRadius: '12px 12px 0 0',
           }}
         >
-          <Box display="flex" alignItems="center" gap={isMobile ? 1 : 2}>
-            <SmartToy color="primary" sx={{ fontSize: isMobile ? 24 : 28 }} />
+          <Box display="flex" alignItems="center" justifyContent="space-between">
+            <Box display="flex" alignItems="center" gap={isMobile ? 1 : 2}>
+              <SmartToy color="primary" sx={{ fontSize: isMobile ? 24 : 28 }} />
+                      <Box>
+          <Typography 
+            variant={isMobile ? "subtitle1" : "h6"} 
+            color="primary"
+            sx={{ 
+              fontSize: isMobile ? '1rem' : undefined,
+              lineHeight: isMobile ? 1.2 : undefined
+            }}
+          >
+            {isMobile ? "AI Assistant" : "FloripaSat-1 AI Assistant"}
+          </Typography>
+          {messages.length > 1 && (
             <Typography 
-              variant={isMobile ? "subtitle1" : "h6"} 
-              color="primary"
-              sx={{ 
-                fontSize: isMobile ? '1rem' : undefined,
-                lineHeight: isMobile ? 1.2 : undefined
-              }}
+              variant="caption" 
+              color="text.secondary"
+              sx={{ fontSize: '0.7rem', opacity: 0.8 }}
             >
-              {isMobile ? "AI Assistant" : "FloripaSat-1 AI Assistant"}
+              {messages.length - 1} conversation{messages.length > 2 ? 's' : ''}
             </Typography>
+          )}
+        </Box>
+            </Box>
+            
+            {/* Chat Action Buttons */}
+            <Box display="flex" gap={0.5}>
+              <Tooltip title="Export chat history">
+                <IconButton
+                  onClick={exportChatHistory}
+                  size="small"
+                  disabled={messages.length <= 1}
+                  sx={{
+                    color: theme.palette.text.secondary,
+                    '&:hover': {
+                      color: theme.palette.info.main,
+                      bgcolor: theme.palette.info.light + '20',
+                    },
+                    '&:disabled': {
+                      color: theme.palette.action.disabled,
+                    },
+                  }}
+                >
+                  <HealthAndSafety fontSize="small" />
+                </IconButton>
+              </Tooltip>
+              
+              <Tooltip title="Clear chat history">
+                <IconButton
+                  onClick={clearChatHistory}
+                  size="small"
+                  sx={{
+                    color: theme.palette.text.secondary,
+                    '&:hover': {
+                      color: theme.palette.error.main,
+                      bgcolor: theme.palette.error.light + '20',
+                    },
+                  }}
+                >
+                  <ClearAll fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </Box>
           </Box>
         </Paper>
 
@@ -287,8 +446,13 @@ Ready to explore your satellite mission data! 🚀`,
               component="textarea"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              onKeyPress={(e) => {
+              onKeyDown={(e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSendMessage();
+                }
+                // Ctrl/Cmd + Enter to send
+                if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
                   e.preventDefault();
                   handleSendMessage();
                 }
