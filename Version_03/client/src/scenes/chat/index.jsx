@@ -3,6 +3,7 @@ import {
   Box,
   Typography,
   useTheme,
+  useMediaQuery,
   Alert,
   Paper,
   Chip,
@@ -21,6 +22,8 @@ import Header from '../../components/Header';
 
 const Chat = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery('(max-width: 600px)');
+  const isTablet = useMediaQuery('(max-width: 900px)');
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const messagesEndRef = useRef(null);
@@ -107,7 +110,13 @@ Ready to explore your satellite mission data! 🚀`,
   };
 
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box 
+      m={isMobile ? "1rem" : isTablet ? "1.5rem 2rem" : "1.5rem 2.5rem"}
+      sx={{ 
+        minHeight: '100vh',
+        pb: isMobile ? 2 : 3
+      }}
+    >
       <Header
         title="🤖 AI Satellite Assistant"
         subtitle="Chat with AI to analyze FloripaSat-1 telemetry data"
@@ -120,22 +129,32 @@ Ready to explore your satellite mission data! 🚀`,
       <Box 
         display="flex" 
         flexDirection="column" 
-        height="calc(100vh - 250px)"
-        sx={{ minHeight: '600px' }}
+        height={isMobile ? "calc(100vh - 200px)" : "calc(100vh - 250px)"}
+        sx={{ 
+          minHeight: isMobile ? '500px' : '600px',
+          maxHeight: isMobile ? '70vh' : '80vh'
+        }}
       >
         <Paper
           elevation={1}
           sx={{
-            p: 2,
+            p: isMobile ? 1.5 : 2,
             mb: 1,
             bgcolor: theme.palette.background.alt,
             borderRadius: '12px 12px 0 0',
           }}
         >
-          <Box display="flex" alignItems="center" gap={2}>
-            <SmartToy color="primary" sx={{ fontSize: 28 }} />
-            <Typography variant="h6" color="primary">
-              FloripaSat-1 AI Assistant
+          <Box display="flex" alignItems="center" gap={isMobile ? 1 : 2}>
+            <SmartToy color="primary" sx={{ fontSize: isMobile ? 24 : 28 }} />
+            <Typography 
+              variant={isMobile ? "subtitle1" : "h6"} 
+              color="primary"
+              sx={{ 
+                fontSize: isMobile ? '1rem' : undefined,
+                lineHeight: isMobile ? 1.2 : undefined
+              }}
+            >
+              {isMobile ? "AI Assistant" : "FloripaSat-1 AI Assistant"}
             </Typography>
           </Box>
         </Paper>
@@ -163,8 +182,8 @@ Ready to explore your satellite mission data! 🚀`,
             >
               <Box
                 sx={{
-                  width: 40,
-                  height: 40,
+                  width: isMobile ? 32 : 40,
+                  height: isMobile ? 32 : 40,
                   borderRadius: '50%',
                   bgcolor: message.isUser 
                     ? theme.palette.primary.main 
@@ -173,16 +192,17 @@ Ready to explore your satellite mission data! 🚀`,
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'white',
+                  flexShrink: 0,
                 }}
               >
-                {message.isUser ? <Person /> : <SmartToy />}
+                {message.isUser ? <Person sx={{ fontSize: isMobile ? 16 : 20 }} /> : <SmartToy sx={{ fontSize: isMobile ? 16 : 20 }} />}
               </Box>
 
-              <Box maxWidth="70%">
+              <Box maxWidth={isMobile ? "85%" : isTablet ? "75%" : "70%"}>
                 <Paper
                   elevation={1}
                   sx={{
-                    p: 2,
+                    p: isMobile ? 1.5 : 2,
                     bgcolor: message.isUser 
                       ? theme.palette.primary.main 
                       : theme.palette.background.paper,
@@ -195,7 +215,7 @@ Ready to explore your satellite mission data! 🚀`,
                   }}
                 >
                   <Typography 
-                    variant="body1" 
+                    variant={isMobile ? "body2" : "body1"}
                     sx={{ 
                       whiteSpace: 'pre-wrap',
                       lineHeight: 1.5,
@@ -218,30 +238,31 @@ Ready to explore your satellite mission data! 🚀`,
             >
               <Box
                 sx={{
-                  width: 40,
-                  height: 40,
+                  width: isMobile ? 32 : 40,
+                  height: isMobile ? 32 : 40,
                   borderRadius: '50%',
                   bgcolor: theme.palette.secondary.main,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'white',
+                  flexShrink: 0,
                 }}
               >
-                <SmartToy />
+                <SmartToy sx={{ fontSize: isMobile ? 16 : 20 }} />
               </Box>
-              <Box maxWidth="70%">
+              <Box maxWidth={isMobile ? "85%" : isTablet ? "75%" : "70%"}>
                 <Paper
                   elevation={1}
                   sx={{
-                    p: 2,
+                    p: isMobile ? 1.5 : 2,
                     bgcolor: theme.palette.background.paper,
                     borderRadius: '20px 20px 20px 5px',
                   }}
                 >
                   <Box display="flex" alignItems="center" gap={1}>
-                    <CircularProgress size={16} />
-                    <Typography variant="body2" color="text.secondary">
+                    <CircularProgress size={isMobile ? 14 : 16} />
+                    <Typography variant={isMobile ? "caption" : "body2"} color="text.secondary">
                       AI is thinking...
                     </Typography>
                   </Box>
@@ -255,7 +276,7 @@ Ready to explore your satellite mission data! 🚀`,
         <Paper
           elevation={2}
           sx={{
-            p: 2,
+            p: isMobile ? 1.5 : 2,
             mt: 2,
             bgcolor: theme.palette.background.paper,
             borderRadius: 2,
@@ -272,16 +293,16 @@ Ready to explore your satellite mission data! 🚀`,
                   handleSendMessage();
                 }
               }}
-              placeholder="Ask me about satellite data, battery performance, anomalies..."
+              placeholder={isMobile ? "Ask about satellite data..." : "Ask me about satellite data, battery performance, anomalies..."}
               sx={{
                 flex: 1,
-                minHeight: '60px',
-                maxHeight: '120px',
+                minHeight: isMobile ? '50px' : '60px',
+                maxHeight: isMobile ? '100px' : '120px',
                 resize: 'vertical',
                 border: `1px solid ${theme.palette.divider}`,
                 borderRadius: '12px',
-                padding: '12px',
-                fontSize: '14px',
+                padding: isMobile ? '10px' : '12px',
+                fontSize: isMobile ? '13px' : '14px',
                 fontFamily: 'inherit',
                 backgroundColor: theme.palette.background.default,
                 color: theme.palette.text.primary,
@@ -295,9 +316,12 @@ Ready to explore your satellite mission data! 🚀`,
             <IconButton
               onClick={handleSendMessage}
               disabled={!inputMessage.trim() || isLoading}
+              size={isMobile ? "small" : "medium"}
               sx={{
                 bgcolor: theme.palette.primary.main,
                 color: theme.palette.primary.contrastText,
+                minWidth: isMobile ? '40px' : '48px',
+                minHeight: isMobile ? '40px' : '48px',
                 '&:hover': {
                   bgcolor: theme.palette.primary.dark,
                 },
@@ -306,7 +330,7 @@ Ready to explore your satellite mission data! 🚀`,
                 },
               }}
             >
-              {isLoading ? <CircularProgress size={20} color="inherit" /> : <Send />}
+              {isLoading ? <CircularProgress size={isMobile ? 18 : 20} color="inherit" /> : <Send />}
             </IconButton>
           </Box>
         </Paper>
