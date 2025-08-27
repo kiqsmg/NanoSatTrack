@@ -1,4 +1,4 @@
-import google.generativeai as genai
+import httpx
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any, Optional
 import json
@@ -14,7 +14,7 @@ class SatelliteDataAI:
     """
     🛰️ Intelligent AI Assistant for FloripaSat-1 Satellite Data Analysis
     
-    This service integrates Google Gemini AI to provide natural language
+    This service integrates Google Gemini 2.0 Flash AI to provide natural language
     interaction with satellite telemetry data, offering insights, analysis,
     and technical explanations about the FloripaSat-1 mission.
     """
@@ -24,9 +24,8 @@ class SatelliteDataAI:
         if not GeminiConfig.API_KEY:
             raise ValueError("❌ GEMINI_API_KEY not found in environment variables!")
         
-        # Configure Gemini AI
-        genai.configure(api_key=GeminiConfig.API_KEY)
-        self.model = genai.GenerativeModel(GeminiConfig.MODEL_NAME)
+        self.api_key = GeminiConfig.API_KEY
+        self.api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
         
         # System context about the satellite mission
         self.system_context = """
@@ -68,6 +67,52 @@ class SatelliteDataAI:
         - Provide specific data when available
         - Suggest follow-up questions or analysis
         """
+    
+    async def _call_gemini_api(self, prompt: str) -> str:
+        """Make API call to Gemini 2.0 Flash"""
+        try:
+            headers = {
+                "Content-Type": "application/json",
+                "X-goog-api-key": self.api_key
+            }
+            
+            payload = {
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": prompt
+                            }
+                        ]
+                    }
+                ]
+            }
+            
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    self.api_url,
+                    headers=headers,
+                    json=payload,
+                    timeout=30.0
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    # Extract the generated text from the response
+                    if "candidates" in result and len(result["candidates"]) > 0:
+                        candidate = result["candidates"][0]
+                        if "content" in candidate and "parts" in candidate["content"]:
+                            parts = candidate["content"]["parts"]
+                            if len(parts) > 0 and "text" in parts[0]:
+                                return parts[0]["text"]
+                    
+                    # Fallback if response structure is different
+                    return str(result)
+                else:
+                    return f"❌ API Error: {response.status_code} - {response.text}"
+                    
+        except Exception as e:
+            return f"❌ API Call Error: {str(e)}"
     
     def _serialize_data(self, obj: Any) -> Any:
         """Convert database objects to JSON-serializable format"""
@@ -151,10 +196,10 @@ class SatelliteDataAI:
             """
             
             # Generate AI response
-            response = self.model.generate_content(full_prompt)
+            response = await self._call_gemini_api(full_prompt)
             
-            if response and response.text:
-                return response.text
+            if response and response.strip():
+                return response
             else:
                 return "🤔 I couldn't generate a response. Please try rephrasing your question!"
                 
@@ -202,8 +247,8 @@ class SatelliteDataAI:
             [Suggest next steps or monitoring]
             """
             
-            response = self.model.generate_content(prompt)
-            return response.text if response and response.text else "🤔 Couldn't complete anomaly analysis."
+            response = await self._call_gemini_api(prompt)
+            return response if response and response.strip() else "🤔 Couldn't complete anomaly analysis."
             
         except Exception as e:
             return f"❌ Anomaly Analysis Error: {str(e)}"
