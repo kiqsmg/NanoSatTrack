@@ -166,7 +166,7 @@ Ready to explore your satellite mission data! 🚀`,
         const data = await response.json();
         const aiMessage = {
           id: Date.now() + '_ai',
-          message: data.ai_response,
+          message: data.response,
           isUser: false,
           timestamp: new Date().toISOString(),
         };
